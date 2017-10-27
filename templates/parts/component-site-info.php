@@ -47,7 +47,7 @@
 					esc_html_x( 'Using %1$s %2$s theme created by %3$s', '1: theme name, 2: linked "WordPress" word, 3: theme developer name.', 'boo-valley' ),
 					'<a href="' . esc_url( wp_get_theme( 'boo-valley' )->get( 'ThemeURI' ) ) . '"><strong>' . wp_get_theme( 'boo-valley' )->get( 'Name' ) . '</strong></a>',
 					'<a href="' . esc_url( __( 'http://wordpress.org/', 'boo-valley' ) ) . '">WordPress</a>',
-					'<a href="https://www.sullidigital.com">SulliDigital Design</a>'
+					'<a href="https://www.sullidigital.com">Sulli Digital</a>'
 				);
 
 				?>

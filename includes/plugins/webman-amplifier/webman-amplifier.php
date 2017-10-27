@@ -38,7 +38,7 @@
  * 10) Plugin integration
  */
 
-	define( 'BOO_VALLEY_PATH_PLUGINS_WEBMAN_AMPLIFIER', BOO_VALLEY_PATH_PLUGINS . 'sullidigital-amplifier/class-sullidigital-amplifier-' );
+	define( 'BOO_VALLEY_PATH_PLUGINS_WEBMAN_AMPLIFIER', BOO_VALLEY_PATH_PLUGINS . 'webman-amplifier/class-webman-amplifier-' );
 
 	require BOO_VALLEY_PATH_PLUGINS_WEBMAN_AMPLIFIER . 'setup.php';
 

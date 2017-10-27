@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Boo Valley\n"
-"Report-Msgid-Bugs-To: https://webmandesign.ticksy.com\n"
+"Report-Msgid-Bugs-To: https://sullidigital.ticksy.com\n"
 "POT-Creation-Date: 2017-05-31 14:56+0200\n"
 "PO-Revision-Date: 2017-05-31 14:58+0200\n"
-"Last-Translator: Oliver Juhas, SulliDigital Design\n"
-"Language-Team: SulliDigital - Oliver Juhas <webmandesigneu@gmail.com>\n"
+"Last-Translator: Sulli Digital\n"
+"Language-Team: SulliDigital <bill@sullidigital.com>\n"
 "Language: sk_SK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -166,8 +166,8 @@ msgid "You can obtain other professional WordPress themes at %s."
 msgstr "Ďalšie profesionálne WordPress témy môžete získať na %s."
 
 #: includes/customize/class-customize.php:249
-msgid "Thank you for using a theme by SulliDigital Design!"
-msgstr "Ďakujeme, že používate tému od SulliDigital Design!"
+msgid "Thank you for using a theme by Sulli Digital!"
+msgstr "Ďakujeme, že používate tému od Sulli Digital!"
 
 #: includes/customize/class-customize.php:263
 #: includes/customize/class-customize.php:305
@@ -1894,18 +1894,18 @@ msgstr "Odkazy sociálnych sietí"
 
 #: includes/starter-content/class-starter-content.php:234
 msgctxt "Theme starter content"
-msgid "SulliDigital Design on Facebook"
-msgstr "SulliDigital Design na Facebooku"
+msgid "Sulli Digital on Facebook"
+msgstr "Sulli Digital na Facebooku"
 
 #: includes/starter-content/class-starter-content.php:239
 msgctxt "Theme starter content"
-msgid "SulliDigital Design on Twitter"
-msgstr "SulliDigital Design na Twitteri"
+msgid "Sulli Digital on Twitter"
+msgstr "Sulli Digital na Twitteri"
 
 #: includes/starter-content/class-starter-content.php:244
 msgctxt "Theme starter content"
-msgid "SulliDigital Design on Vimeo"
-msgstr "SulliDigital Design na Vimeo"
+msgid "Sulli Digital on Vimeo"
+msgstr "Sulli Digital na Vimeo"
 
 #: includes/tgmpa/class-tgmpa-plugins.php:114
 msgid "Adding theme features, post types, shortcodes, icons."

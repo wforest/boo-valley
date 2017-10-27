@@ -1,8 +1,8 @@
 <?php
 /**
- * SulliDigital Design Use Child Theme
+ * Sulli Digital Use Child Theme
  *
- * @package     SulliDigital WordPress Theme Framework
+ * @package     Sulli Digital WordPress Theme Framework
  * @subpackage  Plugins
  *
  * @since    1.6.2
@@ -14,13 +14,13 @@
 
 
 /**
- * SulliDigital Design Use Child Theme
+ * Sulli Digital Use Child Theme
  *
  * @link  https://github.com/webmandesign/use-child-theme
  * @link  https://github.com/FacetWP/use-child-theme
  *
  * This is a fork of Use Child Theme by FacetWP modified for use
- * in SulliDigital WordPress Theme Framework.
+ * in Sulli Digital WordPress Theme Framework.
  *
  * This does not work in WordPress multisite installation due to theme
  * file editor not being available in single site dashboard.

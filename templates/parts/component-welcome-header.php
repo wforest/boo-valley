@@ -37,7 +37,7 @@
 		printf(
 			esc_html_x( 'Thank you for using %1$s WordPress theme by %2$s!', '1: theme name, 2: theme developer link.', 'boo-valley' ),
 			'<strong>' . wp_get_theme( 'boo-valley' )->get( 'Name' ) . '</strong>',
-			'<a href="' . esc_url( wp_get_theme( 'boo-valley' )->get( 'AuthorURI' ) ) . '" target="_blank"><strong>SulliDigital Design</strong></a>'
+			'<a href="' . esc_url( wp_get_theme( 'boo-valley' )->get( 'AuthorURI' ) ) . '" target="_blank"><strong>Sulli Digital</strong></a>'
 		);
 
 		?>

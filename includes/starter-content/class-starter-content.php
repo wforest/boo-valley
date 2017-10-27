@@ -231,22 +231,22 @@ class Boo_Valley_Starter_Content {
 							'items' => array(
 
 								'link_facebook' => array(
-									'title' => esc_html_x( 'SulliDigital Design on Facebook', 'Theme starter content', 'boo-valley' ),
-									'url'   => 'https://www.facebook.com/webmandesigneu',
+									'title' => esc_html_x( 'Sulli Digital on Facebook', 'Theme starter content', 'boo-valley' ),
+									'url'   => 'https://www.facebook.com/sullidigital',
 								),
 
 								'link_twitter' => array(
-									'title' => esc_html_x( 'SulliDigital Design on Twitter', 'Theme starter content', 'boo-valley' ),
-									'url'   => 'https://www.twitter.com/webmandesigneu',
+									'title' => esc_html_x( 'Sulli Digital on Twitter', 'Theme starter content', 'boo-valley' ),
+									'url'   => 'https://www.twitter.com/sullidigital',
 								),
 
 								'link_vimeo' => array(
-									'title' => esc_html_x( 'SulliDigital Design on Vimeo', 'Theme starter content', 'boo-valley' ),
-									'url'   => 'https://www.vimeo.com/webmandesigneu',
+									'title' => esc_html_x( 'Sulli Digital on Vimeo', 'Theme starter content', 'boo-valley' ),
+									'url'   => 'https://www.vimeo.com/sullidigital',
 								),
 
-								'link_webman_design' => array(
-									'title' => 'SulliDigital Design',
+								'link_sullidigital' => array(
+									'title' => 'Sulli Digital',
 									'url'   => 'https://www.sullidigital.com',
 								),
 

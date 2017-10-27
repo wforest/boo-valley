@@ -28,7 +28,7 @@
 		<h3><?php esc_html_e( 'SulliDigital Amplifier', 'boo-valley' ); ?></h3>
 
 		<p>
-			<?php printf( esc_html_x( 'To make the theme highly flexible, open and future-proof, it uses the %s plugin.', '%s: plugin name.', 'boo-valley' ), '<a href="https://wordpress.org/plugins/sullidigital-amplifier/" target="_blank"><strong>SulliDigital Amplifier</strong></a>' ); ?>
+			<?php printf( esc_html_x( 'To make the theme highly flexible, open and future-proof, it uses the %s plugin.', '%s: plugin name.', 'boo-valley' ), '<a href="https://wordpress.org/plugins/webman-amplifier/" target="_blank"><strong>SulliDigital Amplifier</strong></a>' ); ?>
 			<?php esc_html_e( 'Please, install and activate this plugin to unveil the additional functionality.', 'boo-valley' ); ?>
 		</p>
 

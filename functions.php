@@ -164,7 +164,7 @@
 	// SulliDigital Amplifier
 
 		if ( class_exists( 'WM_Amplifier' ) ) {
-			require BOO_VALLEY_PATH_PLUGINS . 'sullidigital-amplifier/sullidigital-amplifier.php';
+			require BOO_VALLEY_PATH_PLUGINS . 'webman-amplifier/webman-amplifier.php';
 		}
 
 	// Advanced Custom Fields

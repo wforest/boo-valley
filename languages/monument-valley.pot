@@ -164,7 +164,7 @@ msgid "You can obtain other professional WordPress themes at %s."
 msgstr ""
 
 #: includes/customize/class-customize.php:249
-msgid "Thank you for using a theme by SulliDigital Design!"
+msgid "Thank you for using a theme by Sulli Digital!"
 msgstr ""
 
 #: includes/customize/class-customize.php:263
@@ -1826,17 +1826,17 @@ msgstr ""
 
 #: includes/starter-content/class-starter-content.php:234
 msgctxt "Theme starter content"
-msgid "SulliDigital Design on Facebook"
+msgid "Sulli Digital on Facebook"
 msgstr ""
 
 #: includes/starter-content/class-starter-content.php:239
 msgctxt "Theme starter content"
-msgid "SulliDigital Design on Twitter"
+msgid "Sulli Digital on Twitter"
 msgstr ""
 
 #: includes/starter-content/class-starter-content.php:244
 msgctxt "Theme starter content"
-msgid "SulliDigital Design on Vimeo"
+msgid "Sulli Digital on Vimeo"
 msgstr ""
 
 #: includes/tgmpa/class-tgmpa-plugins.php:114

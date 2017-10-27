@@ -40,7 +40,7 @@ class Boo_Valley_SulliDigital_Amplifier_Setup {
 
 					// Plugin features
 
-						add_theme_support( 'sullidigital-amplifier', apply_filters( 'wmhook_boo_valley_webman_amplifier_setup', array(
+						add_theme_support( 'webman-amplifier', apply_filters( 'wmhook_boo_valley_webman_amplifier_setup', array(
 								'cp-modules',
 								'cp-projects',
 								'cp-staff',

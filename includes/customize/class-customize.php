@@ -246,7 +246,7 @@ class Boo_Valley_Customize {
 								)
 								. '</p>'
 								. '<p class="description">'
-								. esc_html__( 'Thank you for using a theme by SulliDigital Design!', 'boo-valley' )
+								. esc_html__( 'Thank you for using a theme by Sulli Digital!', 'boo-valley' )
 								. '</p>',
 						),
 
