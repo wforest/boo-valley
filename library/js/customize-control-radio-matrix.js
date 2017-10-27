@@ -3,7 +3,7 @@
  *
  * Customizer matrix radio fields.
  *
- * @package     WebMan WordPress Theme Framework
+ * @package     SulliDigital WordPress Theme Framework
  * @subpackage  Customize
  *
  * @since    1.0.0

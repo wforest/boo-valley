@@ -10,9 +10,9 @@
  * @license    GPL-3.0, http://www.gnu.org/licenses/gpl-3.0.html
  *
  * @link  https://github.com/webmandesign/webman-theme-framework
- * @link  http://www.webmandesign.eu
+ * @link  http://www.sullidigital.com
  *
- * @package     WebMan WordPress Theme Framework
+ * @package     SulliDigital WordPress Theme Framework
  * @subpackage  Update Notifier
  *
  * @version  2.0

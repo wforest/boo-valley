@@ -32,7 +32,7 @@
  * @license    GPL-3.0, http://www.gnu.org/licenses/gpl-3.0.html
  *
  * @link  https://github.com/webmandesign/wp-post-formats
- * @link  http://www.webmandesign.eu
+ * @link  http://www.sullidigital.com
  *
  * @version  2.5
  *

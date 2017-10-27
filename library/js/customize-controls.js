@@ -6,7 +6,7 @@
  * we conditionally hide corresponding "_attachment", "_position",
  * "_repeat", "_size" and also "_opacity" controls.
  *
- * @package     WebMan WordPress Theme Framework
+ * @package     SulliDigital WordPress Theme Framework
  * @subpackage  Customize
  *
  * @since    2.2.0

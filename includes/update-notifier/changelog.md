@@ -1,4 +1,4 @@
-# WebMan WordPress Theme Update Notifier
+# SulliDigital WordPress Theme Update Notifier
 
 ## 2.0
 
@@ -20,4 +20,4 @@
 * **Update**: Removed theme screenshot
 
 
-*WebMan WordPress Theme Framework, (C) Sulli Digital, www.webmandesign.eu*
+*SulliDigital WordPress Theme Framework, (C) Sulli Digital, www.sullidigital.com*

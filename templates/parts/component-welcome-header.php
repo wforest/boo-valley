@@ -37,7 +37,7 @@
 		printf(
 			esc_html_x( 'Thank you for using %1$s WordPress theme by %2$s!', '1: theme name, 2: theme developer link.', 'boo-valley' ),
 			'<strong>' . wp_get_theme( 'boo-valley' )->get( 'Name' ) . '</strong>',
-			'<a href="' . esc_url( wp_get_theme( 'boo-valley' )->get( 'AuthorURI' ) ) . '" target="_blank"><strong>WebMan Design</strong></a>'
+			'<a href="' . esc_url( wp_get_theme( 'boo-valley' )->get( 'AuthorURI' ) ) . '" target="_blank"><strong>SulliDigital Design</strong></a>'
 		);
 
 		?>
@@ -47,9 +47,9 @@
 
 	<p class="wm-actions">
 
-		<a href="https://www.webmandesign.eu/manual/boo-valley/" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Documentation', 'boo-valley' ); ?></a>
+		<a href="https://www.sullidigital.com/manual/boo-valley/" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Documentation', 'boo-valley' ); ?></a>
 
-		<a href="https://www.webmandesign.eu/reference/#links-support" class="button button-hero" target="_blank"><?php esc_html_e( 'Support Center', 'boo-valley' ); ?></a>
+		<a href="https://www.sullidigital.com/reference/#links-support" class="button button-hero" target="_blank"><?php esc_html_e( 'Support Center', 'boo-valley' ); ?></a>
 
 	</p>
 

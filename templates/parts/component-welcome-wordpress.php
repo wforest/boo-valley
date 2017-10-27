@@ -19,7 +19,7 @@
 
 <div class="wm-notes special" style="padding: 2em; font-size: inherit;">
 
-	<a class="button button-hero button-primary mt0 alignright" href="https://www.webmandesign.eu/manual/boo-valley/#wordpress" target="_blank"><?php esc_html_e( 'WordPress Video Tutorials &raquo;', 'boo-valley' ); ?></a>
+	<a class="button button-hero button-primary mt0 alignright" href="https://www.sullidigital.com/manual/boo-valley/#wordpress" target="_blank"><?php esc_html_e( 'WordPress Video Tutorials &raquo;', 'boo-valley' ); ?></a>
 
 	<h2 class="mt0" style="font-size: 1.62em;"><strong><?php esc_html_e( 'New to WordPress?', 'boo-valley' ); ?></strong></h2>
 

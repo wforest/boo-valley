@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://webmandesign.ticksy.com\n"
 "POT-Creation-Date: 2017-05-31 14:56+0200\n"
 "PO-Revision-Date: 2015-05-12 20:39+0100\n"
-"Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
+"Last-Translator: SulliDigital - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -164,7 +164,7 @@ msgid "You can obtain other professional WordPress themes at %s."
 msgstr ""
 
 #: includes/customize/class-customize.php:249
-msgid "Thank you for using a theme by WebMan Design!"
+msgid "Thank you for using a theme by SulliDigital Design!"
 msgstr ""
 
 #: includes/customize/class-customize.php:263
@@ -1826,17 +1826,17 @@ msgstr ""
 
 #: includes/starter-content/class-starter-content.php:234
 msgctxt "Theme starter content"
-msgid "WebMan Design on Facebook"
+msgid "SulliDigital Design on Facebook"
 msgstr ""
 
 #: includes/starter-content/class-starter-content.php:239
 msgctxt "Theme starter content"
-msgid "WebMan Design on Twitter"
+msgid "SulliDigital Design on Twitter"
 msgstr ""
 
 #: includes/starter-content/class-starter-content.php:244
 msgctxt "Theme starter content"
-msgid "WebMan Design on Vimeo"
+msgid "SulliDigital Design on Vimeo"
 msgstr ""
 
 #: includes/tgmpa/class-tgmpa-plugins.php:114
@@ -2822,7 +2822,7 @@ msgid "Quickstart Guide"
 msgstr ""
 
 #: templates/parts/component-welcome-quickstart.php:28
-msgid "WebMan Amplifier"
+msgid "SulliDigital Amplifier"
 msgstr ""
 
 #: templates/parts/component-welcome-quickstart.php:31
@@ -2846,7 +2846,7 @@ msgid "Install %s &raquo;"
 msgstr ""
 
 #: templates/parts/component-welcome-quickstart.php:43
-msgid "Perfect! WebMan Amplifier plugin is active and running."
+msgid "Perfect! SulliDigital Amplifier plugin is active and running."
 msgstr ""
 
 #: templates/parts/component-welcome-quickstart.php:54

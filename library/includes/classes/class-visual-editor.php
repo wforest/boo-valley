@@ -5,7 +5,7 @@
  * This is a helper class and does not load automatically with the library.
  * Load it directly from within your theme's `functions.php` file.
  *
- * @package     WebMan WordPress Theme Framework
+ * @package     SulliDigital WordPress Theme Framework
  * @subpackage  Visual Editor
  *
  * @since    1.0.0

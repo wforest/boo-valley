@@ -2,7 +2,7 @@
 /**
  * Update Notifier class
  *
- * @package     WebMan WordPress Theme Framework
+ * @package     SulliDigital WordPress Theme Framework
  * @subpackage  Update Notifier
  *
  * @since    1.9

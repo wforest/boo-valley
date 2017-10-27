@@ -1,6 +1,6 @@
 # WordPress Theme Update Notifier
 
-**WordPress Theme Update Notifier** by [*WebMan Design*](http://www.webmandesign.eu)
+**WordPress Theme Update Notifier** by [*SulliDigital Design*](http://www.sullidigital.com)
 
 Provides a notification when a WordPress theme is updated. Use only in themes not available via WordPress.org repository.
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * WebMan Amplifier: Metaboxes Class
+ * SulliDigital Amplifier: Metaboxes Class
  *
  * @package    Boo Valley
  * @copyright  Sulli Digital
@@ -13,7 +13,7 @@
  *  0) Init
  * 10) Content Modules
  */
-class Boo_Valley_WebMan_Amplifier_Metaboxes {
+class Boo_Valley_SulliDigital_Amplifier_Metaboxes {
 
 
 
@@ -159,6 +159,6 @@ class Boo_Valley_WebMan_Amplifier_Metaboxes {
 
 
 
-} // /Boo_Valley_WebMan_Amplifier_Metaboxes
+} // /Boo_Valley_SulliDigital_Amplifier_Metaboxes
 
-add_action( 'after_setup_theme', 'Boo_Valley_WebMan_Amplifier_Metaboxes::init' );
+add_action( 'after_setup_theme', 'Boo_Valley_SulliDigital_Amplifier_Metaboxes::init' );

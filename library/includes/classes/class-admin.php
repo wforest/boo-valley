@@ -2,7 +2,7 @@
 /**
  * Admin class
  *
- * @package     WebMan WordPress Theme Framework
+ * @package     SulliDigital WordPress Theme Framework
  * @subpackage  Admin
  *
  * @since    1.0.0

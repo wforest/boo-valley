@@ -144,7 +144,7 @@ class Boo_Valley_One_Click_Demo_Import {
 					$text .= '<p>';
 					$text .= esc_html__( 'Please note that imported media files (such as images, video and audio files) are of low quality to prevent copyright infringement.', 'boo-valley' );
 					$text .= ' ' . esc_html__( 'Please read "Credits" section of theme documentation for reference where the demo media files were obtained from.', 'boo-valley' );
-					$text .= ' <a href="https://www.webmandesign.eu/manual/boo-valley/#credits" target="_blank">' . esc_html__( 'Get media for your website &raquo;', 'boo-valley' ) . '</a>';
+					$text .= ' <a href="https://www.sullidigital.com/manual/boo-valley/#credits" target="_blank">' . esc_html__( 'Get media for your website &raquo;', 'boo-valley' ) . '</a>';
 					$text .= '</p>';
 
 				$text .= '</div>';

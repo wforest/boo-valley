@@ -5,7 +5,7 @@
  * @uses  `wmhook_boo_valley_theme_options` global hook
  * @uses  `wmhook_boo_valley_enable_rtl` global hook
  *
- * @package     WebMan WordPress Theme Framework
+ * @package     SulliDigital WordPress Theme Framework
  * @subpackage  Core
  *
  * @since    1.0.0

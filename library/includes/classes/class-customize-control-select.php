@@ -4,7 +4,7 @@
  *
  * Customizer select field (with optgroups).
  *
- * @package     WebMan WordPress Theme Framework
+ * @package     SulliDigital WordPress Theme Framework
  * @subpackage  Customize
  *
  * @since    1.0.0

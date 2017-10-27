@@ -1,6 +1,6 @@
 <?php
 /**
- * WebMan WordPress Theme Framework
+ * Sulli Digital WordPress Theme Framework
  *
  * Theme options with `__` prefix (`get_theme_mod( '__option_id' )`) are theme
  * setup related options and can not be edited via customizer.
@@ -10,9 +10,9 @@
  * @license    GPL-3.0, http://www.gnu.org/licenses/gpl-3.0.html
  *
  * @link  https://github.com/webmandesign/webman-theme-framework
- * @link  http://www.webmandesign.eu
+ * @link  http://www.sullidigital.com
  *
- * @package     WebMan WordPress Theme Framework
+ * @package     SulliDigital WordPress Theme Framework
  * @subpackage  Core
  *
  * @version  2.2.5

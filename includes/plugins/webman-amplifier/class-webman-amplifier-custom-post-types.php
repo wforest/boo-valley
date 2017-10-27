@@ -1,6 +1,6 @@
 <?php
 /**
- * WebMan Amplifier: Custom Post Types Class
+ * SulliDigital Amplifier: Custom Post Types Class
  *
  * @package    Boo Valley
  * @copyright  Sulli Digital
@@ -17,7 +17,7 @@
  *  40) Testimonials
  * 100) Others
  */
-class Boo_Valley_WebMan_Amplifier_Custom_Post_Types {
+class Boo_Valley_SulliDigital_Amplifier_Custom_Post_Types {
 
 
 
@@ -901,6 +901,6 @@ class Boo_Valley_WebMan_Amplifier_Custom_Post_Types {
 
 
 
-} // /Boo_Valley_WebMan_Amplifier_Custom_Post_Types
+} // /Boo_Valley_SulliDigital_Amplifier_Custom_Post_Types
 
-add_action( 'after_setup_theme', 'Boo_Valley_WebMan_Amplifier_Custom_Post_Types::init' );
+add_action( 'after_setup_theme', 'Boo_Valley_SulliDigital_Amplifier_Custom_Post_Types::init' );

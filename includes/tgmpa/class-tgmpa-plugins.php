@@ -109,10 +109,10 @@ class Boo_Valley_TGMPA_Plugins {
 
 							// Recommended
 
-								'webman-amplifier' => array(
-									'name'        => 'WebMan Amplifier',
+								'sullidigital-amplifier' => array(
+									'name'        => 'SulliDigital Amplifier',
 									'description' => esc_html__( 'Adding theme features, post types, shortcodes, icons.', 'boo-valley' ),
-									'slug'        => 'webman-amplifier',
+									'slug'        => 'sullidigital-amplifier',
 									'required'    => false,
 								),
 
@@ -125,7 +125,7 @@ class Boo_Valley_TGMPA_Plugins {
 								),
 
 								'webman-templates' => array(
-									'name'        => 'WebMan Templates',
+									'name'        => 'SulliDigital Templates',
 									'description' => esc_html__( 'Adding set of predefined templates for Beaver Builder page builder.', 'boo-valley' ),
 									'slug'        => 'webman-templates',
 									'required'    => false,
@@ -205,7 +205,7 @@ class Boo_Valley_TGMPA_Plugins {
 
 			// Adding font weight classes
 
-				$action_links[] = '<a href="' . esc_url( 'https://www.webmandesign.eu/manual/boo-valley/#plugins' ) . '" target="_blank">' . esc_html__( 'Other useful plugins &raquo;', 'boo-valley' ) . '</a>';
+				$action_links[] = '<a href="' . esc_url( 'https://www.sullidigital.com/manual/boo-valley/#plugins' ) . '" target="_blank">' . esc_html__( 'Other useful plugins &raquo;', 'boo-valley' ) . '</a>';
 
 
 		// Output

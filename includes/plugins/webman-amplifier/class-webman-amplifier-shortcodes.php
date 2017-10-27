@@ -1,6 +1,6 @@
 <?php
 /**
- * WebMan Amplifier: Shortcodes Class
+ * SulliDigital Amplifier: Shortcodes Class
  *
  * @package    Boo Valley
  * @copyright  Sulli Digital
@@ -17,7 +17,7 @@
  * 40) Shortcode: Posts
  * 50) Shortcode: Testimonials
  */
-class Boo_Valley_WebMan_Amplifier_Shortcodes {
+class Boo_Valley_SulliDigital_Amplifier_Shortcodes {
 
 
 
@@ -225,7 +225,7 @@ class Boo_Valley_WebMan_Amplifier_Shortcodes {
 
 				// Removing obsolete shortcodes
 
-					// WebMan Amplifier native
+					// SulliDigital Amplifier native
 
 						unset( $definitions['audio'] );
 						unset( $definitions['column'] );
@@ -693,6 +693,6 @@ class Boo_Valley_WebMan_Amplifier_Shortcodes {
 
 
 
-} // /Boo_Valley_WebMan_Amplifier_Shortcodes
+} // /Boo_Valley_SulliDigital_Amplifier_Shortcodes
 
-add_action( 'after_setup_theme', 'Boo_Valley_WebMan_Amplifier_Shortcodes::init' );
+add_action( 'after_setup_theme', 'Boo_Valley_SulliDigital_Amplifier_Shortcodes::init' );

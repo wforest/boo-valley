@@ -1,6 +1,6 @@
 <?php
 /**
- * WebMan Amplifier: Icons Class
+ * SulliDigital Amplifier: Icons Class
  *
  * @package    Boo Valley
  * @copyright  Sulli Digital
@@ -13,7 +13,7 @@
  *  0) Init
  * 10) Setup
  */
-class Boo_Valley_WebMan_Amplifier_Icons {
+class Boo_Valley_SulliDigital_Amplifier_Icons {
 
 
 
@@ -112,6 +112,6 @@ class Boo_Valley_WebMan_Amplifier_Icons {
 
 
 
-} // /Boo_Valley_WebMan_Amplifier_Icons
+} // /Boo_Valley_SulliDigital_Amplifier_Icons
 
-add_action( 'after_setup_theme', 'Boo_Valley_WebMan_Amplifier_Icons::init' );
+add_action( 'after_setup_theme', 'Boo_Valley_SulliDigital_Amplifier_Icons::init' );

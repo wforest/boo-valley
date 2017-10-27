@@ -3,7 +3,7 @@
  *
  * @see  wp-admin/js/post.js
  *
- * @package     WebMan WordPress Theme Framework
+ * @package     SulliDigital WordPress Theme Framework
  * @subpackage  Visual Editor
  *
  * @since    1.7.2

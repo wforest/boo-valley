@@ -364,7 +364,7 @@ function boo_valley_custom_styles( $visual_editor = false ) {
 
 			date_default_timezone_set( 'UTC' );
 
-			$output .= "\r\n\r\n\r\n" . '/* Using Boo Valley theme by WebMan Design - Oliver Juhas (https://www.webmandesign.eu), version ' . BOO_VALLEY_THEME_VERSION . '. CSS generated on ' . date( 'Y/m/d H:i, e' ) . '. */';
+			$output .= "\r\n\r\n\r\n" . '/* Using Boo Valley theme by Sulli Digital (https://www.sullidigital.com), version ' . BOO_VALLEY_THEME_VERSION . '. CSS generated on ' . date( 'Y/m/d H:i, e' ) . '. */';
 
 
 	// Output

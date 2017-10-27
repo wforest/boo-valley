@@ -2,7 +2,7 @@
 /**
  * Plugin compatibility file.
  *
- * WebMan Amplifier
+ * SulliDigital Amplifier
  *
  * @link  https://wordpress.org/plugins/webman-amplifier/
  *
@@ -38,7 +38,7 @@
  * 10) Plugin integration
  */
 
-	define( 'BOO_VALLEY_PATH_PLUGINS_WEBMAN_AMPLIFIER', BOO_VALLEY_PATH_PLUGINS . 'webman-amplifier/class-webman-amplifier-' );
+	define( 'BOO_VALLEY_PATH_PLUGINS_WEBMAN_AMPLIFIER', BOO_VALLEY_PATH_PLUGINS . 'sullidigital-amplifier/class-sullidigital-amplifier-' );
 
 	require BOO_VALLEY_PATH_PLUGINS_WEBMAN_AMPLIFIER . 'setup.php';
 

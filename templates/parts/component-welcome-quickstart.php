@@ -25,22 +25,22 @@
 
 		<span class="dropcap">1</span>
 
-		<h3><?php esc_html_e( 'WebMan Amplifier', 'boo-valley' ); ?></h3>
+		<h3><?php esc_html_e( 'SulliDigital Amplifier', 'boo-valley' ); ?></h3>
 
 		<p>
-			<?php printf( esc_html_x( 'To make the theme highly flexible, open and future-proof, it uses the %s plugin.', '%s: plugin name.', 'boo-valley' ), '<a href="https://wordpress.org/plugins/webman-amplifier/" target="_blank"><strong>WebMan Amplifier</strong></a>' ); ?>
+			<?php printf( esc_html_x( 'To make the theme highly flexible, open and future-proof, it uses the %s plugin.', '%s: plugin name.', 'boo-valley' ), '<a href="https://wordpress.org/plugins/sullidigital-amplifier/" target="_blank"><strong>SulliDigital Amplifier</strong></a>' ); ?>
 			<?php esc_html_e( 'Please, install and activate this plugin to unveil the additional functionality.', 'boo-valley' ); ?>
 		</p>
 
 		<?php if ( ! class_exists( 'WM_Amplifier' ) ) : ?>
 
-			<a href="<?php echo esc_url( admin_url( 'themes.php?page=tgmpa-install-plugins' ) ); ?>" class="button button-hero"><?php printf( esc_html_x( 'Install %s &raquo;', '%s: plugin name.', 'boo-valley' ), '<strong>WebMan Amplifier</strong>' ); ?></a>
+			<a href="<?php echo esc_url( admin_url( 'themes.php?page=tgmpa-install-plugins' ) ); ?>" class="button button-hero"><?php printf( esc_html_x( 'Install %s &raquo;', '%s: plugin name.', 'boo-valley' ), '<strong>SulliDigital Amplifier</strong>' ); ?></a>
 
 		<?php else : ?>
 
 			<p style="margin-top: 2em;">
 				<span style="display: inline-block; float: left; width: 2em; height: 2em; margin: 0 .62em 1em; line-height: 2em; text-align: center; box-shadow: inset 0 0 0 2px;">&#10004;</span>
-				<?php esc_html_e( 'Perfect! WebMan Amplifier plugin is active and running.', 'boo-valley' ); ?>
+				<?php esc_html_e( 'Perfect! SulliDigital Amplifier plugin is active and running.', 'boo-valley' ); ?>
 			</p>
 
 		<?php endif; ?>

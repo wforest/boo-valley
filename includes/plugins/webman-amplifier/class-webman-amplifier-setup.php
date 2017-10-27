@@ -1,6 +1,6 @@
 <?php
 /**
- * WebMan Amplifier: Setup Class
+ * SulliDigital Amplifier: Setup Class
  *
  * @package    Boo Valley
  * @copyright  Sulli Digital
@@ -12,7 +12,7 @@
  *
  * 0) Init
  */
-class Boo_Valley_WebMan_Amplifier_Setup {
+class Boo_Valley_SulliDigital_Amplifier_Setup {
 
 
 
@@ -40,7 +40,7 @@ class Boo_Valley_WebMan_Amplifier_Setup {
 
 					// Plugin features
 
-						add_theme_support( 'webman-amplifier', apply_filters( 'wmhook_boo_valley_webman_amplifier_setup', array(
+						add_theme_support( 'sullidigital-amplifier', apply_filters( 'wmhook_boo_valley_webman_amplifier_setup', array(
 								'cp-modules',
 								'cp-projects',
 								'cp-staff',
@@ -90,6 +90,6 @@ class Boo_Valley_WebMan_Amplifier_Setup {
 
 
 
-} // /Boo_Valley_WebMan_Amplifier_Setup
+} // /Boo_Valley_SulliDigital_Amplifier_Setup
 
-add_action( 'after_setup_theme', 'Boo_Valley_WebMan_Amplifier_Setup::init' );
+add_action( 'after_setup_theme', 'Boo_Valley_SulliDigital_Amplifier_Setup::init' );

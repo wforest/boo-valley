@@ -27,7 +27,7 @@
 
 	<p>
 		<?php esc_html_e( 'Alternatively (such as when the automated installation fails) you can follow theme documentation instructions for manual demo content installation.', 'boo-valley' ); ?>
-		<a href="https://www.webmandesign.eu/manual/boo-valley/#demo-content" target="_blank"><?php esc_html_e( 'Read the instructions &raquo;', 'boo-valley' ); ?></a>
+		<a href="https://www.sullidigital.com/manual/boo-valley/#demo-content" target="_blank"><?php esc_html_e( 'Read the instructions &raquo;', 'boo-valley' ); ?></a>
 	</p>
 
 	<?php if ( ! ( class_exists( 'OCDI_Plugin' ) || class_exists( 'PT_One_Click_Demo_Import' ) ) ) : ?>

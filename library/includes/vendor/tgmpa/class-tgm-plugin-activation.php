@@ -7,7 +7,7 @@
  * Modification:
  * - Changed localization text domain
  *
- * @package     WebMan WordPress Theme Framework
+ * @package     SulliDigital WordPress Theme Framework
  * @subpackage  Plugins
  *
  * @since    1.0

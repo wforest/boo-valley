@@ -164,7 +164,7 @@ class Boo_Valley_Advanced_Custom_Fields {
 					),
 					'location' => array (
 
-						// Display everywhere except blog page, "No intro" page template, WebMan Amplifier, Beaver Builder/Themer and WooSidebars related CPTs
+						// Display everywhere except blog page, "No intro" page template, SulliDigital Amplifier, Beaver Builder/Themer and WooSidebars related CPTs
 
 							100 => array (
 
@@ -411,7 +411,7 @@ class Boo_Valley_Advanced_Custom_Fields {
 					),
 					'location' => array (
 
-						// Display everywhere except blog page, WebMan Amplifier and WooSidebars related CPTs
+						// Display everywhere except blog page, SulliDigital Amplifier and WooSidebars related CPTs
 
 							100 => array (
 

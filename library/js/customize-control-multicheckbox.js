@@ -3,7 +3,7 @@
  *
  * Customizer multiple checkboxes.
  *
- * @package     WebMan WordPress Theme Framework
+ * @package     SulliDigital WordPress Theme Framework
  * @subpackage  Customize
  *
  * @since    2.1.0

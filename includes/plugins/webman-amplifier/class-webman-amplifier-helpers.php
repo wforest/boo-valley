@@ -1,6 +1,6 @@
 <?php
 /**
- * WebMan Amplifier: Helpers Class
+ * SulliDigital Amplifier: Helpers Class
  *
  * @package    Boo Valley
  * @copyright  Sulli Digital
@@ -13,7 +13,7 @@
  *  0) Init
  * 10) Pagination
  */
-class Boo_Valley_WebMan_Amplifier_Helpers {
+class Boo_Valley_SulliDigital_Amplifier_Helpers {
 
 
 
@@ -96,6 +96,6 @@ class Boo_Valley_WebMan_Amplifier_Helpers {
 
 
 
-} // /Boo_Valley_WebMan_Amplifier_Helpers
+} // /Boo_Valley_SulliDigital_Amplifier_Helpers
 
-add_action( 'after_setup_theme', 'Boo_Valley_WebMan_Amplifier_Helpers::init' );
+add_action( 'after_setup_theme', 'Boo_Valley_SulliDigital_Amplifier_Helpers::init' );

@@ -231,23 +231,23 @@ class Boo_Valley_Starter_Content {
 							'items' => array(
 
 								'link_facebook' => array(
-									'title' => esc_html_x( 'WebMan Design on Facebook', 'Theme starter content', 'boo-valley' ),
+									'title' => esc_html_x( 'SulliDigital Design on Facebook', 'Theme starter content', 'boo-valley' ),
 									'url'   => 'https://www.facebook.com/webmandesigneu',
 								),
 
 								'link_twitter' => array(
-									'title' => esc_html_x( 'WebMan Design on Twitter', 'Theme starter content', 'boo-valley' ),
+									'title' => esc_html_x( 'SulliDigital Design on Twitter', 'Theme starter content', 'boo-valley' ),
 									'url'   => 'https://www.twitter.com/webmandesigneu',
 								),
 
 								'link_vimeo' => array(
-									'title' => esc_html_x( 'WebMan Design on Vimeo', 'Theme starter content', 'boo-valley' ),
+									'title' => esc_html_x( 'SulliDigital Design on Vimeo', 'Theme starter content', 'boo-valley' ),
 									'url'   => 'https://www.vimeo.com/webmandesigneu',
 								),
 
 								'link_webman_design' => array(
-									'title' => 'WebMan Design',
-									'url'   => 'https://www.webmandesign.eu',
+									'title' => 'SulliDigital Design',
+									'url'   => 'https://www.sullidigital.com',
 								),
 
 								'link_email',

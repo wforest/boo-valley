@@ -17,7 +17,7 @@ Follow [Sulli Digital on Twitter](https://twitter.com/sullidigital) and become a
 
 ## Demo
 
-Full theme demo website at https://themedemos.webmandesign.eu/boo-valley/
+Full theme demo website at https://themedemos.sullidigital.com/boo-valley/
 
 
 ## Browser Compatibility

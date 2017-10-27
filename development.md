@@ -1,13 +1,13 @@
 # Starter Theme Development Instructions
 
-The starter theme was created by **WebMan Design**. Please read the instructions below for theme development process.
+The starter theme was created by **SulliDigital Design**. Please read the instructions below for theme development process.
 
 
 ## Additional scripts
 
 This starter theme requires installation of these additional scripts:
 
-* [**WebMan WordPress Theme Framework**](https://github.com/webmandesign/webman-theme-framework) - copy the `library` folder into the theme's root folder.
+* [**SulliDigital WordPress Theme Framework**](https://github.com/webmandesign/webman-theme-framework) - copy the `library` folder into the theme's root folder.
 * [**Theme Update Notifier**](https://github.com/webmandesign/webman-theme-framework) - copy the `update-notifier` folder into the `includes` folder.
 * [**WordPress CSS starter**](https://github.com/webmandesign/wp-css-starter) - copy the `starter` SASS folder into the `assets/scss` folder.
 * **OPTIONAL:**
@@ -76,4 +76,4 @@ Or simply use `webman-sass-debug.php` plugin for that.
 This will force loading `fallback.css` instead of the customizer-generated stylesheet.
 
 
-*(C) Sulli Digital, [https://www.webmandesign.eu]*
+*(C) Sulli Digital, [https://www.sullidigital.com]*
