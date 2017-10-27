@@ -125,7 +125,7 @@ class Boo_Valley_TGMPA_Plugins {
 								),
 
 								'webman-templates' => array(
-									'name'        => 'SulliDigital Templates',
+									'name'        => 'WebMan Templates',
 									'description' => esc_html__( 'Adding set of predefined templates for Beaver Builder page builder.', 'boo-valley' ),
 									'slug'        => 'webman-templates',
 									'required'    => false,
@@ -167,13 +167,6 @@ class Boo_Valley_TGMPA_Plugins {
 									'required'    => false,
 								),
 
-								'envato-market' => array(
-									'name'        => 'Envato Market',
-									'description' => esc_html__( 'For automatic theme updates.', 'boo-valley' ),
-									'slug'        => 'envato-market',
-									'required'    => false,
-									'source'      => 'http://envato.github.io/wp-envato-market/dist/envato-market.zip',
-								),
 
 					) );
 
