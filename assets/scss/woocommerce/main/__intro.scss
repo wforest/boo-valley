@@ -1,0 +1,166 @@
+/* FILE: woocommerce/main/__intro.scss */
+
+//
+// Intro title on shop pages
+//
+
+
+
+
+
+// Intro title section
+
+	.intro-container {
+
+		.woocommerce-page & {
+			padding-top: 8%;
+		}
+
+		@include responsive( map_get( $breakpoint, 'xl' ) ) {
+
+			.single-product &:not(.no-intro-image) {
+				padding-top: 8%;
+			}
+
+		}
+
+	}
+
+	.intro-title,
+	.page-summary {
+
+		.archive.woocommerce.no-widgets-sidebar & {
+			margin-left: 0;
+			margin-right: 0;
+			text-align: inherit;
+		}
+
+	}
+
+	.has-intro {
+
+		.site-main {
+
+			> .page-title {
+				@extend %wc_screen_reader_hiding;
+			}
+
+			.term-description {
+				display: none;
+			}
+
+		}
+
+	}
+
+
+
+// Breadcrumbs
+
+	.woocommerce-breadcrumb {
+		margin-bottom: $golden_major +em;
+		text-transform: uppercase;
+		font-size: 1em - $golden_minor / 2;
+		color: inherit;
+
+		a {
+			color: inherit;
+		}
+
+		&-item:last-child {
+			display: none;
+		}
+
+		&-delimiter {
+			margin: 0 ( $golden_minor +em );
+		}
+
+	}
+
+
+
+// Title & price container
+
+	.product-title-price {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: baseline;
+
+		.intro-title {
+			flex: 0 1 auto;
+			max-width: none;
+		}
+
+		.price {
+			@extend %wc_font_logo;
+			flex: 0 1 auto;
+			margin: 0;
+			margin-#{$right}: $golden +rem;
+			font-size: power( 1 + $golden_minor, 2 ) +em;
+			font-style: italic;
+			text-align: $right; // {{RTL}}
+		}
+
+		.amount {
+			font-weight: 900;
+		}
+
+		del,
+		ins {
+			margin: 0;
+			line-height: 1;
+		}
+
+		del {
+			display: none; // Still keeping all the styles in case it's displayed with custom CSS
+			text-align: center;
+			font-size: $golden_major +em;
+
+			.amount {
+				font-weight: 400;
+			}
+
+		}
+
+		ins {
+			text-decoration: none;
+		}
+
+		.woocommerce-price-suffix {
+			line-height: 1;
+			font-size: percentage( $golden_minor );
+			white-space: nowrap;
+		}
+
+
+
+		// Price "from-to"
+
+			.amount:nth-child(1):nth-last-child(3),
+			.amount:nth-child(1):nth-last-child(4),
+			.amount-separator,
+			.amount:nth-child(3):nth-last-child(1),
+			.amount:nth-child(3):nth-last-child(2) {
+				font-size: percentage( $golden_major );
+			}
+
+	}
+
+
+
+// Product rating
+
+	.star-rating {
+		display: block;
+
+		.intro & {
+			margin-top: $golden_major +em;
+			font-size: $golden +em;
+		}
+
+	}
+
+	.woocommerce-review-link {
+		color: inherit;
+	}

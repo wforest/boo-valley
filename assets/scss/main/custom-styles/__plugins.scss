@@ -1,0 +1,52 @@
+/* FILE: main/custom-styles/__plugins.scss */
+
+//
+// Plugins colors
+//
+
+
+
+
+
+// Plugin: Breadcrumb NavXT
+
+	.no-intro .site-content .breadcrumbs-container {
+		@extend %site_header_colors;
+
+		&:not(:hover) .breadcrumbs {
+			opacity: .5;
+		}
+
+	}
+
+
+
+// Plugin: Jeptack
+
+	.site #infinite-handle span {
+		@extend %accent_colors;
+	}
+
+	.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
+		@extend %accent_background_color;
+	}
+
+	// !important overrides
+
+		.infinite-loader .spinner > div > div {
+			/*[*/
+			background-color: map_get( $colors, 'accent' ) !important;
+			/*]*/
+			/*//
+			background-color: [[color_accent]] !important;
+			//*/
+		}
+
+		.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
+			/*[*/
+			color: map_get( $colors, 'accent_text' ) !important;
+			/*]*/
+			/*//
+			color: [[color_accent_text]] !important;
+			//*/
+		}

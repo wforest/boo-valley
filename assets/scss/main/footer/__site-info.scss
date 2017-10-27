@@ -1,0 +1,28 @@
+/* FILE: main/footer/__site-info.scss */
+
+//
+// Site info (credits)
+//
+
+
+
+
+
+.footer-area-site-info {
+	padding: ( $golden +rem ) 0;
+	text-align: center;
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+		padding: ( power( $golden, 2 ) +rem ) 0;
+	}
+
+	a {
+		@extend %font_weight_700;
+
+		.site-footer & {
+			color: inherit;
+		}
+
+	}
+
+}

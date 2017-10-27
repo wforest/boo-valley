@@ -1,0 +1,82 @@
+/* FILE: shortcodes/__jquery-isotope-masonry.scss */
+
+//
+// Isotope and Masonry layout styles
+//
+
+
+
+
+
+$columns: 6;
+$gutter: $golden; // In rem
+$gutter_fallback_percent: 4; // In %
+
+
+
+.filter-this,
+.masonry-this {
+	margin-bottom: $gutter * -1rem;
+
+	&.no-margin {
+		margin-bottom: 0;
+	}
+
+	&.with-margin {
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			width: percentage( ( 100 + $gutter_fallback_percent / 2 ) / 100 );
+			width: calc( 100% + #{ $gutter +rem } );
+		}
+
+		&[data-columns="1"] {
+			width: 100%;
+		}
+
+		.wm-column {
+			margin-top: 0;
+			margin-bottom: $gutter +rem;
+			width: 100%;
+
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				margin-#{$right}: percentage( $gutter_fallback_percent / 2 / ( 100 + $gutter_fallback_percent / 2 ) ); // {{RTL}} // if fallback gutter is 4% then = 2 / 102% * 100
+				margin-#{$right}: $gutter +rem; // {{RTL}}
+			}
+
+		}
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+
+			%column_device_medium {
+				// Max 2 columns
+				$i: 2;
+				width: percentage( ( 100 / $i - $gutter_fallback_percent / 2 ) / 100 );
+				width: calc( #{ percentage( 1 / $i ) } - #{ $gutter +rem } );
+			}
+
+			@for $i from 2 through $columns {
+
+				.width-1-#{$i} {
+					@extend %column_device_medium;
+				}
+
+			}
+
+		}
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+			@for $i from 2 through $columns {
+
+				.width-1-#{$i} {
+					width: percentage( ( 100 / $i - $gutter_fallback_percent / 2 ) / 100 );
+					width: calc( #{ percentage( 1 / $i ) } - #{ $gutter +rem } );
+				}
+
+			}
+
+		}
+
+	}
+
+}

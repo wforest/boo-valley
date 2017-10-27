@@ -1,0 +1,25 @@
+/* FILE: shortcodes/__row.scss */
+
+//
+// Row, required for other shortcodes
+//
+
+
+
+
+
+.wm-row {
+	clear: both;
+	display: flex;
+	flex-wrap: wrap;
+
+	+ .wm-row {
+		margin-top: $golden +rem;
+	}
+
+	&.no-margin,
+	.wm-items-container &.no-margin {
+		margin-top: 0;
+	}
+
+}

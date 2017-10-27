@@ -1,0 +1,73 @@
+/* FILE: main/menu/__menu-footer.scss */
+
+//
+// Footer menu
+//
+
+
+
+
+
+.footer-area-footer-menu {
+	@extend %background_overlay_from_text_color;
+}
+
+
+
+.footer-menu {
+	flex: 0 1 auto;
+	text-transform: uppercase;
+
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		overflow: hidden;
+	}
+
+	li {
+		float: $left;
+	}
+
+	a {
+		@extend %font_weight_400;
+		padding: ( $golden_major +em ) 1em;
+		border-width: 2px;
+		border-style: solid;
+		border-color: transparent;
+		border-radius: 5em;
+		transition: border-color ( $small_animation_speed +s );
+	}
+
+	ul:hover .current-menu-item a {
+		border-color: inherit;
+	}
+
+	a:hover,
+	a:focus,
+	a:active,
+	.current-menu-item a,
+	ul .current-menu-item a:hover {
+		text-decoration: none;
+		border-color: currentColor;
+	}
+
+	&-inner {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		padding: ( $golden +em ) 0;
+		line-height: 3rem; // To center child elements vertically
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			padding: ( power( $golden, 2 ) +em ) 0;
+		}
+
+		nav,
+		form {
+			flex: 0 1 auto;
+		}
+
+	}
+
+}

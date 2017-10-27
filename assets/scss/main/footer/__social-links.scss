@@ -1,0 +1,18 @@
+/* FILE: main/footer/__social-links.scss */
+
+//
+// Footer social links
+//
+
+
+
+
+
+.footer-area-social-links {
+	padding: ( $golden +rem ) 0;
+
+	.footer-area-footer-widgets + & {
+		padding-top: 0;
+	}
+
+}

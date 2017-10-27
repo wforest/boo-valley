@@ -1,0 +1,23 @@
+/* FILE: shortcodes/custom-styles/_shortcodes.scss */
+
+//
+// Shortcodes colors
+//
+// As this file is being included within a single main custom styles
+// stylesheet, we can use variables, functions, mixins and extenders
+// from `main/custom-styles` files.
+//
+
+
+
+
+
+// Imports
+
+	@import '_base';
+
+	@import '_content-module';
+
+	@import '_message';
+
+	@import '_tabs';

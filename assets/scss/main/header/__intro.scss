@@ -1,0 +1,214 @@
+/* FILE: main/header/__intro.scss */
+
+//
+// Intro section
+//
+
+
+
+
+
+.intro {
+	@extend %background_overlay_from_text_color;
+	width: 100%;
+	padding: 8% 0;
+
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+		padding-bottom: power( $golden, 2 ) + $golden +rem;
+		font-size: $golden_minor + 1em;
+	}
+
+
+
+	// If no intro image background set
+
+		.no-intro-image & {
+
+			// Remove background gradient overlay
+
+				&::before {
+					display: none;
+				}
+
+			// Remove text shadow
+
+				&:not(.no-text-shadow) {
+					text-shadow: none;
+				}
+
+		}
+
+
+
+	// Intro title and widgets container
+
+		&-container {
+			position: relative;
+			padding-top: 8%;
+			margin: 0;
+			background-position: 50% 50%;
+			background-size: cover;
+
+			*,
+			*::after,
+			*::before {
+				border-color: inherit;
+			}
+
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				background-attachment: fixed;
+
+				.is-singular:not([class*="paged-"]) &:not(.no-intro-image) {
+					padding-top: 16%;
+				}
+
+			}
+
+
+
+			// Intro background filter
+
+				.has-intro-filter & {
+					background-blend-mode: multiply;
+				}
+
+		}
+
+
+
+	// Intro title container
+
+		&-inner {
+			@extend %content_width;
+
+			@at-root {
+				@keyframes fadeInFromBottom {
+
+					0% {
+						opacity: 0;
+						transform: translateY( $golden_minor +em );
+					}
+
+					33% {
+						opacity: 0;
+						transform: translateY( $golden_minor +em );
+					}
+
+					100% {
+						opacity: 1;
+						transform: translateY(0);
+					}
+
+				}
+			}
+
+			.intro & {
+				animation: fadeInFromBottom ( $large_animation_speed * 2s );
+			}
+
+		}
+
+
+
+	// Entry title in intro section
+
+		&-title {
+			@extend %line_height_tight;
+			font-weight: 700;
+			margin: 0;
+
+			.intro & {
+				color: inherit;
+			}
+
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				font-size: power( $golden, 2 ) + 1em;
+			}
+
+			.blog &,
+			.archive &,
+			.search & {
+
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+					font-size: power( $golden, 2 ) +em;
+				}
+
+			}
+
+			a {
+				color: inherit;
+			}
+
+			.author & span {
+				@extend %font_weight_300;
+			}
+
+		}
+
+}
+
+
+
+// Intro title & excerpt
+
+	.intro-title,
+	.page-summary {
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			max-width: percentage( 1 - $golden_minor / 2 );
+		}
+
+		@include responsive( map_get( $breakpoint, 'xl' ) ) {
+			max-width: percentage( $golden_major );
+		}
+
+
+
+		// Center align text in intro section on archive pages with no sidebar
+
+			.blog.no-widgets-sidebar &,
+			.archive.no-widgets-sidebar &,
+			.search.no-widgets-sidebar & {
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+
+	}
+
+
+
+	// Excerpt
+
+		.page-summary {
+			@extend %font_weight_300;
+			margin-top: $golden +em;
+
+			p {
+				margin-bottom: 1em;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+			}
+
+		}
+
+
+
+// Hide default page header when intro section displayed
+
+	.page-header {
+
+		.site-main > & {
+
+			.blog &,
+			.archive &,
+			.search-results & {
+				@extend %screen_reader_hiding;
+			}
+
+		}
+
+	}

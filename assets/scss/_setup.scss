@@ -1,0 +1,403 @@
+/////////////////////
+//
+// Support
+//
+/////////////////////
+
+	//
+	// Post formats
+	//
+	// @see  includes/frontend/class-post-media.php
+	//
+
+		$supported_post_formats: (
+			'aside',
+			'audio',
+			'gallery',
+			'image',
+			'link',
+			'quote',
+			'status',
+			'video',
+		);
+
+
+
+
+
+/////////////////////
+//
+// Layout
+//
+/////////////////////
+
+	//
+	// Breakpoints info:
+	//
+	// 's'     :  448, // =  28em // Starting mobile landscape
+	// 'm'     :  672, // =  42em // Starting tablet portrait
+	// 'l'     :  880, // =  55em // Starting tablet landscape
+	// 'xl'    : 1280, // =  80em // Starting laptop
+	// 'xxl'   : 1600, // = 100em // Starting desktop
+	// 'xxxl'  : 1920, // = 120em // Starting desktop full HD
+	// 'xxxxl' : 2560, // = 160em // Starting desktop WQHD
+	//
+
+	//
+	// Site widths
+	//
+
+		$boxed_width: 1640;   // In px // Default max boxed site width
+		$content_width: 1180; // In px // Default content width
+
+		$single_post_left_padding: .38 * .62 * 100; // In %
+
+
+
+	//
+	// Header height
+	//
+
+		$header_height: (
+			'normal': 5, // In rem
+			'narrow': 4, // In rem
+		) !default;
+
+
+
+	//
+	// Column paddings
+	//
+
+		$padding_vertical: 3.62rem;
+
+
+
+
+
+/////////////////////
+//
+// Appearance
+//
+/////////////////////
+
+	//
+	// Special color classes
+	//
+
+		$special_color_class_prefix: 'set-colors-';
+
+
+
+	//
+	// Automated color calculation
+	//
+
+		$border_opacity_from_text: (
+
+			'general': .40,
+
+			'header':  .40,
+			'content': .40,
+			'footer':  .40,
+
+		);
+
+		$fullwidth_submenu_opacity: .98;
+
+		$overlay_from_text_color_opacity: .10;
+
+
+
+	//
+	// Theme colors
+	// For accessibility test with http://jxnblk.com/colorable/demos/text/
+	//
+	// //* = Doesn't change via Customizer.
+	//
+
+		$color_mejs_bg: #333; //*
+
+		$colors: (
+
+			// Accent color
+
+				'accent':      #9d693f,
+				'accent_text': #fff,
+
+			// Body
+
+				'body_background': #a37852, // Accent color, 5% lighter and 10% less saturated
+
+			// Site header
+
+				'header_background': #232323,
+				'header_text':       #e3e3e3,
+
+				// Header bottom widgets
+
+					'header_widgets_background': #373737,
+					'header_widgets_text':       #a3a3a3,
+
+			// Intro
+
+				'intro_background': #9d693f,
+				'intro_text':       #fff,
+
+				// Intro filter is controlled with inline styles
+
+				'intro_overlay':         #1c1c1c,
+				'opacity_intro_overlay': .9,
+
+				// Intro widgets
+
+					'intro_widgets_background': #232323,
+					'intro_widgets_text':       #a3a3a3,
+					'intro_widgets_headings':   #e3e3e3,
+
+			// Site content
+
+				'content_background': #fcfcfc,
+				'content_text':       #737373,
+				'content_headings':   #131313,
+
+			// Site footer
+
+				'footer_background':  #232323,
+				'footer_text':        #a3a3a3,
+				'footer_headings':    #e3e3e3,
+
+				// Footer secondary widgets
+
+					'footer_secondary_background': #9d693f, // Accent color
+					'footer_secondary_text':       #fff,
+					'footer_secondary_headings':   #fff,
+
+				// Site info (credits)
+
+					'site_info_background':  #fcfcfc,
+					'site_info_text':        #737373,
+
+			// Predefined colors
+
+				'error_background': rgba( #e00, .85 ),   //*
+				'error_text':       #fff,                //*
+
+				'info_background': rgba( #05e, .85 ),    //*
+				'info_text':       #fff,                 //*
+
+				'success_background': rgba( #072, .85 ), //*
+				'success_text':       #fff,              //*
+
+				'warning_background': rgba( #fd0, .85 ), //*
+				'warning_text':       #310,              //*
+
+		);
+
+
+
+	//
+	// Decorations
+	//
+
+		// Animation speeds
+
+			$small_animation_speed: .3; // Seconds
+			$large_animation_speed: .5; // Seconds
+
+		// Site borders
+
+			$site_border_width: 1.38%;
+
+		// Drop shadows
+
+			$column_box_shadows: (
+				'small':  1rem,
+				'medium': 2rem,
+				'large':  3rem,
+			) !default;
+
+			$column_box_shadows_opacity: .2;
+
+			$post_hover_shadow: 0 2px 1.38em rgba( #000, .2 );
+
+
+
+
+
+/////////////////////
+//
+// Typography
+//
+/////////////////////
+
+	//
+	// Font size
+	//
+
+		$font_size: 16; // Set also in `assets/css-generate/custom-styles.php`
+
+
+
+	//
+	// Font families
+	//
+
+		// @link  https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/
+		$font_family: (
+			'body':     "'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif",
+			'headings': "'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif",
+			'logo':     "'Playfair Display', Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif",
+		) !default;
+
+
+
+	//
+	// Headings
+	//
+
+		$h_tags_setup: (
+
+			// $selector : (
+			//   $size
+			//   $line_height
+			//   $margin_top    [ ( span_4_or_3_lines - $size * $line_height - $margin_bottom ) / $size ]
+			//   $margin_bottom [ $margin_bottom / $size / $line_height ]
+			// )
+
+			// @link http://www.zell-weekeat.com/responsive-typography/
+			//
+			// Em vs Rem section regarding vertical rhythm
+			//
+			// "First, we’re not 100% precise and accurate with our math. We could get more precise (like 10 decimal places), but that would make our code ugly as hell…"
+			// "Second, different browsers handle subpixel rounding issues differently. This means we’ll never be able to get pixel-perfect rhythms no matter how hard we try."
+			// "So, here’s what I realized. It’s impossible to apply perfect responsive vertical rhythms across different browsers. At least not with the current technology."
+
+			'h1, .h1' : (
+					2.62,
+					1.19,
+					( 6.48 - 2.62 * 1.19 - 1.62 ) / 2.62,
+					1.62 / 2.62 / 1.19
+				),
+			'h2, .h2' : (
+					1.9,
+					1.19,
+					( 6.48 - 1.9 * 1.19 - 1.62 ) / 1.9,
+					1.62 / 1.9 / 1.19
+				),
+			'h3, .h3' : (
+					1.62,
+					1.38,
+					( 6.48 - 1.62 * 1.38 - 1.62 ) / 1.62,
+					1.62 / 1.62 / 1.38
+				),
+			'h4, .h4' : (
+					1.38,
+					1.38,
+					( 4.86 - 1.38 * 1.38 - 1.62 ) / 1.38,
+					1.62 / 1.38 / 1.38
+				),
+			'h5, .h5' : (
+					1.19,
+					1.62,
+					( 4.86 - 1.19 * 1.62 - 1.62 ) / 1.19,
+					1.62 / 1.19 / 1.62
+				),
+			'h6, .h6' : (
+					1,
+					1.62,
+					( 4.86 - 1 * 1.62 - 1.62 ) / 1,
+					1.62 / 1 / 1.62
+				)
+
+		) !default;
+
+
+
+	//
+	// Special typography
+	//
+
+		$display_text_size: (
+			1 : 2.62em, // this should match the H1 size
+			2 : 3.62em,
+			3 : 4.25em,
+			4 : 5em,
+		) !default;
+
+
+
+
+
+/////////////////////
+//
+// Icons
+//
+/////////////////////
+
+	//
+	// Entry meta
+	//
+
+		$entry_meta_icons: (
+
+			// class: char
+
+			'author':          '\f304',
+			'cat-links':       '\f301',
+			'comments-link a': '\f300',
+			'entry-date':      '\f303',
+			'tags-links':      '\f302',
+
+		);
+
+
+
+
+
+/////////////////////
+//
+// Element groups
+//
+/////////////////////
+
+	//
+	// Margin elements
+	//
+
+		$tags_margin_bottom: (
+			'h1',
+			'h2',
+			'h3',
+			'.h1',
+			'.h2',
+			'.h3',
+			'p',
+			'ol',
+			'ul',
+			'blockquote',
+			'.gallery',
+			'.tiled-gallery'
+		);
+
+
+
+	//
+	// Button elements
+	//
+
+		$button_elements: (
+			'.button',
+			'button',
+			'input[type="button"]',
+			'input[type="reset"]',
+			'input[type="submit"]'
+		);
+
+		$button_elements_beaver_builder: ();
+
+		$beaver_builder_button_prepend: '.site .fl-builder-content .fl-module';
+
+		@each $button_element in $button_elements {
+			$button_elements_beaver_builder: append( $button_elements_beaver_builder, '#{$beaver_builder_button_prepend} #{$button_element}', comma );
+		}

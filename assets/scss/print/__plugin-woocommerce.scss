@@ -1,0 +1,146 @@
+/* FILE: print/__plugin-woocommerce.scss */
+
+//
+// Plugin: WooCommerce styles
+//
+
+
+
+
+
+// Base
+
+	.woocommerce {
+
+		.price {
+			display: block;
+			font-size: $golden_minor + 1em;
+			margin: ( $golden_major +em ) 0;
+		}
+
+		.button,
+		.product-remove,
+		.product-name a[href]:after,
+		.product-thumbnail a[href]:after,
+		.order-number a[href]:after,
+		.order-actions,
+		.download-actions {
+			@extend .noprint;
+		}
+
+	}
+
+
+
+// Loop
+
+	.shop-before-widgets-container,
+	.products-sorting,
+	.widget_layered_nav_filters {
+		@extend .noprint;
+	}
+
+	.products {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0;
+		margin: 0;
+
+		.product {
+			flex: 0 1 auto;
+			display: inline-block;
+			width: 26%;
+			padding: 2%;
+			margin: 1%;
+			border: 1px solid;
+			page-break-inside: avoid;
+
+			a {
+				@extend %no_link_after;
+				text-decoration: none;
+			}
+
+			img + img,
+			.onsale,
+			.button {
+				@extend .noprint;
+			}
+
+		}
+
+	}
+
+
+
+// Single product
+
+	.single-product {
+
+		.intro-container {
+			display: block !important;
+			background: transparent;
+
+			.breadcrumbs {
+				@extend .noprint;
+			}
+
+		}
+
+		.woocommerce-breadcrumb {
+
+			a {
+				@extend %no_link_after;
+			}
+
+		}
+
+		.summary-container {
+			overflow: hidden;
+		}
+
+		.product_meta {
+			margin: 1em 0;
+		}
+
+		.woocommerce-tabs {
+
+			.panel {
+				display: block !important;
+			}
+
+			#tab-reviews,
+			#tab-upsells {
+				@extend .noprint;
+			}
+
+		}
+
+		.thumbnails,
+		.woocommerce-review-link,
+		.quantity,
+		.button,
+		.posted_in,
+		.tagged_as,
+		.tabs,
+		#sidebar-product-label,
+		.related-container {
+			@extend .noprint;
+		}
+
+	}
+
+
+
+// Pages
+
+	.checkout-guide {
+		@extend .noprint;
+	}
+
+
+
+// Widgets
+
+	.header-shopping-cart {
+		@extend .noprint;
+	}

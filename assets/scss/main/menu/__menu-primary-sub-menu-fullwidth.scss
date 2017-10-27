@@ -1,0 +1,68 @@
+/* FILE: main/menu/_menu-primary-sub-menu-fullwidth.scss */
+
+//
+// Sub-menu fullwidth layout
+//
+// Other references of the `.has-fullwidth-submenu` class are in:
+// - main\base\__site-borders.scss
+// - main\header\__sticky.scss
+//
+
+
+
+
+
+.has-fullwidth-submenu {
+
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+		// Site container
+
+			.site {
+				overflow: hidden;
+			}
+
+
+
+		// Sub-menu
+
+			.main-navigation-container li {
+				white-space: normal;
+
+				ul {
+					padding: ( power( $golden, 2 ) +em ) 99em;
+					margin: 0 -99em;
+				}
+
+				ul ul {
+					box-shadow: 0 0 ( $section_shadow_size ) ( $section_shadow_size / 2 ) rgba( $section_shadow_color, $section_shadow_opacity );
+				}
+
+				li {
+					min-width: 14em;
+					margin-#{$left}: -1em; // {{RTL}}
+					border-width: 0;
+				}
+
+				.no-js &:hover,
+				&.focus {
+
+					> ul {
+						opacity: $fullwidth_submenu_opacity;
+					}
+
+				}
+
+			}
+
+
+
+		// Megamenu
+
+			.main-navigation-container .megamenu li li {
+				margin-#{$left}: 0; // {{RTL}}
+			}
+
+	}
+
+}

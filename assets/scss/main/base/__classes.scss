@@ -1,0 +1,150 @@
+/* FILE: main/base/__classes.scss */
+
+//
+// CSS classes
+//
+
+
+
+
+
+// Generic utility
+
+	.no-wrap {
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			white-space: nowrap;
+		}
+	}
+
+	.text-#{$left} {
+		text-align: $left !important; // {{RTL}}
+	}
+
+	.text-center {
+		text-align: center !important;
+	}
+
+	.text-#{$right} {
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			text-align: $right !important; // {{RTL}}
+		}
+	}
+
+
+	@for $i from 1 through 10 {
+
+		%padding_percent_#{ $i * 2 } {
+			padding: percentage( $i * 2 / 100 );
+		}
+
+	}
+
+	.mt0 {
+		margin-top: 0 !important;
+	}
+
+	.mb0 {
+		margin-bottom: 0 !important;
+	}
+
+	.zindex-10 {
+		position: relative;
+		z-index: 10;
+	}
+
+	.background-size-stretch {
+		background-size: 100% 100%;
+
+		.site & > div {
+			background-size: inherit;
+		}
+
+	}
+
+
+
+// Dropcaps
+
+	.dropcap-text {
+
+		&::first-letter {
+			float: $left; // {{RTL}}
+			display: block;
+			padding: 0 ( $golden_minor / 2 +em );
+			padding-#{$left}: 0; // {{RTL}}
+			line-height: 1;
+			font-size: power( $golden, 2 ) +em;
+
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				font-size: power( $golden, 3 ) +em;
+			}
+
+		}
+
+	}
+
+
+
+// Inline list
+
+	.inline {
+
+		li,
+		.widget ul li {
+			display: inline-block;
+			padding: 0 ( $golden_major +em );
+			border-width: 0;
+			border-#{$left}-width: 1px; // {{RTL}}
+			border-#{$left}-style: solid; // {{RTL}}
+
+			&:first-child {
+				border-width: 0;
+			}
+
+			&::before {
+				display: none;
+			}
+
+			&:hover {
+				transform: none;
+			}
+
+		}
+
+	}
+
+
+
+// Internet Explorer upgrade message
+
+	.message-oldie {
+		display: block;
+		padding: 1em;
+		margin: 1em;
+		text-align: center;
+		background: map_get( $colors, 'error_background' );
+		color: map_get( $colors, 'error_text' );
+
+		a {
+			text-decoration: underline;
+			font-weight: bold;
+			color: inherit;
+		}
+
+	}
+
+
+
+// Widget flexbox layout alterations
+
+	@for $i from 1 through 4 {
+
+		.set-flex-grow-#{$i} {
+
+			.widget-area & {
+				flex-grow: $i;
+			}
+
+		}
+
+	}

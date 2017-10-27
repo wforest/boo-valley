@@ -1,0 +1,36 @@
+/* FILE: main/content/__post.scss */
+
+//
+// Post styles
+//
+
+
+
+
+
+// Excerpt
+
+	.entry-summary {
+
+		&.has-more-tag {
+			text-transform: uppercase;
+		}
+
+	}
+
+
+
+// Content
+
+	.entry-content {
+
+		@include responsive( map_get( $breakpoint, 'xl' ) ) {
+
+			.single-post:not(.fl-builder):not(.content-layout-no-paddings) & {
+				float: $right; // {{RTL}}
+				width: percentage( ( 100 - $single_post_left_padding ) / 100 );
+			}
+
+		}
+
+	}

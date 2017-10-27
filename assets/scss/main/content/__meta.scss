@@ -1,0 +1,252 @@
+/* FILE: main/content/__meta.scss */
+
+//
+// Entry meta
+//
+
+
+
+
+
+.entry-meta {
+	padding: 0;
+	margin-top: 0;
+	border-width: 0;
+
+	&:empty,
+	.updated {
+		display: none;
+	}
+
+	&-element {
+		margin-#{$right}: 1em; // {{RTL}}
+		opacity: 1;
+
+		&::before {
+			@extend %entry_meta_element_before;
+		}
+
+	}
+
+		.comments-link a::before {
+			@extend %entry_meta_element_before;
+		}
+
+	&-description {
+		@extend %screen_reader_hiding;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+
+
+	// Single post meta
+
+		@include responsive( map_get( $breakpoint, 'xl' ), 'max-width' ) {
+
+			.single & {
+				font-size: 1em - $golden_minor / 2;
+				text-transform: uppercase;
+			}
+
+		}
+
+		@include responsive( map_get( $breakpoint, 'xl' ) ) {
+
+			.single-post:not(.fl-builder):not(.content-layout-no-paddings) & {
+				float: $left; // {{RTL}}
+				width: percentage( $single_post_left_padding / 100 );
+				padding: 0;
+				padding-#{$right}: power( $golden, 2 ) +em; // {{RTL}}
+				margin: 0 0 ( $golden +em );
+				line-height: 1 + $golden_minor; // 1.38
+				font-size: 1em - $golden_minor / 2; // .81
+				border-width: 0;
+
+				.entry-meta-element {
+					display: block;
+					padding: 1em;
+					padding-top: $golden +rem;
+					margin: 0 0 1em;
+					border-width: 2px;
+					border-style: solid;
+					border-color: currentColor;
+				}
+
+
+
+				// Date
+
+					.entry-date {
+						line-height: 1 + $golden_minor / 2;
+						text-transform: uppercase;
+						font-size: $golden_minor + 1em;
+
+						&::before {
+							display: none;
+						}
+
+						span {
+							display: block;
+						}
+
+						.day {
+							font-size: 2em;
+						}
+
+					}
+
+			}
+
+		}
+
+
+
+	// When Beaver Builder used
+
+		.single.fl-builder &,
+		.single.content-layout-no-paddings & {
+			@extend %font_size_small;
+			padding: 1em 0;
+			text-align: center;
+			text-transform: uppercase;
+			border-width: 1px 0;
+			border-style: solid;
+
+			&-element {
+				margin-#{$right}: $golden +em; // {{RTL}}
+				color: inherit;
+			}
+
+		}
+
+
+
+	// In loop
+
+		.posts &,
+		.single.fl-builder .posts &,
+		.single.content-layout-no-paddings .posts & {
+			@extend %font_size_tiny;
+			padding: 1em 0;
+			margin: 0 0 ( $golden +rem );
+			text-transform: uppercase;
+			letter-spacing: .05em;
+			border-top-width: 1px;
+			border-top-style: solid;
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
+
+			&-element {
+				margin-#{$right}: 1em; // {{RTL}}
+			}
+
+		}
+
+		.posts & {
+			@extend %background_overlay_from_text_color;
+			padding-left: $golden +rem;
+			padding-right: $golden +rem;
+			margin-left: -$golden +rem;
+			margin-right: -$golden +rem;
+
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				padding-left: power( $golden, 2 ) +rem;
+				padding-right: power( $golden, 2 ) +rem;
+				margin-left: -1 * power( $golden, 2 ) +rem;
+				margin-right: -1 * power( $golden, 2 ) +rem;
+			}
+
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				padding-left: power( 1 + $golden_minor, 4 ) +rem;
+				padding-right: power( 1 + $golden_minor, 4 ) +rem;
+				margin-left: -1 * power( 1 + $golden_minor, 4 ) +rem;
+				margin-right: -1 * power( 1 + $golden_minor, 4 ) +rem;
+			}
+
+			&::before {
+				opacity: 0;
+				transition: opacity ( $small_animation_speed +s );
+			}
+
+			a {
+				vertical-align: middle;
+			}
+
+		}
+
+		.posts .entry:hover &,
+		.search-results .type-post & {
+
+			&::before {
+				opacity: $overlay_from_text_color_opacity;
+			}
+
+		}
+
+
+
+	// Icons
+
+		%entry_meta_element_before {
+			content: '';
+			position: relative;
+			margin: -( $golden_minor / 4 +em ) 0 0;
+			margin-#{$right}: $golden_minor / 4 +em; // {{RTL}}
+			font-size: $golden_minor + 1em;
+			vertical-align: middle;
+		}
+
+		%entry_meta_icon {
+
+			&::before {
+				@extend %genericon;
+				margin-top: 0;
+				vertical-align: middle;
+
+				.single & {
+					line-height: 1;
+
+					@include responsive( map_get( $breakpoint, 'xl' ) ) {
+						vertical-align: top;
+					}
+
+				}
+
+				.single.fl-builder &,
+				.single.content-layout-no-paddings & {
+					vertical-align: middle;
+				}
+
+			}
+
+		}
+
+		@each $icon, $char in $entry_meta_icons {
+
+			.#{$icon} {
+				@extend %entry_meta_icon;
+
+				&::before {
+					content: $char;
+				}
+
+			}
+
+		}
+
+}
+
+
+
+// Linked entry date
+
+	.entry-date {
+
+		a & {
+			cursor: pointer;
+		}
+
+	}

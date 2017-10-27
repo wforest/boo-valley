@@ -1,0 +1,111 @@
+/* FILE: main/content/__parted.scss */
+
+//
+// Posts parts (post table of contents)
+//
+
+
+
+
+
+.post-table-of-contents {
+	margin-top: power( $golden, 2 ) +rem;
+
+	ol {
+		counter-reset: table-of-contents-counter;
+	}
+
+	li {
+		padding: 0;
+		border-top-width: 1px;
+		border-top-style: solid;
+
+		&:first-child {
+			border-width: 0;
+		}
+
+		&::before {
+			display: none;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+	}
+
+	a {
+		padding: ( $golden_major +em ) 1em;
+		padding-#{$left}: power( $golden, 2 ) +em; // {{RTL}}
+
+		.entry-content & {
+			border-width: 0;
+		}
+
+		&::before {
+			@extend %font_weight_700;
+			@extend %font_size_higher;
+			content: counter( table-of-contents-counter );
+			counter-increment: table-of-contents-counter;
+			float: $left; // {{RTL}}
+			margin-top: $golden_minor / -2 +em;
+			margin-#{$left}: -1em - $golden_minor; // {{RTL}}
+		}
+
+		&::after {
+			content: '\00bb';
+			margin-#{$left}: $golden_major +em; // {{RTL}}
+		}
+
+	}
+
+
+
+	// Parts that have been read already
+
+		.is-passed {
+
+			a {
+				text-decoration: line-through;
+				opacity: .66;
+
+				&:hover,
+				&:focus {
+					opacity: 1;
+				}
+
+				&::before {
+					text-decoration: inherit;
+				}
+
+			}
+
+		}
+
+
+
+	// Part that is currently being read
+
+		.is-current {
+
+			a {
+				opacity: .33;
+
+				&:hover,
+				&:focus {
+					opacity: 1;
+				}
+
+			}
+
+		}
+
+
+
+	// Table of contents in the beginning of the article
+
+		&.top {
+			display: none;
+		}
+
+}

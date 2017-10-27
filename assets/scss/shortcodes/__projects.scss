@@ -1,0 +1,189 @@
+/* FILE: shortcodes/__projects.scss */
+
+//
+// Posts: Projects
+//
+// For common custom post types styles see `/assets/scss/shortcodes/_posts.scss`.
+//
+
+
+
+
+
+.type-wm_projects {
+
+	.posts & {
+		padding: 0;
+
+		.search-results & {
+
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				padding-bottom: power( $golden, 2 ) +rem;
+			}
+
+		}
+
+
+
+		// Media
+
+			.entry-media {
+				margin: 0;
+
+				.search-results & {
+					margin-bottom: 0;
+				}
+
+			}
+
+
+
+		// Title
+
+			.entry-header {
+				padding: ( power( $golden, 2 ) +rem ) ( $golden +rem );
+				margin: 0;
+			}
+
+			h2,
+			h3,
+			h4 {
+				font-size: nth( map_get( $h_tags_setup, 'h3, .h3' ), 1 ) +em;
+			}
+
+
+
+		// Summary
+
+			.entry-content {
+				display: none;
+			}
+
+
+
+		// Taxonomies
+
+			.taxonomy {
+				padding: 1rem ( $golden +rem ) 0;
+				font-size: 1em - $golden_minor / 2;
+				border-top-width: 1px;
+				border-top-style: solid;
+
+				.search-results & {
+
+					@include responsive( map_get( $breakpoint, 'm' ) ) {
+						padding-left: 0;
+						padding-right: 0;
+					}
+
+				}
+
+				&:last-child {
+					padding-bottom: 1rem;
+				}
+
+				+ .taxonomy {
+					padding-top: 0;
+					border-width: 0;
+				}
+
+				a {
+					color: inherit;
+				}
+
+				&-label {
+					margin-#{$right}: $golden_minor +em; // {{RTL}}
+					text-transform: uppercase;
+					font-size: 1em - $golden_minor / 2;
+					letter-spacing: .05em;
+				}
+
+			}
+
+	}
+
+
+
+	// Simple layout
+
+		.simple-layout & {
+			border-width: 0;
+			overflow: hidden;
+
+			.entry-header {
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				padding: 0;
+				margin: 1rem;
+				transition: opacity ( $large_animation_speed +s ),
+				            transform ( $large_animation_speed +s );
+
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+					height: calc( 100% - 2rem );
+					opacity: 0;
+					transform: scaleY( 0 );
+				}
+
+				a {
+					display: block;
+					padding: 6%;
+
+					@include responsive( map_get( $breakpoint, 'xl' ) ) {
+						flex: 1 1 auto;
+						display: flex;
+						flex-direction: column-reverse;
+						padding: 8% 4%;
+					}
+
+				}
+
+			}
+
+			&:hover,
+			&.focus {
+
+				.entry-header {
+
+					@include responsive( map_get( $breakpoint, 'xl' ) ) {
+						opacity: .9;
+						transform: scaleY( 1 );
+					}
+
+				}
+
+			}
+
+			h2,
+			h3,
+			h4 {
+				font-size: $golden_minor + 1em;
+				font-style: italic;
+				color: inherit;
+
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+					display: flex;
+					height: 100%;
+				}
+
+			}
+
+			.entry-subtitle {
+				margin-top: $golden_minor +em;
+				font-size: 1em - $golden_minor;
+				font-style: normal;
+
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+					order: -1;
+				}
+
+			}
+
+			.taxonomy {
+				display: none;
+			}
+
+		}
+
+}

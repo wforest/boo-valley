@@ -1,0 +1,106 @@
+/* FILE: main/header/__branding.scss */
+
+//
+// Branding: site title, logo image, site description (tagline)
+//
+
+
+
+
+
+// Extender
+
+	%site_title {
+		text-decoration: none;
+		color: inherit;
+	}
+
+
+
+// Site branding
+
+	.site-branding {
+		float: $left; // {{RTL}}
+		margin-#{$right}: $golden +em; // {{RTL}}
+		line-height: inherit;
+		color: inherit;
+
+		@include responsive( map_get( $breakpoint, 'xl' ) ) {
+			margin-#{$right}: power( $golden, 2 ) +em; // {{RTL}}
+		}
+
+		a {
+
+			&,
+			&:hover,
+			&:active {
+				@extend %site_title;
+			}
+
+		}
+
+		&-text {
+			@extend %line_height_golden_minor;
+			display: inline-block;
+			vertical-align: middle;
+
+			.site-title-hidden & {
+				@extend %screen_reader_hiding;
+			}
+
+		}
+
+	}
+
+
+
+// Site title
+
+	.site-title {
+		@extend %site_title;
+		@extend %font_logo;
+		@extend %font_size_golden;
+		@extend %font_style_normal;
+		margin: 0;
+		line-height: inherit;
+
+
+
+		// Fix for image logo vertical alignment
+
+			&.type-img {
+				font-family: sans-serif; // Yes, this fixes it, don't ask why (even debugging was a nightmare)...
+			}
+
+	}
+
+
+
+// Site description (tagline)
+
+	.site-description {
+		@extend %font_size_small;
+		text-transform: uppercase;
+		opacity: .8;
+	}
+
+
+
+// Custom logo image
+
+	.custom-logo {
+		display: inline-block;
+		width: auto;
+		max-height: map_get( $header_height, 'narrow' ) * 1rem;
+		margin-#{$right}: 1em; // {{RTL}}
+		vertical-align: middle;
+
+		@include responsive() {
+			max-height: map_get( $header_height, 'normal' ) * 1rem;
+		}
+
+		.site-title-hidden & {
+			margin-#{$right}: 0;
+		}
+
+	}

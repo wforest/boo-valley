@@ -1,0 +1,35 @@
+/* FILE: woocommerce/custom-styles/__loop.scss */
+
+//
+// Loop color styles
+//
+
+
+
+
+
+ul.products {
+
+	.product {
+
+		&:hover {
+			box-shadow: $post_hover_shadow; //*
+		}
+
+		.onsale {
+			@extend %site_content_colors;
+		}
+
+		.star-rating {
+			@extend %site_content_colors;
+			/*[*/
+			box-shadow: 0 0 0 ( $golden_major +em ) map_get( $colors, 'content_background' );
+			/*]*/
+			/*//
+			box-shadow: 0 0 0 #{ $golden_major +em } [[color_content_background]];
+			//*/
+		}
+
+	}
+
+}

@@ -1,0 +1,158 @@
+/* FILE: main/header/__sticky.scss */
+
+//
+// Sticky header displayed when scrolling up
+//
+// Yes, we could simplify the styles using header position absolute
+// where appropriate, but that would create glitches on page scroll
+// as CSS position can not be smoothly transitioned.
+//
+
+
+
+
+
+@include responsive_minmax( map_get( $breakpoint, 'xl' ), map_get( $breakpoint, 's' ), 'min-width', 'min-height' ) {
+
+	// Default sticky header styles
+
+		.has-sticky-header:not(.no-js) {
+
+			.site-header {
+				position: fixed;
+				width: 100%;
+				#{$left}: 0; // {{RTL}}
+				top: 0;
+				transition: transform ( $large_animation_speed +s ),
+				            opacity ( $large_animation_speed +s ),
+				            margin ( $small_animation_speed +s );
+			}
+
+
+
+			// Add top margin when admin bar displayed
+
+				&.admin-bar,
+				&.admin-bar.has-scrolled {
+
+					.site-header {
+						margin-top: 32px;
+					}
+
+				}
+
+
+
+			// On boxed site layout
+
+				&.site-layout-boxed {
+
+					.site-header {
+						position: absolute;
+						margin-top: 0;
+						transition: transform ( $large_animation_speed +s ),
+						            // opacity ( $large_animation_speed +s ),
+						            margin ( $small_animation_speed +s );
+					}
+
+					&:not(.has-fullwidth-submenu) {
+
+						.site-header {
+							// Max-width gets overrode in generated stylesheet
+							max-width: $boxed_width +px;
+							max-width: $boxed_width * $px;
+						}
+
+					}
+
+				}
+
+
+
+			// Display sticky header placeholder on pages with no Intro section
+
+				&:not(.has-intro) {
+
+					.site-header-placeholder {
+						display: block;
+					}
+
+				}
+
+		}
+
+
+
+	// When scrolled
+
+		.has-scrolled:not(.no-js) {
+
+			.site-header {
+				box-shadow: 0 ( $section_shadow_size ) 2px ( -$section_shadow_size / 2 ) rgba( $section_shadow_color, $section_shadow_opacity );
+				opacity: 0;
+				transform: translate3d( 0, -120%, 0 ); // Using `translate3d` for triggering the performance improvement in browser
+
+				&-inner {
+					line-height: map_get( $header_height, 'narrow' ) * 1rem;
+				}
+
+			}
+
+
+
+			// Image logo size
+
+				.custom-logo {
+					max-height: map_get( $header_height, 'narrow' ) * 1rem;
+				}
+
+
+
+			// On boxed site layout
+
+				&.site-layout-boxed {
+
+					.site-header {
+						position: fixed;
+					}
+
+					&:not(.has-fullwidth-submenu) {
+
+						.site-header {
+							#{$left}: auto; // {{RTL}}
+						}
+
+					}
+
+				}
+
+		}
+
+
+
+	// When scrolling up
+
+		.scrolling-up:not(.no-js) {
+
+			.site-header {
+				opacity: 1;
+				transform: translate3d( 0, 0, 0 );
+
+				&-content .social-links .back-to-top-link {
+					display: inline-block;
+				}
+
+			}
+
+		}
+
+}
+
+
+
+// Sticky header placeholder
+
+	.site-header-placeholder {
+		display: none;
+		min-height: map_get( $header_height, 'normal' ) * 1rem;
+	}

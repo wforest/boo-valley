@@ -1,0 +1,54 @@
+/* FILE: woocommerce/main/__price.scss */
+
+//
+// Price styles
+//
+
+
+
+
+
+.price {
+
+	.amount {
+		font-weight: 700;
+	}
+
+	del {
+		display: block;
+		font-size: 1rem;
+		opacity: .5;
+
+		.amount {
+			font-weight: 400;
+		}
+
+	}
+
+	ins {
+		margin: 0;
+		text-decoration: none;
+	}
+
+}
+
+
+
+// Price suffix
+
+	.woocommerce-price-suffix {
+		margin-#{$left}: $golden_minor +em; // {{RTL}}
+	}
+
+
+
+// Price "from-to"
+
+	.amount-separator {
+		margin: 0 ( $golden_minor / 2 +em );
+
+		del & {
+			margin: 0;
+		}
+
+	}

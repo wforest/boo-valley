@@ -1,0 +1,56 @@
+/* FILE: main/custom-styles/__footer.scss */
+
+//
+// Site footer colors
+//
+
+
+
+
+
+.site-footer,
+.#{$special_color_class_prefix}footer,
+.#{$special_color_class_prefix}footer > .fl-row-content-wrap,
+.#{$special_color_class_prefix}footer > .fl-col-content {
+	@extend %site_footer_colors;
+
+	h2, h3, h4,
+	.h1, .h2, .h3, .h4 {
+		@extend %site_footer_headings_color;
+	}
+
+}
+
+
+
+// Footer accent colors are actually footer headings colors
+
+	.site-footer {
+
+		a {
+			@extend %site_footer_headings_color;
+		}
+
+		#{$accent_color_elements},
+		.button,
+		button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"] {
+			text-shadow: none;
+			/*[*/
+			background-color: map_get( $colors, 'footer_headings' );
+			color: map_get( $colors, 'footer_background' );
+			/*]*/
+			/*//
+			background-color: [[color_footer_headings]];
+			color: [[color_footer_background]];
+			//*/
+		}
+
+		mark,
+		.highlight {
+			box-shadow: none; //*
+		}
+
+	}

@@ -1,0 +1,160 @@
+/* FILE: shortcodes/_posts.scss */
+
+//
+// Posts / Custom Posts
+//
+
+
+
+
+
+.wm-posts {
+
+	&-item {
+		display: flex;
+		position: relative;
+
+		.entry {
+			flex: 0 1 auto;
+			display: flex;
+			flex-direction: column;
+			float: none;
+			width: 100%;
+			margin: 0;
+
+			.no-widgets-sidebar & {
+				border-color: inherit; // Required as the default is transparent
+			}
+
+		}
+
+	}
+
+	&-post {
+
+		.entry {
+			text-align: $left; // {{RTL}}
+		}
+
+	}
+
+	.entry {
+
+		h2,
+		h3,
+		h4 {
+			font-size: nth( map_get( $h_tags_setup, 'h3, .h3' ), 1 ) +em;
+		}
+
+		&-meta {
+
+			&::before {
+				display: none;
+			}
+
+		}
+
+	}
+
+}
+
+
+
+// Simple layout
+
+	// Default WordPress posts
+
+		.simple-layout .type-post {
+			padding: .5em;
+			border-width: 0;
+
+			&.entry:hover {
+				box-shadow: none;
+			}
+
+			.entry-media {
+				display: none;
+			}
+
+			.entry-meta {
+				@extend %sc_background_overlay_from_text_color;
+				padding: ( $golden_major +em ) ( $golden +em );
+				margin: 0 0 ( $golden +rem );
+				font-size: 1em - $golden_minor / 2;
+				border-width: 0;
+
+				&::before {
+					display: block;
+				}
+
+			}
+
+		}
+
+
+
+// Custom post types
+
+	// Imports
+
+		@import '_projects';
+
+		@import '_staff';
+
+
+
+	// Common styles
+
+		// No margin
+
+			.wm-posts-wm_projects,
+			.wm-posts-wm_staff {
+
+				.no-margin {
+
+					.wm-posts-item {
+						padding: 1px;
+					}
+
+				}
+
+			}
+
+
+
+		// In loop
+
+			.wm-posts-wm_projects,
+			.wm-posts-wm_staff {
+
+				.wm-posts-item {
+					display: block;
+				}
+
+			}
+
+
+
+		// Single post
+
+			.single-wm_projects,
+			.single-wm_staff {
+
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
+
+					&:not(.fl-builder):not(.content-layout-no-paddings) .entry-content {
+						padding-#{$left}: percentage( $single_post_left_padding / 100 ); // {{RTL}}
+					}
+
+					.site-main > .entry > .entry-media {
+						position: relative;
+						float: $left; // {{RTL}}
+						width: percentage( $golden_minor );
+						margin: 0 ( $golden +em ) 1em;
+						margin-#{$left}: 0; // {{RTL}}
+						z-index: 1;
+					}
+
+				}
+
+			}

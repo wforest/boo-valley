@@ -1,0 +1,187 @@
+/* FILE: main/sidebar/__header.scss */
+
+//
+// Header widgets area
+//
+
+
+
+
+
+.header-widgets {
+	@extend %content_width;
+	@extend %font_size_smaller;
+
+	.header-layout-fullwidth & {
+		@extend %full_width;
+	}
+
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+		display: flex;
+		align-items: center;
+	}
+
+	&-container {
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			order: -1;
+		}
+
+	}
+
+
+
+	// Widget inside the area
+
+		.widget {
+			flex: 0 1 auto;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			transition: padding-top ( $small_animation_speed +s ),
+			            padding-bottom ( $small_animation_speed +s );
+
+			&:not(:last-child) {
+				border-bottom-width: 1px;
+				border-bottom-style: solid;
+			}
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				flex: 0 1 auto;
+
+				.has-scrolled & {
+					padding-top: $golden_major +em;
+					padding-bottom: $golden_major +em;
+				}
+
+				&:not(:last-child) {
+					border-bottom-width: 0;
+				}
+
+				+ .widget {
+					margin-#{$left}: $golden +rem; // {{RTL}}
+				}
+
+				&:last-child {
+					flex-grow: 1;
+					text-align: $right; // {{RTL}}
+				}
+
+			}
+
+
+
+			// Don't display widget titles
+
+				&-title {
+					display: none;
+				}
+
+
+
+			// Search form
+
+				&_search,
+				&_product_search {
+
+					@include responsive( map_get( $breakpoint, 'l' ) ) {
+						padding-top: 0;
+						padding-bottom: 0;
+						line-height: 3rem;
+
+						.has-scrolled & {
+							padding-top: 0;
+							padding-bottom: 0;
+						}
+
+					}
+
+				}
+
+		}
+
+
+
+	// Social links inside the area
+
+		.social-links {
+			@extend %line_height_1;
+		}
+
+
+
+	// Accessible links
+
+		p,
+		.widget_text {
+
+			a {
+				@extend %accessible_link_style;
+			}
+
+		}
+
+
+
+	// Inline lists
+
+		ul {
+
+			li {
+				display: inline-block;
+				padding: 0;
+				margin: 0;
+				margin-#{$right}: $golden_major +em; // {{RTL}}
+				border-width: 0;
+
+				&:hover {
+					transform: none;
+				}
+
+				&:last-child {
+					margin-#{$right}: 0; // {{RTL}}
+				}
+
+			}
+
+		}
+
+
+
+	// Menu inside the area
+
+		.menu {
+
+			li {
+				margin-#{$right}: 2px; // {{RTL}}
+			}
+
+			a {
+				@extend %font_weight_400;
+				padding: ( $golden_minor +em ) ( $golden_major +em );
+				border-width: 2px;
+				border-style: solid;
+				border-color: transparent;
+				border-radius: 5em;
+				transition: border-color ( $small_animation_speed +s );
+			}
+
+			&:hover .current-menu-item a {
+				border-color: inherit;
+			}
+
+			a:hover,
+			a:focus,
+			a:active,
+			.current-menu-item a,
+			.current-menu-item a:hover {
+				text-decoration: none;
+				border-color: currentColor;
+			}
+
+		}
+
+		.sub-menu {
+			display: none;
+		}
+
+}

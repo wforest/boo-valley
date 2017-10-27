@@ -1,0 +1,79 @@
+/* FILE: print/__extenders.scss */
+
+//
+// Extenders
+//
+
+
+
+
+
+// Typography
+
+	%font_serif {
+		font-family: Georgia, serif;
+	}
+
+	%font_sans {
+		font-family: Arial, sans-serif;
+	}
+
+	%font_size_small {
+		font-size: 1em - $golden_minor / 2;
+	}
+
+
+
+// Colors
+
+	%background_light {
+		background: #f6f6f6 !important;
+	}
+
+
+
+// Links
+
+	%no_link_after {
+
+		&:after {
+			@extend .noprint;
+		}
+
+	}
+
+
+
+// JavaScript inline styles
+
+	%remove_js_styles_container {
+		width: auto !important;
+		height: auto !important;
+		transform: none !important;
+	}
+
+	%remove_js_styles {
+		position: relative !important;
+		left: auto !important;
+		right: auto !important;
+		top: auto !important;
+		bottom: auto !important;
+		transform: none !important;
+	}
+
+
+
+// Layout
+
+	%floating_column {
+		float: $left; // {{RTL}}
+		padding: 1em;
+	}
+
+
+
+// Don't print!
+
+	.noprint {
+		display: none !important;
+	}

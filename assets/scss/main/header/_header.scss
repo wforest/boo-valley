@@ -1,0 +1,91 @@
+/* FILE: main/header/_header.scss */
+
+//
+// Site header
+//
+
+
+
+
+
+// Site header
+
+	.site-header {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		z-index: 99;
+
+		*,
+		*::after,
+		*::before {
+			border-color: inherit;
+		}
+
+		div {
+			flex: 0 1 auto;
+		}
+
+		&-inner {
+			@extend .clearfix;
+			@extend %content_width;
+			display: flex;
+			flex-wrap: wrap;
+			position: relative;
+			line-height: map_get( $header_height, 'narrow' ) * 1rem;
+			transition: line-height ( $small_animation_speed +s );
+
+			.header-layout-fullwidth & {
+				@extend %full_width;
+			}
+
+			@include responsive() {
+				line-height: map_get( $header_height, 'normal' ) * 1rem;
+			}
+
+			> div,
+			> nav {
+				flex: 0 1 auto;
+			}
+
+		}
+
+		a {
+
+			&:not(.button) {
+				color: inherit;
+			}
+
+		}
+
+
+
+		// Overlap the Intro section
+
+			.has-intro & {
+
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+					position: absolute;
+					width: 100%;
+					opacity: .93; // The same value as for intro widgets background
+					transition: opacity ( $small_animation_speed +s );
+
+					&:hover {
+						opacity: 1;
+					}
+
+				}
+
+			}
+
+	}
+
+
+
+// Imports
+
+	@import '_sticky';
+
+	@import '_branding';
+
+	@import '_intro';

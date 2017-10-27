@@ -1,0 +1,78 @@
+/* FILE: main/headings/__widget-title.scss */
+
+//
+// Widget title
+//
+
+
+
+
+
+// Extender
+
+	%widget_title {
+		@extend %font_size_smaller_rem;
+		@extend %font_weight_700;
+		@extend %line_height_golden_minor;
+		margin: 0 0 ( $golden +rem );
+		text-transform: uppercase;
+		letter-spacing: 1px;
+
+		a {
+			font-weight: inherit;
+			text-decoration: none;
+		}
+
+	}
+
+
+
+// Default widget titles
+
+	.widget-title {
+		@extend %widget_title;
+
+		.site & {
+			border-bottom-width: 2px;
+			border-bottom-style: solid;
+			border-color: currentColor;
+		}
+
+	}
+
+
+
+// Forced widget title style (in Beaver Builder)
+
+	.widget-title-style {
+
+		.widgettitle {
+			@extend %widget_title;
+			border-bottom-width: 2px;
+			border-bottom-style: solid;
+			border-color: currentColor;
+		}
+
+	}
+
+
+
+// Hiding widget title
+
+	.hide-widget-title {
+
+		.widget-title,
+		.widgettitle {
+			display: none;
+		}
+
+		&-accessibly {
+
+			.widget-title,
+			.widgettitle {
+				@extend %screen_reader_hiding;
+			}
+
+		}
+
+	}

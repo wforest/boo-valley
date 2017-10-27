@@ -1,0 +1,445 @@
+/* FILE: woocommerce/main/__loop.scss */
+
+//
+// Products loop styles
+//
+
+
+
+
+
+$gutter: 1; // In %
+
+$column_gutter: 2 * $gutter / 100; // Calculation for column gutter inside SASS `percentage()` function
+
+ul.products { // Unfortunately, in some cases also a DIV wrapper has a class of `.products`...
+	clear: both;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 percentage( -$gutter / 100 );
+	list-style: none;
+
+
+
+	// List item (product & category)
+
+		.product {
+			position: relative;
+			flex: 0 1 auto;
+			width: percentage( 1 - $column_gutter );
+			margin: ( power( 1 + $golden_minor, 5 ) / 2 +em ) percentage( $gutter / 100 );
+			text-align: center;
+			border-width: 1px;
+			border-style: solid;
+			transition: box-shadow ( $large_animation_speed +s );
+			transition-timing-function: cubic-bezier( 0.165, 0.975, 0.530, 1.650 );
+
+			a {
+				text-decoration: none;
+
+				&:first-child {
+					display: block;
+					padding-bottom: 1em;
+				}
+
+			}
+
+			img {
+				position: relative;
+				width: 100%;
+				vertical-align: top;
+			}
+
+			.description {
+				position: relative;
+				padding: $golden +em;
+			}
+
+			h3 {
+				margin: 0;
+				font-size: 1em;
+				font-weight: 700;
+			}
+
+			.entry-subtitle {
+				margin-top: $golden_minor +em;
+				font-size: 1em - $golden_minor / 2;
+			}
+
+			.star-rating,
+			.onsale {
+				position: absolute;
+				bottom: 100%;
+			}
+
+			.star-rating {
+				#{$left}: 0; // {{RTL}}
+				margin: 1em;
+			}
+
+			.onsale {
+				#{$right}: 0; // {{RTL}}
+				padding: 0 ( $golden_major +em );
+				margin: $golden_minor +rem;
+				line-height: 1rem + 2 * $golden_major;
+				border-width: 0;
+			}
+
+			.price {
+				display: block;
+				margin: ( $golden_minor +em ) 0 0;
+				line-height: 1 + $golden_minor / 2;
+
+				.amount {
+					font-weight: 400;
+				}
+
+				del {
+					display: inline;
+					margin-#{$right}: $golden_minor +em; // {{RTL}}
+					font-size: 1rem - $golden_minor / 2;
+				}
+
+			}
+
+			.button,
+			.added_to_cart {
+				position: absolute;
+				#{$left}: 50%; // {{RTL}}
+				top: 100%;
+				white-space: nowrap;
+				@include rtl_property( transform, translateX( -50% ) translateY( -50% ), translateX( 50% ) translateY( -50% ) ); // {{RTL}}
+
+				&::before {
+					@extend %wc_genericon;
+					content: '\f447';
+					display: inline-block; // Required for animation
+					margin-#{$right}: $golden_minor +em; // {{RTL}}
+					line-height: $golden_major;
+					font-size: 1em + $golden_minor;
+					vertical-align: middle;
+				}
+
+			}
+
+			.button {
+
+				+ .button {
+					margin-top: 1em;
+				}
+
+				&.loading {
+
+					&::before {
+						content: '\f420';
+						animation-name: rotate;
+						animation-duration: $large_animation_speed * 2s;
+						animation-timing-function: linear;
+						animation-iteration-count: infinite;
+					}
+
+				}
+
+				&.added {
+
+					&::before {
+						content: '\f418';
+					}
+
+				}
+
+			}
+
+			.added_to_cart {
+				@extend %wc_screen_reader_hiding;
+				text-decoration: none;
+
+				&::before {
+					content: '\f403';
+				}
+
+			}
+
+
+
+			// Categories list
+
+				&-category {
+
+					h3 {
+						font-size: $golden_minor / 2 + 1em;
+					}
+
+					.count {
+						font-size: 1em - $golden_minor / 2;
+						font-weight: 400;
+					}
+
+					.category-label {
+						margin-bottom: 0;
+						text-transform: uppercase;
+						font-size: 1em - $golden_minor / 2;
+					}
+
+				}
+
+		}
+
+
+
+	// Buttons
+
+		.added-to-cart {
+
+			.button:nth-child(2) {
+
+				&::before {
+					content: '\f418';
+				}
+
+			}
+
+			.button.loading {
+
+				&::before {
+					content: '\f420';
+				}
+
+			}
+
+		}
+
+
+
+	// Categories list
+
+		&-categories {
+			padding-bottom: $golden +em;
+			margin-bottom: $golden +em;
+			border-bottom-width: 2px;
+			border-bottom-style: solid;
+
+			.product-category {
+				margin-top: 0;
+				margin-bottom: power( 1 + $golden_minor, 4 ) +em;
+			}
+
+		}
+
+
+
+	// Products columns
+
+		// 2 columns `ul.products` layout gutter widening
+
+			.woocommerce.archive.has-widgets-sidebar & {
+
+					@include responsive( map_get( $breakpoint, 'm' ) ) {
+						margin-left: percentage( -2 * $gutter / 100 );
+						margin-right: percentage( -2 * $gutter / 100 );
+					}
+
+			}
+
+			.woocommerce.archive.has-widgets-sidebar.content-layout-stretched & {
+
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
+					margin-left: percentage( -$gutter / 100 );
+					margin-right: percentage( -$gutter / 100 );
+				}
+
+				@include responsive_minmax( map_get( $breakpoint, 'xl' ), map_get( $breakpoint, 'xxl' ) ) {
+					margin-left: percentage( -2 * $gutter / 100 );
+					margin-right: percentage( -2 * $gutter / 100 );
+				}
+
+			}
+
+		.product {
+
+			// Small devices columns
+
+				$columns: 2;
+
+				@if 1 < $columns {
+
+					@include responsive_minmax( map_get( $breakpoint, 's' ), map_get( $breakpoint, 'l' ) ) {
+						width: percentage( 1 / $columns - $column_gutter );
+					}
+
+				}
+
+
+
+			// Medium devices columns
+
+				$columns: 3;
+
+				.single-product &,
+				.woocommerce.archive.no-widgets-sidebar & {
+
+					@include responsive_minmax( map_get( $breakpoint, 'l' ), map_get( $breakpoint, 'xl' ) ) {
+						width: percentage( 1 / $columns - $column_gutter );
+					}
+
+				}
+
+
+
+			// Default layout
+
+				$columns: 4;
+
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+					width: percentage( 1 / $columns - $column_gutter );
+				}
+
+
+
+				// With sidebar
+
+					$columns: 2;
+
+					.woocommerce.archive.has-widgets-sidebar & {
+
+						@include responsive( map_get( $breakpoint, 'm' ) ) {
+							width: percentage( 1 / $columns - 2 * $column_gutter );
+							margin-left: percentage( 2 * $gutter / 100 );
+							margin-right: percentage( 2 * $gutter / 100 );
+						}
+
+					}
+
+
+
+				// Fullwidth content layout
+
+					$columns: 6;
+
+					.woocommerce.archive.content-layout-stretched & {
+
+						@include responsive( map_get( $breakpoint, 'xxl' ) ) {
+							width: percentage( 1 / $columns - $column_gutter );
+							margin-left: percentage( $gutter / 100 );
+							margin-right: percentage( $gutter / 100 );
+						}
+
+					}
+
+
+
+					// With sidebar
+
+						.woocommerce.archive.has-widgets-sidebar.content-layout-stretched & {
+
+							$columns: 4;
+
+							@include responsive( map_get( $breakpoint, 'xxl' ) ) {
+								width: percentage( 1 / $columns - $column_gutter );
+							}
+
+							$columns: 2;
+
+							@include responsive_minmax( map_get( $breakpoint, 'xl' ), map_get( $breakpoint, 'xxl' ) ) {
+								width: percentage( 1 / ( $columns + 1 ) - $column_gutter );
+								margin-left: percentage( 2 * $gutter / 100 );
+								margin-right: percentage( 2 * $gutter / 100 );
+							}
+
+						}
+
+
+
+			// Forced columns layouts
+
+				.columns-1 & {
+					width: percentage( 1 - $column_gutter );
+				}
+
+				@for $i from 2 through 6 {
+
+					.columns-#{$i} & {
+
+						@include responsive( map_get( $breakpoint, 'l' ) ) {
+							width: percentage( 1 / $i - $column_gutter );
+						}
+
+					}
+
+				}
+
+
+
+				// Medium devices columns
+
+					$columns: 3;
+
+					.columns-4 &,
+					.columns-5 &,
+					.columns-6 & {
+
+						@include responsive_minmax( map_get( $breakpoint, 'l' ), map_get( $breakpoint, 'xl' ) ) {
+							width: percentage( 1 / $columns - $column_gutter );
+						}
+
+					}
+
+
+
+				// Large devices columns
+
+					$columns: 4;
+
+					.columns-5 &,
+					.columns-6 & {
+
+						@include responsive_minmax( map_get( $breakpoint, 'xl' ), map_get( $breakpoint, 'xxl' ) ) {
+							width: percentage( 1 / $columns - $column_gutter );
+						}
+
+					}
+
+		}
+
+}
+
+
+
+// Fullwidth products loops on single product pages
+
+	.single-product .products-container {
+		padding: ( $padding_vertical * $golden_major ) 0;
+		border-top-width: 1px;
+		border-top-style: solid;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			padding-top: $padding_vertical * ( $golden_major + $golden_minor / 2 );
+			padding-bottom: $padding_vertical * ( $golden_major + $golden_minor / 2 );
+		}
+
+		@include responsive( map_get( $breakpoint, 'xl' ) ) {
+			padding-top: $padding_vertical;
+			padding-bottom: $padding_vertical;
+		}
+
+		h2,
+		section > h2:first-child {
+			margin-bottom: 0;
+			letter-spacing: 0;
+			text-transform: none;
+			font-size: 1em + $golden_minor;
+			font-weight: 400;
+			border: 0;
+		}
+
+	}
+
+
+
+// Imports
+
+	@import '_loop-related';
+
+	@import '_loop-cross-sells';
+
+	@import '_loop-search';

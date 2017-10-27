@@ -1,0 +1,40 @@
+/* FILE: editor-style-rtl.scss */
+
+//
+// Visual Editor core stylesheet (RTL)
+//
+// @package    Boo Valley
+// @copyright  Sulli Digital
+//
+
+
+
+
+
+// These will be ignored when editor stylesheet is generated
+
+	/*[*/
+	@import url( 'main-rtl.css' );
+	/*]*/
+
+	/*[*/
+	@import url( 'custom-styles-editor.css' );
+	/*]*/
+
+
+
+// RTL style overrides
+
+	body {
+		direction: rtl;
+		unicode-bidi: embed;
+	}
+
+	.mce-content-body {
+
+		&::after {
+			left: 0;
+			right: auto;
+		}
+
+	}

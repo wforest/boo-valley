@@ -1,0 +1,150 @@
+/* FILE: shortcodes/__staff.scss */
+
+//
+// Posts: Staff
+//
+// For common custom post types styles see `/assets/scss/shortcodes/_posts.scss`.
+//
+
+
+
+
+
+.type-wm_staff {
+
+	.posts & {
+		padding-bottom: 0;
+		text-align: center;
+
+		.search-results & {
+
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				padding-bottom: power( $golden, 2 ) +rem;
+			}
+
+		}
+
+
+
+		// Photo
+
+			.entry-media {
+
+				&,
+				.search-results & {
+					margin: 0 0 ( $golden +rem );
+				}
+
+			}
+
+			img {
+				display: inline-block;
+				width: percentage( $golden_major );
+				max-width: 240 *$px;
+				border-radius: 240 *$px;
+			}
+
+
+
+		// Name
+
+			h2,
+			h3,
+			h4 {
+				font-size: nth( map_get( $h_tags_setup, 'h3, .h3' ), 1 ) +em;
+				font-style: italic;
+			}
+
+
+
+		// Summary
+
+			.entry-content {
+
+				.button {
+					margin: 0 auto ( $golden +rem );
+
+					.entry-subtitle {
+						display: none;
+					}
+
+				}
+
+			}
+
+
+
+		// Taxonomies
+
+			.taxonomy {
+				padding: 1rem;
+				margin: ( $golden +rem ) ( $golden * -1rem ) 0;
+				font-size: 1em - $golden_minor / 2;
+
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
+					margin-left: power( $golden, 2 ) * -1rem;
+					margin-right: power( $golden, 2 ) * -1rem;
+				}
+
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+					margin-left: power( 1 + $golden_minor, 4 ) * -1rem;
+					margin-right: power( 1 + $golden_minor, 4 ) * -1rem;
+				}
+
+				a {
+					color: inherit;
+				}
+
+				&-label {
+					margin-#{$right}: $golden_minor +em; // {{RTL}}
+					text-transform: uppercase;
+					font-size: 1em - $golden_minor / 2;
+					letter-spacing: .05em;
+				}
+
+				& + .taxonomy {
+					@extend %sc_background_overlay_from_text_color;
+					margin-top: 0;
+				}
+
+				.search-results & {
+
+					@include responsive( map_get( $breakpoint, 'm' ) ) {
+						padding: 1rem 0 0;
+						margin: 0;
+						background: transparent;
+						color: inherit;
+						border-top-width: 1px;
+						border-top-style: solid;
+
+						+ .taxonomy {
+							padding-top: 0;
+							border-width: 0;
+						}
+
+						&::before {
+							display: none;
+						}
+
+					}
+
+				}
+
+			}
+
+	}
+
+
+
+	// Summary hiding
+
+		.summary {
+
+			.hide-excerpt &,
+			.hide-summary & {
+				display: none;
+			}
+
+		}
+
+}

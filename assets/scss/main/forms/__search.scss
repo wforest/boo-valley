@@ -1,0 +1,112 @@
+/* FILE: main/forms/__search.scss */
+
+//
+// Search form
+//
+
+
+
+
+
+form[role="search"],
+.search-form {
+
+	.site & {
+
+		&::before {
+			@extend %genericon;
+			content: '\f400';
+			position: absolute;
+			width: power( $golden, 2 ) +rem;
+			height: 100%;
+			#{$right}: 0; // {{RTL}}
+			top: 0;
+			text-align: center;
+			font-size: $golden +rem;
+			z-index: 1;
+		}
+
+		input[type="submit"],
+		.search-submit {
+
+			&,
+			&:hover,
+			&:active,
+			&:focus {
+				@extend %form_search_submit_button;
+			}
+
+		}
+
+	}
+
+	.site .fl-builder-content .fl-module & input[type="submit"] {
+
+		&,
+		&:hover,
+		&:active,
+		&:focus {
+			@extend %form_search_submit_button;
+		}
+
+	}
+
+	.footer-menu-inner & {
+		width: 100%;
+		margin-top: $golden +em;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			width: auto;
+			margin-top: 0;
+		}
+
+	}
+
+	.header-widgets & {
+		display: inline-block;
+		width: 100%;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			max-width: 16rem;
+			min-width: 12rem;
+		}
+
+		input[type="search"],
+		.search-field {
+			padding-top: $golden_minor +em;
+			padding-bottom: $golden_minor +em;
+			background: transparent;
+		}
+
+	}
+
+	label {
+		// Label wraps the search input field and contains .screen-reader-text span
+		display: block;
+		padding: 0;
+	}
+
+	input[type="search"],
+	.search-field {
+		padding-#{$right}: power( $golden, 2 ) +rem; // {{RTL}}
+	}
+
+}
+
+
+
+%form_search_submit_button {
+	@extend .overflow-hidden;
+	position: absolute;
+	width: power( $golden, 2 ) +rem;
+	height: 100%;
+	#{$right}: 0; // {{RTL}}
+	top: 0;
+	padding: 0;
+	text-indent: -999em;
+	background: none;
+	color: inherit;
+	border-width: 0;
+	z-index: 2;
+	box-shadow: none;
+}

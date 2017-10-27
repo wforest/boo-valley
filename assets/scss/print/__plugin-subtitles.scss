@@ -1,0 +1,15 @@
+/* FILE: print/__plugin-subtitles.scss */
+
+//
+// Plugin: Subtitles styles
+//
+
+
+
+
+
+.entry-subtitle {
+	display: block;
+	margin-top: $golden_minor +em;
+	font-size: 1em - $golden_minor / 2;
+}

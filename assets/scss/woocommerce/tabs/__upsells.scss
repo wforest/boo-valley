@@ -1,0 +1,23 @@
+/* FILE: woocommerce/tabs/__upsells.scss */
+
+//
+// Tab: Upsells ("You may also like...")
+//
+
+
+
+
+
+// @todo  Don't use ID selector if possible
+#tab-upsells {
+
+	.woocommerce-tabs & {
+
+		h2:first-child {
+			@extend %wc_panel_title;
+			margin-bottom: 0;
+		}
+
+	}
+
+}

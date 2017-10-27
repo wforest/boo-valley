@@ -1,0 +1,16 @@
+/* FILE: main/custom-styles/__site-info.scss */
+
+//
+// Site info colors
+//
+
+
+
+
+
+.footer-area-site-info,
+.#{$special_color_class_prefix}credits,
+.#{$special_color_class_prefix}credits > .fl-row-content-wrap,
+.#{$special_color_class_prefix}credits > .fl-col-content {
+	@extend %site_info_colors;
+}

@@ -1,0 +1,64 @@
+/* FILE: main/content/__pagination.scss */
+
+//
+// Pagination
+//
+
+
+
+
+
+.pagination {
+	@extend .overflow-hidden;
+	margin-top: $golden +rem;
+	text-align: center;
+	border-width: 1px;
+	border-style: solid;
+
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+		margin-top: power( $golden, 2 ) +rem;
+	}
+
+	a,
+	span {
+		margin: 0;
+		background: transparent;
+		color: inherit;
+	}
+
+	a {
+		opacity: 1;
+
+		&:hover {
+			@extend %background_overlay_from_text_color;
+		}
+
+	}
+
+	.prev {
+		float: $left; // {{RTL}}
+		border-#{$right}-width: 1px; // {{RTL}}
+		border-#{$right}-style: solid; // {{RTL}}
+	}
+
+	.next {
+		float: $right; // {{RTL}}
+		border-#{$left}-width: 1px; // {{RTL}}
+		border-#{$left}-style: solid; // {{RTL}}
+	}
+
+	@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+		position: relative;
+
+		&::after {
+			@include rtl_property( content, attr(data-current) ' / ' attr(data-total), attr(data-current) ' \2216 ' attr(data-total) ); // {{RTL}}
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translateX( -50% )
+			           translateY( -50% );
+		}
+
+	}
+
+}

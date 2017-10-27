@@ -1,0 +1,25 @@
+/* FILE: shortcodes/custom-styles/__message.scss */
+
+//
+// Message colors
+//
+
+
+
+
+
+.wm-message {
+
+	&.color-error,
+	&.color-info,
+	&.color-success,
+	&.color-warning {
+		box-shadow: 0 0 ( 1em - $golden_minor / 4 ) rgba( #000, .2 ); //*
+
+		&:hover {
+			box-shadow: 0 0 ( $golden +em ) rgba( #000, .2 ); //*
+		}
+
+	}
+
+}

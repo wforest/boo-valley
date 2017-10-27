@@ -1,0 +1,207 @@
+/* FILE: main/content/__formats.scss */
+
+//
+// Post formats
+//
+
+
+
+
+
+// Group styles
+
+	.format-link,
+	.format-quote,
+	.format-status {
+
+		.posts & {
+
+			.entry-media {
+
+				&,
+				.search-results & {
+					margin-bottom: 0;
+				}
+
+			}
+
+			.entry-content {
+
+				&::before {
+					@extend %genericon;
+					content: '\f107';
+					line-height: 1;
+					font-size: power( $golden, 2 ) +rem;
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Aside
+
+	.format-aside {
+
+		.posts & {
+			border-width: 2px;
+			border-style: dashed;
+			border-color: inherit; // Required here for default is transparent
+		}
+
+		.entry-media {
+			margin: 0;
+			margin-bottom: power( $golden, 2 ) +rem;
+		}
+
+	}
+
+
+
+// Audio
+
+	.format-audio {
+
+		.posts & {
+
+			.entry-media {
+
+				iframe {
+					max-height: 182px; // SoundCloud iframe height
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Image
+
+	.format-image {
+
+		.posts & {
+
+			.entry-summary {
+				@extend %font_size_golden_minor;
+			}
+
+		}
+
+	}
+
+
+
+// Link
+
+	.format-link,
+	.format-status {
+
+		.posts & {
+
+			.entry-content {
+				@extend %font_size_higher;
+				@extend %line_height_golden_minor;
+
+				&::before {
+					content: '\f107';
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Gallery
+
+	.format-gallery {
+
+		%format_gallery_image {
+			width: 50%;
+			padding: 1px;
+		}
+
+		// As strange as it may look, the `.image-count-2` and `.image-count-3` classes
+		// are added in posts list only. That's why we declare these styles:
+
+		.image-count-2 {
+
+			img {
+				@extend %format_gallery_image;
+			}
+
+		}
+
+		.image-count-3 {
+
+			img {
+				@extend %format_gallery_image;
+
+				&:first-child,
+				&:first-of-type {
+					// This is to compensate for certain website caching solutions
+					// which might inserts `<script>` tag before `img:first-child`
+					width: 100%;
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Quote
+
+	.format-quote {
+
+		.posts & {
+
+			.entry-content {
+
+				&::before {
+					content: '\f106';
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Status
+
+	.format-status {
+
+		.posts & {
+
+			.avatar {
+				max-width: power( $golden, 4 ) +em;
+				margin-top: power( $golden, 2 ) +em;
+				border-radius: power( $golden, 4 ) +em;
+			}
+
+			.entry-content {
+				@extend %font_size_golden_minor;
+				@extend %line_height_golden;
+
+				&::before {
+					content: '\f105';
+				}
+
+			}
+
+		}
+
+	}

@@ -1,0 +1,29 @@
+/* FILE: woocommerce/shortcodes/__order-tracking.scss */
+
+//
+// Shortcode: [woocommerce_order_tracking]
+//
+// Displays order tracking form.
+// Redirect to "Order Details" page then.
+//
+
+
+
+
+
+.track_order {
+	padding: power( $golden, 2 ) +em;
+	margin-left: auto;
+	margin-right: auto;
+	border-width: 2px;
+	border-style: dashed;
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+
+	label {
+		font-weight: 700;
+	}
+
+}

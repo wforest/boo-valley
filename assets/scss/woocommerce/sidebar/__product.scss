@@ -1,0 +1,34 @@
+/* FILE: woocommerce/sidebar/__product.scss */
+
+//
+// Product widgets area
+//
+
+
+
+
+
+.product-widgets {
+	@extend %wc_horizontal_widget_area;
+
+	&-container {
+		border-top-width: 1px;
+		border-top-style: solid;
+
+		@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+			// Preventing mobile horizontal scrolling
+			// (Required for horizontal_widget_area.)
+			overflow: hidden;
+		}
+
+	}
+
+	&-inner {
+		@extend %wc_content_width;
+	}
+
+	.widget-title {
+		border-width: 0;
+	}
+
+}

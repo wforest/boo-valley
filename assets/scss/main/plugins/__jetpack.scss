@@ -1,0 +1,122 @@
+/* FILE: main/plugins/__jetpack.scss */
+
+//
+// Jetpack
+//
+
+
+
+
+
+// Related posts
+
+	div#jp-relatedposts {
+
+		.site & {
+			border-color: inherit;
+		}
+
+		.jp-relatedposts-headline {
+			@extend %font_weight_700;
+		}
+
+	}
+
+
+
+// Sharing
+
+	div.sharedaddy {
+		margin-top: power( $golden, 2 ) +rem;
+		border-color: inherit;
+
+		.sd-title {
+			@extend %font_size_1em;
+			@extend %font_weight_700;
+		}
+
+		.site &:hover .sd-content ul li a.sd-button {
+			opacity: .66;
+
+			&:hover {
+				opacity: 1;
+			}
+
+		}
+
+
+
+		// In intro section
+
+			.intro & {
+				padding: ( $golden +em ) 0 0;
+				margin: ( $golden +em ) 0 0;
+
+				@include responsive( map_get( $breakpoint, 'l' ) ) {
+					max-width: percentage( $golden_major );
+				}
+
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+					max-width: percentage( $golden_minor );
+				}
+
+				.sd-title {
+					@extend %font_size_smaller;
+					@extend %font_weight_300;
+					display: inline-block;
+					margin-#{$right}: $golden +em;
+					color: inherit;
+				}
+
+				.sd-content {
+					display: inline-block;
+				}
+
+			}
+
+	}
+
+
+
+	// Icon border in icons-only display
+
+		.site .sd-social-icon .sd-content ul li[class*="share-"] {
+
+			a,
+			a:hover,
+			div.option a {
+				border-width: 2px;
+				border-style: solid;
+			}
+
+		}
+
+
+
+// Widget: Blog Subscriptions
+
+	.jetpack_subscription_widget {
+
+		.fl-widget & {
+
+			.widgettitle {
+				@extend %font_size_1rem;
+			}
+
+		}
+
+
+
+		// Simple button styling
+
+			.form-button-simple & {
+
+					input[type="submit"] {
+						padding: $golden_major +em;
+						padding-top: calc( #{ $golden_major +em } - 2px );    // Compensating for 2px border
+						padding-bottom: calc( #{ $golden_major +em } - 2px ); // Compensating for 2px border
+					}
+
+			}
+
+	}

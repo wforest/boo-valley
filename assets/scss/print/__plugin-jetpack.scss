@@ -1,0 +1,14 @@
+/* FILE: print/__plugin-jetpack.scss */
+
+//
+// Plugin: Jetpack styles
+//
+
+
+
+
+
+.sharedaddy,
+.jp-relatedposts {
+	@extend .noprint;
+}

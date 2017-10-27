@@ -1,0 +1,111 @@
+/* FILE: main/content/__media.scss */
+
+//
+// Media
+//
+
+
+
+
+
+// Entry media
+
+	.entry-media {
+		margin-bottom: power( $golden, 2 ) +rem;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			margin-bottom: power( 1 + $golden_minor, 4 ) +rem;
+		}
+
+		a {
+			display: inline-block; // To wrap the focus outline around the image/entry media object
+			width: 100%;
+		}
+
+		.wp-playlist {
+			text-align: $left; // {{RTL}}
+		}
+
+		.search-results & img {
+			width: auto;
+			max-width: 100%;
+		}
+
+
+
+		// On single post page and when using any-page-builder-ready layout
+
+			.site-main > .entry > & {
+
+				.single-post &,
+				.content-layout-no-paddings & {
+					// Has to use more specific CSS selector in case we are displaying other posts inside using a page builder.
+					// Has to keep it accessible for SEO purposes (using microformats).
+					@extend %screen_reader_hiding;
+				}
+
+			}
+
+
+
+		// In loop
+
+			.posts & {
+				float: none;
+				width: auto;
+				margin: $golden * -1em;
+				margin-bottom: $golden +em;
+
+				@include responsive( map_get( $breakpoint, 'm' ) ) {
+					margin: power( $golden, 2 ) * -1em;
+					margin-bottom: power( $golden, 2 ) +em;
+				}
+
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+					margin: power( 1 + $golden_minor, 4 ) * -1em;
+					margin-bottom: power( $golden, 2 ) +em;
+				}
+
+			}
+
+
+
+		// Hiding the post media
+
+			.hide-media & {
+				display: none;
+			}
+
+
+
+		// Avatar image
+
+			.avatar {
+				margin-bottom: $golden +em;
+			}
+
+	}
+
+
+
+// Attachment page
+
+	.attachment {
+
+		caption {
+			caption-side: top;
+		}
+
+		&-download {
+			padding: $golden +em;
+			margin-bottom: $golden +em;
+			border-width: 2px;
+			border-style: dashed;
+
+			&-label {
+				@extend %font_weight_700;
+			}
+
+		}
+
+	}

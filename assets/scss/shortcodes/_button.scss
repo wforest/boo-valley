@@ -1,0 +1,59 @@
+/* FILE: shortcodes/_button.scss */
+
+//
+// Button
+//
+
+
+
+
+
+.button {
+
+	&.fullwidth {
+		width: 100%;
+	}
+
+
+
+	// Icon
+
+		i,
+		span {
+			position: relative;
+			bottom: $golden_minor / 4 * -1em;
+			margin-#{$right}: $golden_minor +em; // {{RTL}}
+			line-height: 1;
+			font-size: $golden_minor + 1em;
+			color: inherit;
+		}
+
+
+
+	// Sizes
+
+		&.size-small {
+			font-size: 1rem - $golden_minor;
+		}
+
+		&.size-large {
+			font-size: 1rem;
+		}
+
+		&.size-extra-large {
+			font-size: 1rem + $golden_minor / 2;
+		}
+
+}
+
+
+
+// Button in Beaver Builder
+
+	.fl-module-wm_button {
+
+		&.aligncenter {
+			text-align: center;
+		}
+
+	}

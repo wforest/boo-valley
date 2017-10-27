@@ -1,0 +1,196 @@
+/* FILE: woocommerce/tabs/__reviews.scss */
+
+//
+// Tab: Reviews
+//
+
+
+
+
+
+// @todo  Don't use ID selector if possible
+#comments {
+
+	.woocommerce-tabs & {
+		margin-bottom: power( $golden, 2 ) +em;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			float: $left; // {{RTL}}
+			width: percentage( $golden_major - .04 );
+			margin-bottom: 0;
+		}
+
+		h2:first-child {
+			margin-bottom: $golden +em;
+			font-size: 1em + $golden_minor;
+		}
+
+		.commentlist {
+			max-height: 18em;
+			max-height: 50vh;
+			margin-#{$left}: 0; // {{RTL}}
+			list-style: none;
+			overflow-y: auto;
+			border-radius: $golden_minor / 2 +em;
+			box-shadow: inset 0  1em 1em -1em rgba( #000, .1 ),
+			            inset 0 -1em 1em -1em rgba( #000, .1 );
+
+			@include responsive( map_get( $breakpoint, 's' ), 'max-height' ) {
+				max-height: 75vh;
+			}
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				max-height: 32em;
+				max-height: $golden_major * 100vh;
+			}
+
+		}
+
+		li {
+			padding: $golden +em;
+
+			& + li {
+				border-top-width: 1px;
+				border-top-style: solid;
+			}
+
+			&::before {
+				display: none;
+			}
+
+		}
+
+		p {
+			margin-bottom: 1em;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+		}
+
+		.avatar {
+			width: power( $golden, 2 ) +em;
+			margin-bottom: 1em;
+			border-radius: power( 1 + $golden_minor, 4 ) +em;
+
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				float: $left; // {{RTL}}
+				margin-bottom: 0;
+			}
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				width: power( 1 + $golden_minor, 4 ) +em;
+			}
+
+		}
+
+		.star-rating {
+			margin-bottom: $golden_minor +em;
+		}
+
+		.comment-text {
+
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				margin-#{$left}: power( $golden, 2 ) + 1em; // {{RTL}}
+			}
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				margin-#{$left}: power( 1 + $golden_minor, 4 ) + $golden +em; // {{RTL}}
+			}
+
+		}
+
+		.meta {
+			font-size: 1em - $golden_minor / 2;
+		}
+
+		time {
+			opacity: .75;
+		}
+
+	}
+
+}
+
+
+
+// @todo  Don't use ID selector if possible
+#review_form_wrapper {
+
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+		float: $right; // {{RTL}}
+		width: percentage( $golden_minor - .02 );
+	}
+
+	p,
+	.comment-form-rating {
+		margin-bottom: 1em;
+
+		&.stars {
+			margin-bottom: 0;
+		}
+
+	}
+
+	.comment {
+
+		&-respond {
+			padding: 0;
+			margin: 0;
+		}
+
+		&-reply-title {
+			@extend %wc_widget_title;
+			display: block;
+		}
+
+		&-form {
+			margin: 0;
+
+			&-rating {
+				padding: ( $golden_major +em ) 1em;
+				overflow: hidden;
+				border-width: 2px;
+				border-style: solid;
+
+				label {
+					float: $left; // {{RTL}}
+					margin-#{$right}: 1em; // {{RTL}}
+					font-size: 1em - $golden_minor / 4;
+				}
+
+			}
+
+			textarea {
+				height: power( 1 + $golden_minor, 5 ) +em;
+			}
+
+			.form-submit {
+				clear: both;
+				margin: 0;
+			}
+
+			input[type="submit"] {
+				width: 100%;
+			}
+
+		}
+
+	}
+
+}
+
+.woocommerce-verification-required {
+
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+		float: $right; // {{RTL}}
+		width: percentage( $golden_minor - .02 );
+	}
+
+}
+
+.commentlist {
+	margin-#{$left}: 0; // {{RTL}}
+	list-style: none;
+}

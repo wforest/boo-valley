@@ -1,0 +1,23 @@
+/* FILE: print/__widgets.scss */
+
+//
+// Sidebars and widgets styles
+//
+
+
+
+
+
+// Sidebar
+
+	.sidebar {
+		@extend .noprint;
+	}
+
+
+
+// Sidebar: Header
+
+	.header-widgets-container {
+		@extend .noprint;
+	}

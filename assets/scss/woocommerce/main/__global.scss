@@ -1,0 +1,132 @@
+/* FILE: woocommerce/main/__global.scss */
+
+//
+// Global styles
+//
+
+
+
+
+
+// Basic elements
+
+	.woocommerce {
+
+		ins {
+			text-decoration: none;
+		}
+
+		mark {
+			margin: 0;
+			font-weight: 700;
+			background: none;
+			color: inherit;
+			box-shadow: none;
+			box-decoration-break: slice;
+		}
+
+		.woocommerce-column__title,
+		section > h2:first-child,
+		.col2-set > div > h3:first-child {
+			@extend %wc_widget_title;
+		}
+
+	}
+
+
+
+// Archive titles
+
+	.woocommerce-products-header {
+
+		.page-title {
+			margin-bottom: power( $golden, 2 ) +rem;
+		}
+
+		.has-intro & .page-title {
+			@extend %wc_screen_reader_hiding;
+		}
+
+	}
+
+
+
+// Edit link in titles
+
+	.title {
+
+		.edit {
+			display: inline-block;
+			padding: ( $golden_minor +em ) 1em;
+			margin-bottom: 1em;
+			text-transform: uppercase;
+			font-size: 1rem - $golden_minor / 2;
+			font-weight: 700;
+			letter-spacing: $golden_minor / 6 +em;
+			border-width: 2px;
+			border-style: solid;
+			border-color: transparent;
+			border-radius: 5em;
+			transition: border-color ( $small_animation_speed +s ),
+			            box-shadow ( $small_animation_speed +s );
+
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: none;
+				border-color: currentColor;
+			}
+
+			&::before {
+				@extend %wc_genericon;
+				@extend %wc_icon_vertical_align_middle;
+				content: '\f411';
+				margin-#{$right}: $golden_minor +em; // {{RTL}}
+			}
+
+		}
+
+	}
+
+
+
+// Buttons
+
+	.wc-forward,
+	.woocommerce-Button--next {
+
+		&::after {
+			@include rtl_property( content, '\00bb', '\00ab' ); // {{RTL}}
+			margin-#{$left}: $golden_major +em; // {{RTL}}
+		}
+
+	}
+
+	.woocommerce-Button--previous {
+
+		&::before {
+			@include rtl_property( content, '\00ab', '\00bb' ); // {{RTL}}
+			margin-#{$right}: $golden_major +em; // {{RTL}}
+		}
+
+	}
+
+
+
+// Breadcrumbs
+
+	.breadcrumbs {
+
+		&-container {
+
+			.site-content & {
+
+				.archive.woocommerce & {
+					text-align: inherit;
+				}
+
+			}
+
+		}
+
+	}

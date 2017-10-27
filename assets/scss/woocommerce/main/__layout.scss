@@ -1,0 +1,101 @@
+/* FILE: woocommerce/main/__layout.scss */
+
+//
+// Layout styles
+//
+
+
+
+
+
+// Content area
+
+	.no-widgets-sidebar.woocommerce-page .content-area {
+		width: 100%;
+	}
+
+
+
+// Columns row
+
+	.col2-set {
+		// This is used on:
+		// * Checkout page
+		// * My Account page: login page, if registration form is also enabled
+		// * My Account page: addresses page, if different shipping address allowed
+		// * Order details when displaying addresses
+
+		.col-1,
+		.col-2 {
+			@extend %wc_clearfix;
+		}
+
+		.col-1 {
+			margin-bottom: power( $golden, 2 ) +em;
+		}
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			display: flex;
+			justify-content: space-between;
+
+			.col-1,
+			.col-2 {
+				flex: 0 1 auto;
+				width: 48%;
+				margin-bottom: 0;
+			}
+
+		}
+
+	}
+
+
+
+// Stretched shop layout
+
+	.woocommerce.archive.content-layout-stretched {
+
+		.site-content-inner,
+		.intro-inner,
+		.site-content .breadcrumbs {
+			@extend %wc_full_width;
+		}
+
+		.site-content-inner {
+			padding: $padding_vertical 0;
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				padding-top: $golden_major * $padding_vertical / 2 + $padding_vertical;
+				padding-bottom: $golden_major * $padding_vertical / 2 + $padding_vertical;
+			}
+
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				padding-top: $golden * $padding_vertical;
+				padding-bottom: $golden * $padding_vertical;
+			}
+
+		}
+
+		&.has-widgets-sidebar .content-area {
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				float: $left; // {{RTL}}
+				width: percentage( $golden_major );
+			}
+
+		}
+
+		@include responsive( map_get( $breakpoint, 'xxl' ) ) {
+
+			&.has-widgets-sidebar .content-area {
+				// 24em is max width of sidebar + 4em sidebar/content gap
+				width: calc( 100% - 28em );
+			}
+
+			.sidebar {
+				max-width: 24em;
+			}
+
+		}
+
+	}

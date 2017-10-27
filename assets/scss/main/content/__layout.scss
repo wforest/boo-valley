@@ -1,0 +1,96 @@
+/* FILE: main/content/__layout.scss */
+
+//
+// Site content layout
+//
+
+
+
+
+
+// Site content width holder
+
+	.site-content {
+
+		*,
+		*::after,
+		*::before {
+			border-color: inherit;
+		}
+
+		&-inner {
+			@extend %content_width;
+			@extend .clearfix;
+			padding: $padding_vertical 0;
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				padding-top: $golden_major * $padding_vertical / 2 + $padding_vertical;
+				padding-bottom: $golden_major * $padding_vertical / 2 + $padding_vertical;
+			}
+
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				padding-top: $golden * $padding_vertical;
+				padding-bottom: $golden * $padding_vertical;
+			}
+
+		}
+
+
+
+		// Do not show the outline on the skip link target
+
+			&[tabindex="-1"]:focus {
+				outline: 0;
+			}
+
+	}
+
+
+
+// Primary content container
+
+	.content-area {
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			width: percentage( $golden_major );
+
+			.has-widgets-sidebar & {
+				float: $left; // {{RTL}}
+			}
+
+			.no-widgets-sidebar & {
+				float: none;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+		}
+
+		.error404 &,
+		.page.no-widgets-sidebar &,
+		.posts-layout-masonry.no-widgets-sidebar & {
+			width: 100%;
+		}
+
+	}
+
+
+
+// Extenders
+
+	%fullwidth_sections_layout {
+
+		.site-content-inner {
+			width: 100%;
+			max-width: none;
+			padding: 0;
+		}
+
+		.content-area {
+			float: none;
+			width: 100%;
+			padding: 0;
+			margin: 0;
+		}
+
+	}

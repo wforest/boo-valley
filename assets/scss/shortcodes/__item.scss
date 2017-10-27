@@ -1,0 +1,149 @@
+/* FILE: shortcodes/__item.scss */
+
+//
+// Item, required for other shortcodes
+//
+
+
+
+
+
+.wm-item {
+
+	&-title {
+
+		i,
+		span {
+			margin-#{$right}: $golden_minor +em; // {{RTL}}
+		}
+
+	}
+
+
+
+	// Accordion
+
+		.wm-accordion & {
+			margin-bottom: 1em;
+			transition: padding ( $small_animation_speed +s );
+
+			&-title {
+				@extend %sc_background_overlay_from_text_color;
+				padding: 1rem ( $golden +rem );
+				padding-#{$right}: $golden * 2 + $golden_minor +rem; // {{RTL}}
+				margin: 0;
+				font-size: 1em;
+				font-weight: 700;
+				cursor: pointer;
+				transition: all ( $small_animation_speed +s );
+
+				&::before {
+					transition: background-color ( $small_animation_speed +s );
+				}
+
+				&::after {
+					@extend %sc_genericon;
+					content: '\f510';
+					display: inline-block;
+					position: absolute;
+					width: calc( #{ $golden +em } - 4px );
+					height: calc( #{ $golden +em } - 4px );
+					#{$right}: 0; // {{RTL}}
+					top: 50%;
+					margin-#{$right}: $golden +rem; // {{RTL}}
+					line-height: calc( #{ $golden +em } - 4px );
+					text-align: center;
+					font-size: 1rem;
+					border-width: 1px;
+					border-style: solid;
+					border-radius: 5em;
+					vertical-align: middle;
+					transform: rotate( 0deg ) translateY( -50% );
+					transition: margin ( $small_animation_speed +s ),
+					            transform ( $small_animation_speed +s );
+				}
+
+				i,
+				span {
+					margin-#{$right}: 1rem; // {{RTL}}
+					color: inherit;
+
+					&::before {
+						margin-top: $golden_minor / 2 * -1em;
+						line-height: $golden_major;
+						font-size: $golden +em;
+						vertical-align: middle;
+					}
+
+				}
+
+			}
+
+			&:not(.active):not(.is-active) {
+				border-width: 1px;
+				border-style: solid;
+
+				.wm-item-title {
+					color: inherit;
+				}
+
+			}
+
+			&.active,
+			&.is-active {
+				padding-top: 1em;
+				padding-bottom: 1em;
+
+				.wm-item-title {
+					padding: 1rem 0 ( $golden +rem );
+					padding-#{$right}: $golden +rem; // {{RTL}}
+					font-size: 1 + $golden_minor +em;
+					border-bottom-width: 1px;
+					border-bottom-style: solid;
+
+					&::before {
+						background-color: transparent;
+					}
+
+					&::after {
+						margin-#{$right}: 0; // {{RTL}}
+						transform: rotate( 45deg ) translateX( -50% ) translateY( -50% );
+					}
+
+				}
+
+			}
+
+			&-content {
+				padding: ( $golden +rem ) 0;
+			}
+
+		}
+
+
+
+	// Tabs
+
+		.wm-tabs & {
+			margin: 0;
+		}
+
+		.layout-top &,
+		.layout-left &,
+		.layout-right & {
+			padding: ( power( $golden, 2 ) +rem ) 0;
+		}
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+			.layout-left & {
+				padding: 0 0 ( power( $golden, 2 ) +rem ) ( power( $golden, 2 ) +rem );
+			}
+
+			.layout-right & {
+				padding: 0 ( power( $golden, 2 ) +rem ) ( power( $golden, 2 ) +rem ) 0;
+			}
+
+		}
+
+}

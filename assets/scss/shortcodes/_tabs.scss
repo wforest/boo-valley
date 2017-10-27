@@ -1,0 +1,256 @@
+/* FILE: shortcodes/_tabs.scss */
+
+//
+// Tabs
+//
+
+
+
+
+
+.wm-tab-links {
+	@extend %sc_background_overlay_from_text_color;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	line-height: $golden_minor / 2 + 1;
+	list-style: none;
+	border-width: 1px;
+	border-style: solid;
+	z-index: 1;
+
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+		text-align: center;
+	}
+
+	li {
+		display: block;
+		vertical-align: top;
+		margin: 0;
+		border-top-width: 1px;
+		border-top-style: solid;
+
+		&:first-child {
+			border-top-width: 0;
+		}
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			display: flex;
+			border-width: 0;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+	}
+
+	a {
+		flex: 1 1 auto;
+		display: block;
+		padding: 1rem;
+		margin: -1px 0; // Above `.tabs` container
+		text-transform: uppercase;
+		font-size: 1em - $golden_minor / 2;
+		font-weight: 700;
+		color: inherit;
+		transition: background ( $small_animation_speed +s ),
+		            color ( $small_animation_speed +s ),
+		            box-shadow ( $small_animation_speed +s );
+	}
+
+	i,
+	span {
+
+		&::before {
+			display: inline-block;
+			width: 2em;
+			height: 2em;
+			margin-#{$right}: $golden_major +em; // {{RTL}}
+			line-height: 2;
+			line-height: calc( 2em - 2px );
+			font-size: $golden +em;
+			border-width: 2px;
+			border-style: solid;
+			border-color: currentColor;
+			border-radius: 2em;
+			vertical-align: middle;
+		}
+
+	}
+
+
+
+	// Horizontal tabs
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+			.layout-top & {
+				display: flex;
+				justify-content: center;
+
+				li {
+					flex: 1 1 auto;
+					border-#{$left}-width: 1px; // {{RTL}}
+					border-#{$left}-style: solid; // {{RTL}}
+
+					&:first-child {
+						border-#{$left}-width: 0; // {{RTL}}
+					}
+
+				}
+
+			}
+
+		}
+
+
+
+	// Vertical tabs
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+			.layout-left &,
+			.layout-right & {
+				display: block;
+				float: left;
+				width: 25%;
+				text-align: inherit;
+
+				li {
+					display: block;
+					border-top-width: 1px;
+					border-top-style: solid;
+
+					&:first-child {
+						border-top-width: 0;
+					}
+
+				}
+
+				a {
+					padding-left: $golden +rem;
+					padding-right: $golden +rem;
+					margin: -1px;
+				}
+
+			}
+
+			.layout-right & {
+				float: right;
+			}
+
+		}
+
+}
+
+
+
+// Tour
+
+	.wm-tour-nav {
+		display: none;
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			font-size: 1em - $golden_minor / 2;
+
+			&.bottom {
+				display: block;
+			}
+
+			a,
+			i,
+			span {
+				color: inherit;
+			}
+
+			a {
+				display: block;
+				padding: 1rem;
+				text-decoration: none;
+
+				&::after,
+				&::before {
+					font-size: $golden +em;
+					vertical-align: middle;
+					line-height: 1;
+				}
+
+			}
+
+			.prev,
+			.next {
+				display: inline-block;
+				width: 50%;
+
+				i,
+				span {
+					margin-#{$right}: 1em; // {{RTL}}
+				}
+
+			}
+
+			.prev {
+				text-align: $left; // {{RTL}}
+
+				a {
+
+					&::before {
+						@extend %sc_genericon;
+						content: '\f430';
+						padding-#{$right}: 1rem; // {{RTL}}
+						margin-#{$right}: 1rem; // {{RTL}}
+						border-#{$right}-width: 1px; // {{RTL}}
+						border-#{$right}-style: solid; // {{RTL}}
+					}
+
+				}
+
+			}
+
+			.next {
+				text-align: $right; // {{RTL}}
+
+				a {
+
+					&::after {
+						@extend %sc_genericon;
+						content: '\f429';
+						padding-#{$left}: 1rem; // {{RTL}}
+						margin-#{$left}: 1rem; // {{RTL}}
+						border-#{$left}-width: 1px; // {{RTL}}
+						border-#{$left}-style: solid; // {{RTL}}
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Tab items
+
+	.wm-tabs-items {
+		position: relative;
+
+		.layout-top.tour-tabs & {
+			z-index: 2;
+		}
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+			.layout-left & {
+				padding-left: 25%;
+			}
+
+			.layout-right & {
+				padding-right: 25%;
+			}
+
+		}
+
+	}

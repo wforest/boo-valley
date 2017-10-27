@@ -1,0 +1,51 @@
+/* FILE: woocommerce/shortcodes/__add-to-cart.scss */
+
+//
+// Shortcode: [add_to_cart]
+//
+// Displays price and add to cart button for specific product.
+//
+
+
+
+
+
+.add_to_cart_inline {
+	display: inline-block;
+	text-align: center;
+	margin: ( $golden +em ) auto;
+
+	.amount {
+		@extend %wc_font_logo;
+		font-size: power( $golden, 2 ) +em;
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			font-size: power( $golden, 2 ) + 1em;
+		}
+
+	}
+
+	.woocommerce-Price-currencySymbol {
+		font-size: $golden_major +em;
+	}
+
+	del {
+
+		.amount {
+			font-size: 1em;
+			font-weight: 300;
+		}
+
+		.woocommerce-Price-currencySymbol {
+			font-size: 1em;
+		}
+
+	}
+
+	.button,
+	.added_to_cart {
+		display: block;
+		margin-top: 1em;
+	}
+
+}

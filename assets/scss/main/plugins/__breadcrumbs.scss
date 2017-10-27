@@ -1,0 +1,112 @@
+/* FILE: main/plugins/__breadcrumbs.scss */
+
+//
+// Breadcrumbs
+//
+
+
+
+
+
+.breadcrumbs {
+	@extend %content_width;
+	@extend %font_size_small_rem;
+
+	.footer-layout-fullwidth & {
+		@extend %full_width;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	.home {
+
+		&::before {
+			@extend %genericon;
+			content: '\f409';
+			position: relative;
+			top: .1em;
+			margin-#{$right}: $golden_minor / 2 +em; // {{RTL}}
+			line-height: $golden_major;
+			font-size: $golden_minor / 2 + 1rem;
+		}
+
+	}
+
+	&-container {
+		position: relative;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		border-color: inherit; // Required here
+
+		.no-intro .site-content & {
+			display: none;
+		}
+
+		.site-content & {
+			border-top-width: 1px;
+			border-top-style: solid;
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
+
+			.blog.no-widgets-sidebar &,
+			.archive.no-widgets-sidebar &,
+			.search.no-widgets-sidebar & {
+				text-align: center;
+			}
+
+		}
+
+		.site-footer & {
+
+			a {
+				// Requires more specificity in footer
+				color: inherit;
+			}
+
+		}
+
+
+
+		// Back to top link in the breadcrumbs container
+
+			.back-to-top {
+				float: $right; // {{RTL}}
+				display: none;
+				margin-left: 1em;
+				margin-right: 1em;
+
+				&.alignleft,
+				&.alignright {
+					margin-bottom: 0;
+				}
+
+				.site-footer & {
+					display: inline-block;
+
+					@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+						float: none;
+
+						&.alignright {
+							margin-#{$left}: 0; // {{RTL}}
+							margin-#{$right}: 1em; // {{RTL}}
+						}
+
+					}
+
+				}
+
+			}
+
+	}
+
+
+
+	// Special breadcrumbs title
+
+		&-title {
+			@extend %font_weight_700;
+		}
+
+}

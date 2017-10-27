@@ -1,0 +1,65 @@
+/* FILE: print/__plugin-beaver-builder.scss */
+
+//
+// Plugin: Beaver Builder styles
+//
+
+
+
+
+
+// Row
+
+	.fl-row-content,
+	.fl-col-content {
+		max-width: 100% !important;
+		padding: ( $golden_major +em ) 0 !important;
+		margin: 0 !important;
+	}
+
+	.fl-row-content-wrap {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+
+
+// Column
+
+	.fl-col-group {
+		overflow: hidden;
+
+		.fl-col {
+			max-width: 100% !important;
+			float: $left; // {{RTL}}
+			margin: 0;
+			border: 0;
+		}
+
+		.fl-col-content {
+			padding: ( $golden_major +em ) 1em !important;
+		}
+
+	}
+
+
+
+// Modules
+
+	.fl-module-photo {
+
+		img {
+			max-width: percentage( $golden_minor ) !important;
+		}
+
+	}
+
+
+
+// Animations
+
+	.fl-animation,
+	.fl-animated {
+		animation: none !important;
+		opacity: 1 !important;
+	}

@@ -1,0 +1,61 @@
+/* FILE: shortcodes.scss */
+
+//
+// Shortcodes
+//
+// @package    Boo Valley
+// @copyright  Sulli Digital
+//
+// @since    1.0.0
+// @version  1.0.0
+//
+
+
+
+
+
+// Imports
+
+	@import 'setup';
+
+	@import 'starter/tools/functions';
+
+	@import 'starter/setup/variables';
+
+	@import 'starter/tools/mixins';
+
+	@import 'shortcodes/_helpers';
+
+	// Required for other shortcodes
+
+		@import 'shortcodes/_row';
+
+		@import 'shortcodes/_column';
+
+		@import 'shortcodes/_item';
+
+		@import 'shortcodes/_jquery-isotope-masonry';
+
+		@import 'shortcodes/_jquery-slick';
+
+		@import 'shortcodes/_jquery-slick-custom';
+
+	// Actual shortcodes
+
+		@import 'shortcodes/accordion';
+
+		@import 'shortcodes/button';
+
+		@import 'shortcodes/call-to-action';
+
+		@import 'shortcodes/content-module';
+
+		@import 'shortcodes/divider';
+
+		@import 'shortcodes/message';
+
+		@import 'shortcodes/posts';
+
+		@import 'shortcodes/tabs';
+
+		@import 'shortcodes/testimonials';

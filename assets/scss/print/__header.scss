@@ -1,0 +1,14 @@
+/* FILE: print/__header.scss */
+
+//
+// Header styles
+//
+
+
+
+
+
+.site-header,
+.site-header-placeholder {
+	@extend .noprint;
+}

@@ -1,0 +1,46 @@
+/* FILE: main/footer/_footer.scss */
+
+//
+// Site footer and info
+//
+// For footer widgets see `sidebar` section.
+//
+
+
+
+
+
+// Footer
+
+	.site-footer {
+		@extend %font_size_smaller;
+		position: relative;
+
+		*,
+		*::after,
+		*::before {
+			border-color: inherit;
+		}
+
+		&-area {
+
+			&-inner {
+				@extend %content_width;
+
+				.footer-layout-fullwidth & {
+					@extend %full_width;
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Imports
+
+	@import '_social-links';
+
+	@import '_site-info';

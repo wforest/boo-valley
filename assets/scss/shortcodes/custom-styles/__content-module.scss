@@ -1,0 +1,60 @@
+/* FILE: shortcodes/custom-styles/__content-module.scss */
+
+//
+// Content module colors
+//
+
+
+
+
+
+// General
+
+	.wm-content-module {
+
+		// Hover shadow in the list of modules (the same as posts)
+		// @see  main/custom-styles/_content.scss
+
+			&-item {
+
+				.item-border & {
+
+					&:hover {
+						box-shadow: $post_hover_shadow; //*
+					}
+
+				}
+
+			}
+
+
+
+		// More link
+
+			.more-link {
+
+				a {
+
+					&:hover,
+					&:focus,
+					&:active {
+						@extend %button_default_colors;
+					}
+
+				}
+
+			}
+
+	}
+
+
+
+// Iconbox
+
+	.wm-iconbox-module {
+
+		.image {
+			@extend %accent_color;
+		}
+
+	}

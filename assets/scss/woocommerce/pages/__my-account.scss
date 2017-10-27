@@ -1,0 +1,399 @@
+/* FILE: woocommerce/pages/__my-account.scss */
+
+//
+// Page: My Account
+//
+// Endpoints from class WC_Query->init_query_vars().
+// The body classes receives the default WooCommerce endpoint
+// no matter the dashboard settings (those are URL slugs only).
+//
+
+
+
+
+
+.woocommerce-account {
+
+	.woocommerce {
+		@extend %wc_clearfix;
+
+		h2 {
+			margin-top: power( 1 + $golden_minor, 4 ) +rem;
+		}
+
+		form {
+
+			h3 {
+				@extend %wc_widget_title;
+			}
+
+		}
+
+		a {
+			font-weight: 700;
+		}
+
+	}
+
+}
+
+
+
+// Login and registration forms
+
+	.customer-login {
+
+		&:not(.customer-registration) {
+			@extend %wc_background_overlay_from_text_color;
+			padding: 6%;
+			max-width: 36em;
+			margin: 0 auto;
+			border-width: 2px;
+			border-style: solid;
+		}
+
+		.woocommerce & {
+
+			h2 {
+				@extend %wc_widget_title;
+				margin-top: 0;
+			}
+
+		}
+
+		.col-1,
+		.col-2 {
+			padding: 6%;
+			border-width: 2px;
+			border-style: dashed;
+		}
+
+		.col-1 {
+			@extend %wc_background_overlay_from_text_color;
+			border-style: solid;
+		}
+
+		form {
+			margin: 0;
+		}
+
+		p {
+			margin-top: 1em;
+			margin-bottom: 0;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+		}
+
+		.inline {
+			margin-#{$left}: 1em; // {{RTL}}
+		}
+
+		.lost_password {
+			font-size: 1em - $golden_minor / 2;
+		}
+
+	}
+
+
+
+// Navigation (WC2.6+)
+
+	.woocommerce-MyAccount {
+
+		// Navigation
+
+			&-navigation {
+				font-size: 1em - $golden_minor / 2;
+				margin-bottom: power( $golden, 2 ) +rem;
+
+				@include responsive( map_get( $breakpoint, 'l' ) ) {
+					float: $left; // {{RTL}}
+					width: 32%; // 6% margin
+				}
+
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+					width: 22%; // 6% margin
+				}
+
+				ul {
+					@extend %wc_background_overlay_from_text_color;
+					margin-left: 0;
+					list-style: none;
+					border-width: 1px;
+					border-style: solid;
+				}
+
+				li {
+					border-bottom-width: 1px;
+					border-bottom-style: solid;
+
+					&:last-child {
+						border-bottom-width: 0;
+					}
+
+					a {
+						text-decoration: none;
+					}
+
+				}
+
+				a {
+					display: block;
+					padding: ( $golden_major +rem ) 1rem;
+					margin: -1px;
+					text-transform: uppercase;
+					color: inherit;
+					transition: background ( $small_animation_speed +s ),
+					            color ( $small_animation_speed +s ),
+					            box-shadow ( $small_animation_speed +s );
+
+					@include responsive( map_get( $breakpoint, 'l' ) ) {
+						padding: 1rem ( $golden +rem );
+					}
+
+					.woocommerce & {
+						font-weight: 600;
+					}
+
+					&::before {
+						@extend %wc_genericon;
+						content: '\f443';
+						display: inline-block;
+						margin-#{$right}: $golden_major +em; // {{RTL}}
+						text-align: center;
+						font-size: $golden +em;
+						vertical-align: middle;
+						opacity: .33;
+
+						@include responsive( map_get( $breakpoint, 'l' ) ) {
+							width: 2em;
+							height: 2em;
+							line-height: 2;
+							border-radius: 2em;
+							box-shadow: inset 0 0 0 2px;
+						}
+
+					}
+
+					&:hover {
+						text-decoration: none;
+
+						&::before {
+							opacity: 1;
+						}
+
+					}
+
+				}
+
+				&-link {
+
+					&--dashboard {
+
+						a {
+
+							&::before {
+								content: '\f409';
+							}
+
+						}
+
+					}
+
+					&--orders {
+
+						a {
+
+							&::before {
+								content: '\f447';
+							}
+
+						}
+
+					}
+
+					&--downloads {
+
+						a {
+
+							&::before {
+								content: '\f50b';
+							}
+
+						}
+
+					}
+
+					&--edit-address {
+
+						a {
+
+							&::before {
+								content: '\f417';
+							}
+
+						}
+
+					}
+
+					&--payment-methods {
+
+						a {
+
+							&::before {
+								content: '\f301';
+							}
+
+						}
+
+					}
+
+					&--edit-account {
+
+						a {
+
+							&::before {
+								content: '\f304';
+							}
+
+						}
+
+					}
+
+					&--customer-logout {
+
+						a {
+
+							&::before {
+								content: '\f470';
+							}
+
+						}
+
+					}
+
+				}
+
+				.is-active {
+
+					a {
+
+						&::before {
+							opacity: 1;
+						}
+
+					}
+
+				}
+
+			}
+
+		// Panels generic styles
+
+			&-content {
+
+				@include responsive( map_get( $breakpoint, 'l' ) ) {
+					float: $right; // {{RTL}}
+					width: 62%;
+				}
+
+				@include responsive( map_get( $breakpoint, 'xl' ) ) {
+					width: 72%;
+				}
+
+			}
+
+	}
+
+
+
+// User account intro
+
+	.myaccount_user {
+
+		a {
+			font-weight: 700;
+		}
+
+	}
+
+
+
+// Orders table
+
+	.my_account_orders {
+
+		th,
+		td {
+			vertical-align: middle;
+		}
+
+	}
+
+	.order-number {
+		font-weight: 700;
+	}
+
+	.order-actions,
+	.download-actions {
+
+		.button {
+			padding: ( $golden_minor +em ) 1em;
+			margin: $golden_minor / 2 + em;
+		}
+
+	}
+
+
+
+// Pre WC2.6 downloads list
+
+	.digital-downloads {
+		margin: 0;
+		list-style: none;
+
+		li {
+			padding: $golden_minor +em;
+
+			&::before {
+				@extend %wc_genericon;
+				content: '\f50b';
+				margin-#{$right}: $golden_minor +em;
+				font-size: 1em + $golden_minor;
+				vertical-align: middle;
+			}
+
+		}
+
+	}
+
+
+
+// Imports
+
+	@import '_my-account-lost-password';
+
+	// @import '_my-account-edit-account';
+
+	@import '_my-account-view-order';
+
+	@import '_my-account-edit-address';
+
+	@import '_my-account-add-payment-method';
+
+	// @import '_my-account-customer-logout';
+
+	// WC2.6+
+
+	// @import '_my-account-orders';
+
+	// @import '_my-account-downloads';
+
+	// @import '_my-account-payment-methods';
+
+	// @import '_my-account-delete-payment-method';
+
+	// @import '_my-account-set-default-payment-method';

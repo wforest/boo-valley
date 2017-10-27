@@ -1,0 +1,162 @@
+/* FILE: print/__content.scss */
+
+//
+// Content styles
+//
+
+
+
+
+
+// Pagination
+
+	.pagination {
+		@extend .noprint;
+	}
+
+
+
+// Post navigation
+
+	.post-navigation {
+		@extend .noprint;
+	}
+
+
+
+// Skip links
+
+	.skip-link {
+		@extend .noprint;
+	}
+
+
+
+// Breadcrumbs
+
+	.breadcrumbs-container {
+		@extend .noprint;
+	}
+
+
+
+// Media
+
+	.entry-media,
+	.image,
+	.gallery,
+	.tiled-gallery {
+
+		a {
+			@extend %no_link_after;
+		}
+
+	}
+
+	.entry-media {
+		width: percentage( $golden_minor );
+		float: $left; // {{RTL}}
+		margin: 0 ( $golden +em ) 1em;
+		margin-#{$left}: 0;
+
+		.posts & {
+			width: 100%;
+			float: none;
+			margin: 0 0 1em;
+		}
+
+		.format-gallery & {
+
+			img {
+				display: none;
+
+				&:first-child {
+					display: block;
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Table of contents
+
+	.post-table-of-contents.top {
+		@extend .noprint;
+	}
+
+
+
+// Post meta
+
+	.entry-meta {
+		clear: both;
+		margin: ( $golden +em ) 0;
+		padding: 1em 0;
+		border-top: 2pt dotted;
+		page-break-inside: avoid;
+
+		a {
+			@extend %no_link_after;
+		}
+
+		&-element {
+			margin-#{$right}: $golden +em; // {{RTL}}
+		}
+
+	}
+
+
+
+// Loop
+
+	.posts {
+
+		.entry {
+			padding: $golden +em;
+			margin: 1em 0;
+			border: 1px solid;
+			page-break-inside: avoid;
+
+			&-media {
+				max-width: 24em;
+			}
+
+		}
+
+	}
+
+
+
+// Comments
+
+	.comments-area {
+		@extend .noprint;
+	}
+
+
+
+// List child pages
+
+	.list-child-pages {
+		display: flex;
+		flex-wrap: wrap;
+
+		.child-page {
+			flex: 0 1 auto;
+			display: inline-block;
+			width: 26%;
+			padding: 2%;
+			margin: 1%;
+			border: 1px solid;
+			page-break-inside: avoid;
+		}
+
+		.link-more {
+			margin-top: $golden +em;
+		}
+
+	}

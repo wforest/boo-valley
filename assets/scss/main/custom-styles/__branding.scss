@@ -1,0 +1,24 @@
+/* FILE: main/custom-styles/__branding.scss */
+
+//
+// Max logo image dimensions
+//
+
+
+
+
+
+.custom-logo {
+
+	&,
+	.has-scrolled:not(.no-js) &,
+	.fl-builder-edit & {
+		/*[*/
+		max-height: 28px;
+		/*]*/
+		/*//
+		max-height: [[custom_logo_height]]px;
+		//*/
+	}
+
+}

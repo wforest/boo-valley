@@ -1,0 +1,198 @@
+/* FILE: print/__wp.scss */
+
+//
+// WP styles
+//
+
+
+
+
+
+// Alignment
+
+	.alignleft,
+	.wp-caption.alignleft,
+	img.alignleft {
+		float: left;
+		margin-right: $golden +em;
+		margin-bottom: $golden +em;
+	}
+
+	.alignright,
+	.wp-caption.alignright,
+	img.alignright {
+		float: right;
+		margin-left: $golden +em;
+		margin-bottom: $golden +em;
+	}
+
+	.aligncenter,
+	.wp-caption.aligncenter,
+	img.aligncenter {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.alignnone,
+	img.alignnone {
+		margin: 0;
+	}
+
+
+
+// Pullquotes
+
+	%pullquote {
+		clear: none;
+		width: percentage( $golden_minor );
+		padding: 0;
+		margin-top: 0;
+		margin-left: 6%;
+		margin-right: 6%;
+		text-align: $left; // {{RTL}}
+		padding: 0 6%;
+	}
+
+	blockquote {
+
+		&.alignleft {
+			@extend %pullquote;
+			padding-left: 0;
+			margin-left: 0;
+			text-align: $right; // {{RTL}}
+		}
+
+		&.alignright {
+			@extend %pullquote;
+			padding-right: 0;
+			margin-right: 0;
+		}
+
+	}
+
+
+
+// Image caption
+
+	.wp-caption {
+		position: relative;
+		display: inline-block;
+		max-width: 100%;
+		padding: 0;
+		margin: 0 auto ( $golden_major +em );
+		text-align: center;
+		font-size: 1em - $golden_minor / 2;
+		page-break-inside: avoid;
+		page-break-before: avoid;
+
+		.wp-caption-text {
+			padding: ( $golden_major +em ) 0 0;
+		}
+
+	}
+
+
+
+// Gallery
+
+	.gallery {
+		clear: both;
+		margin: 0 0 ( $golden +em );
+		overflow: hidden;
+
+		a {
+			display: block;
+			width: 100%;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		$columns: 2; // default gallery layout on small devices
+		$gutter: 2;  // %
+
+		&-item {
+			float: $left; // {{RTL}}
+			width: percentage( ( 100 / $columns - $gutter ) / 100 );
+			padding: 0;
+			margin: 0 percentage( $gutter / 2 / 100 ) percentage( $gutter / 100 );
+			overflow: hidden;
+
+			.gallery-columns-1 & {
+				float: none;
+				width: 100%;
+			}
+
+			@for $i from 2 through 9 {
+				.gallery-columns-#{$i} & {
+					$columns: $i; // on large devices do not force any default gallery layout, use actual gallery columns setup
+					width: percentage( ( 100 / $columns - $gutter ) / 100 );
+				}
+			}
+
+		}
+
+		&-caption {
+			@extend .noprint;
+		}
+
+	}
+
+
+
+// Embeds
+
+	.twitter-tweet-rendered,
+	.wp-video {
+		@extend .noprint;
+	}
+
+
+
+// Smilies
+
+	img.wp-smiley {
+
+		.page-content &,
+		.entry-content &,
+		.comment-content & {
+			display: inline;
+			width: auto;
+			max-height: 1em;
+			margin: 0;
+			border: 0;
+		}
+
+	}
+
+
+
+// Media player
+
+	.mejs {
+
+		&-container {
+			height: auto;
+			line-height: 1;
+			text-align: center;
+			font-size: $golden +em;
+			border: 1px solid;
+			border-radius: 200pt;
+			background: transparent !important;
+
+			&:before {
+				@include rtl_property( content, '\25b6', '\25C0' ); // {{RTL}}
+				display: inline-block;
+				margin: 0 ( $golden +em );
+				vertical-align: middle;
+			}
+
+		}
+
+		&-inner {
+			@extend .noprint;
+		}
+
+	}

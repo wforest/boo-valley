@@ -1,0 +1,32 @@
+/* FILE: main/menu/_menu-primary-top-level.scss */
+
+//
+// Top level primary menu items
+//
+
+
+
+
+
+.main-navigation-container {
+
+	.menu > ul > li {
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			margin-#{$left}: 2px; // {{RTL}}
+		}
+
+		> a {
+			text-transform: uppercase;
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				padding-top: 0;
+				padding-bottom: 0;
+				line-height: 2 * $golden_major + 1rem;
+			}
+
+		}
+
+	}
+
+}

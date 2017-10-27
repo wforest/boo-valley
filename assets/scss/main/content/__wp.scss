@@ -1,0 +1,69 @@
+/* FILE: main/content/__wp.scss */
+
+//
+// WordPress default styles
+//
+
+
+
+
+
+// Alignments
+
+	// Pullquotes
+
+		blockquote {
+
+			&.alignleft,
+			&.alignright {
+				padding: 0;
+
+				@include responsive( map_get( $breakpoint, 's' ) ) {
+					width: 35%;
+				}
+
+			}
+
+			&.alignleft {
+				margin-left: 0;
+			}
+
+			&.alignright {
+				margin-right: 0;
+			}
+
+		}
+
+
+
+// Sticky post
+
+	.sticky {
+
+		.blog .posts & {
+			border-color: inherit; // Required here as the default is transparent
+		}
+
+	}
+
+
+
+// Gallery
+
+	.gallery {
+
+		img {
+			width: 100%;
+		}
+
+		&-columns-1 .gallery-item {
+			margin-top: 2em;
+		}
+
+		&-caption {
+			@extend %font_style_italic;
+			padding: 1em;
+			margin-top: -1px; // To prevent a gap in certain cases.
+		}
+
+	}

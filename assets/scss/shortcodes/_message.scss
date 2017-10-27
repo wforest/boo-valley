@@ -1,0 +1,71 @@
+/* FILE: shortcodes/_message.scss */
+
+//
+// Message
+//
+
+
+
+
+
+.wm-message {
+	position: relative;
+	padding: $golden +rem;
+	margin-bottom: $golden +em;
+	text-align: center;
+	border-width: $golden_minor +em;
+	border-style: solid;
+	border-color: currentColor;
+	border-radius: $golden_minor / 2 +rem;
+	transition: box-shadow ( $large_animation_speed +s );
+	transition-timing-function: cubic-bezier( 0.165, 0.975, 0.530, 1.650 );
+
+	.site & {
+		border-color: currentColor;
+	}
+
+	.fl-module & {
+		margin-bottom: 0;
+	}
+
+	&[class*="icon-"] {
+		padding-top: power( $golden, 3 ) + $golden_minor +em;
+
+		&::before {
+			position: absolute;
+			display: block;
+			width: 100%;
+			#{$left}: 0; // {{RTL}}
+			top: $golden_minor + 1rem;
+			line-height: 1;
+			font-size: power( $golden, 2 ) +em;
+		}
+
+	}
+
+	.fl-builder-content & {
+
+		* {
+			color: inherit;
+		}
+
+	}
+
+	&-title {
+		margin-top: 0;
+		margin-bottom: $golden_minor +em;
+		font-size: $golden_minor + 1em;
+		font-weight: 700;
+		color: inherit;
+	}
+
+	p {
+		margin-bottom: 0;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
+}

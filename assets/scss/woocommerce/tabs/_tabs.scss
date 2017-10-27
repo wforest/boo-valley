@@ -1,0 +1,191 @@
+/* FILE: woocommerce/tabs/_tabs.scss */
+
+//
+// Single product page tabs
+//
+
+
+
+
+
+.woocommerce-tabs {
+	clear: both;
+
+	[tabindex="-1"]:focus {
+		outline: 0;
+	}
+
+
+
+	// Tabs list
+
+		.tabs {
+			display: flex;
+			justify-content: center;
+			padding: 0;
+			margin: 0;
+			line-height: $golden_minor / 2 + 1;
+			text-align: center;
+			list-style: none;
+			border-top-width: 1px;
+			border-top-style: solid;
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
+
+			@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+				display: none;
+			}
+
+			.has-shaded-background + & {
+				@extend %wc_background_overlay_from_text_color; // Product summary background
+			}
+
+			li {
+				display: flex;
+				flex: 1 1 auto;
+				padding: 0;
+				margin: 0;
+				border-width: 0;
+				border-#{$left}-width: 1px; // {{RTL}}
+				border-#{$left}-style: solid; // {{RTL}}
+
+				&:first-child {
+					border-#{$left}-width: 0; // {{RTL}}
+				}
+
+			}
+
+			a {
+				flex: 1 1 auto;
+				display: block;
+				padding: 1rem;
+				margin: -1px 0; // Above `.tabs` container
+				text-transform: uppercase;
+				font-size: 1em - $golden_minor / 2;
+				font-weight: 600;
+				color: inherit;
+				transition: background ( $small_animation_speed +s ),
+				            color ( $small_animation_speed +s ),
+				            box-shadow ( $small_animation_speed +s );
+
+				&:hover {
+					text-decoration: none;
+				}
+
+				&::before {
+					@extend %wc_genericon;
+					content: '\f455'; // Default "info" icon
+					display: inline-block;
+					width: 2em;
+					height: 2em;
+					margin-#{$right}: $golden_major +em; // {{RTL}}
+					line-height: 2;
+					line-height: calc( 2em - 2px );
+					font-size: $golden +em;
+					border-width: 2px;
+					border-style: solid;
+					border-color: currentColor;
+					border-radius: 2em;
+					vertical-align: middle;
+				}
+
+				&[href="#tab-description"]::before {
+					content: '\f100';
+				}
+
+				&[href="#tab-reviews"]::before {
+					content: '\f408';
+				}
+
+				&[href="#tab-upsells"]::before {
+					content: '\f461';
+				}
+
+			}
+
+		}
+
+
+
+	// Panels
+
+		.panel {
+			@extend %wc_content_width;
+			padding: ( $padding_vertical * $golden_major ) 0;
+
+			&:focus {
+				outline: 0;
+			}
+
+			@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+				display: block !important;
+				width: 100%;
+				padding-left: 6%;
+				padding-right: 6%;
+				border-top-width: 1px;
+				border-top-style: solid;
+			}
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				padding-top: $padding_vertical * ( $golden_major + $golden_minor / 2 );
+				padding-bottom: $padding_vertical * ( $golden_major + $golden_minor / 2 );
+			}
+
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				padding-top: $padding_vertical;
+				padding-bottom: $padding_vertical;
+			}
+
+			> h2:first-child {
+				@extend %wc_panel_title;
+			}
+
+		}
+
+
+
+	// Only 1 tab to select
+
+		&.tabs-count-1 {
+			margin-top: 0;
+			border-top-width: 1px;
+			border-top-style: solid;
+
+			.tabs {
+				display: none;
+			}
+
+		}
+
+}
+
+
+
+// Extenders
+
+	%wc_panel_title {
+		margin-bottom: $golden +em;
+		font-size: 1em + $golden_minor;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			clip: rect( 1px, 1px, 1px, 1px );
+			position: absolute !important;
+			height: 1px;
+			width: 1px;
+			line-height: 1px;
+			overflow: hidden;
+		}
+
+	}
+
+
+
+// Imports
+
+	@import '_description';
+
+	@import '_additional-information';
+
+	@import '_reviews';
+
+	@import '_upsells';

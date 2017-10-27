@@ -1,0 +1,42 @@
+/* FILE: woocommerce/tabs/__description.scss */
+
+//
+// Tab: Description
+//
+
+
+
+
+
+// @todo  Don't use ID selector if possible
+#tab-description {
+
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+		max-width: 38em;
+		max-width: 70ch;
+	}
+
+	.content-layout-no-paddings & {
+		@extend %wc_content_width;
+		padding: 0;
+	}
+
+	.content-layout-no-paddings &,
+	.fl-builder & {
+
+		> h2:first-child {
+			@extend %wc_content_width;
+			margin-top: $padding_vertical * $golden_major;
+			margin-bottom: $golden +em;
+		}
+
+	}
+
+	.content-layout-stretched &,
+	.fl-builder & {
+		width: 100%;
+		max-width: none;
+		padding: 0;
+	}
+
+}

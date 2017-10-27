@@ -1,0 +1,66 @@
+/* FILE: woocommerce/sidebar/__shop-before.scss */
+
+//
+// Shop before widgets area
+//
+
+
+
+
+
+.shop-before-widgets {
+	@extend %wc_horizontal_widget_area;
+	padding: 0;
+	font-size: 1em - $golden_minor / 2;
+
+	&-container {
+		margin-bottom: $golden +rem;
+
+		@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+			padding: ( $golden_major +em ) 0;
+			// Preventing mobile horizontal scrolling
+			// (Required for horizontal_widget_area.)
+			overflow: hidden;
+		}
+
+	}
+
+	&-inner {
+		border-bottom-width: 2px;
+		border-bottom-style: solid;
+	}
+
+	.widget {
+		padding: 0 0 1rem;
+
+		@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+			flex: 0 1 auto;
+			width: 100%;
+			max-width: none;
+
+			select {
+				max-width: none;
+			}
+
+		}
+
+	}
+
+	ul {
+
+		li {
+			display: inline-block;
+			margin: 0 ( $golden_major +em );
+			border-width: 0;
+		}
+
+	}
+
+	input,
+	select,
+	textarea {
+		width: 100%;
+		max-width: 24em;
+	}
+
+}

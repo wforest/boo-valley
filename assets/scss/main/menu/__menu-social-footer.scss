@@ -1,0 +1,60 @@
+/* FILE: main/menu/__menu-social-footer.scss */
+
+//
+// Social links in footer
+//
+
+
+
+
+
+.social-links {
+
+	.site-footer & {
+		@extend %font_size_golden;
+		@extend %background_overlay_from_text_color;
+		margin: 0;
+		text-align: center;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			padding: 0 ( $golden +rem );
+		}
+
+		&::before {
+			border-radius: 5em;
+		}
+
+		ul {
+			display: flex;
+			max-width: percentage( $golden_major );
+			margin-left: auto;
+			margin-right: auto;
+
+			&:hover {
+
+				a {
+					opacity: map_get( $border_opacity_from_text, 'general' );
+
+					&:hover {
+						opacity: 1;
+					}
+
+				}
+
+			}
+
+		}
+
+		li {
+			flex: 1 1 auto;
+		}
+
+		a {
+			display: block;
+			line-height: power( $golden, 2 );
+			transition: opacity ( $small_animation_speed +s );
+		}
+
+	}
+
+}

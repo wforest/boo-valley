@@ -1,0 +1,164 @@
+/* FILE: shortcodes/__column.scss */
+
+//
+// Column, required for Posts, Testimonials, but mainly Content Module shortcode
+//
+
+
+
+
+
+$gutter: $golden; // In rem
+$gutter_fallback_percent: 4; // In %
+
+
+
+.wm-column {
+	flex: 0 1 auto;
+	position: relative;
+	width: 100%;
+	padding: 0;
+	margin: 0 0 ( $golden +rem );
+
+	&.no-margin,
+	&.last,
+	.wm-row > &:last-child {
+		margin: 0;
+	}
+
+}
+
+
+
+// Column widths
+
+	// Device independent
+
+		.width-1-1:not(:first-child) {
+			margin-top: $gutter +rem;
+		}
+
+
+
+	// Medium devices
+
+		@include responsive_minmax( map_get( $breakpoint, 'm' ), map_get( $breakpoint, 'l' ) ) {
+
+			@for $i from 2 through 6 {
+
+				.width-1-#{$i} {
+
+					// Max 2 columns
+					@if 2 < $i {
+						$i: 2;
+					}
+
+					width: calc( #{ percentage( 1 / $i ) } - #{ $gutter / $i * ( $i - 1 ) +rem } );
+					margin-#{$right}: $gutter +rem; // {{RTL}}
+
+					&.no-margin {
+						width: percentage( 1 / $i );
+					}
+
+					&:nth-child( #{$i}n ) {
+						margin-#{$right}: 0; // {{RTL}}
+					}
+
+				}
+
+			}
+
+		}
+
+
+
+	// Large devices
+
+		@include responsive_minmax( map_get( $breakpoint, 'l' ), map_get( $breakpoint, 'xl' ) ) {
+
+			@for $i from 2 through 6 {
+
+				.width-1-#{$i} {
+
+					// Max 3 columns
+					@if 3 < $i {
+						$i: 3;
+					}
+
+					width: calc( #{ percentage( 1 / $i ) } - #{ $gutter / $i * ( $i - 1 ) +rem } );
+					margin-#{$right}: $gutter +rem; // {{RTL}}
+					margin-bottom: 0;
+
+					&.no-margin {
+						width: percentage( 1 / $i );
+					}
+
+					&:nth-child( #{$i}n ) {
+						margin-#{$right}: 0; // {{RTL}}
+					}
+
+				}
+
+			}
+
+		}
+
+
+
+	// Extra large devices
+
+		@include responsive_minmax( map_get( $breakpoint, 'xl' ), map_get( $breakpoint, 'xxl' ) ) {
+
+			@for $i from 2 through 6 {
+
+				.width-1-#{$i} {
+
+					// Max 4 columns
+					@if 4 < $i {
+						$i: 4;
+					}
+
+					width: calc( #{ percentage( 1 / $i ) } - #{ $gutter / $i * ( $i - 1 ) +rem } );
+					margin-#{$right}: $gutter +rem; // {{RTL}}
+					margin-bottom: 0;
+
+					&.no-margin {
+						width: percentage( 1 / $i );
+					}
+
+					&:nth-child( #{$i}n ) {
+						margin-#{$right}: 0; // {{RTL}}
+					}
+
+				}
+
+			}
+
+		}
+
+
+
+	// Extra-extra large devices
+
+		@include responsive( map_get( $breakpoint, 'xxl' ) ) {
+
+			@for $i from 2 through 6 {
+
+				.width-1-#{$i} {
+					width: calc( #{ percentage( 1 / $i ) } - #{ $gutter / $i * ( $i - 1 ) +rem } );
+					margin-#{$right}: $gutter +rem; // {{RTL}}
+					margin-bottom: 0;
+
+					&.no-margin {
+						width: percentage( 1 / $i );
+					}
+
+					&:nth-child( #{$i}n ) {
+						margin-#{$right}: 0; // {{RTL}}
+					}
+
+				}
+
+			}
+
+		}

@@ -1,0 +1,40 @@
+/* FILE: main/menu/__menu-social-header.scss */
+
+//
+// Social links in header
+//
+
+
+
+
+
+.social-links {
+
+	.site-header-content & {
+		float: $right; // {{RTL}}
+		margin-#{$left}: auto; // {{RTL}} // Float it right in flexbox layout
+		white-space: nowrap;
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			padding-#{$left}: $golden +em; // {{RTL}}
+		}
+
+		.back-to-top-link {
+			display: none;
+		}
+
+		.has-header-cart & {
+
+			@include in( '.has-header-cart.header-layout-boxed' ) {
+				display: none;
+			}
+
+			@include responsive( 1440, 'max-width' ) {
+				display: none;
+			}
+
+		}
+
+	}
+
+}

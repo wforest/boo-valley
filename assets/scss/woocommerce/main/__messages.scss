@@ -1,0 +1,75 @@
+/* FILE: woocommerce/main/__messages.scss */
+
+//
+// Message box styles
+//
+
+
+
+
+
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error,
+.woocommerce-noreviews,
+p.no-comments {
+	@extend %wc_clearfix;
+	clear: both;
+	padding: 1em ( $golden +em );
+	margin: 0;
+	border-width: 2px;
+	border-top-width: 4px;
+	border-style: solid;
+	border-color: currentColor;
+
+	&,
+	&:last-child {
+		margin-bottom: power( $golden, 2 ) +em;
+	}
+
+	a {
+		font-weight: 700;
+	}
+
+	.button {
+		display: block;
+		padding: ( $golden_minor +em ) 1em;
+		margin: 0 0 1em;
+		font-size: 1em - $golden_minor / 2;
+		border-color: transparent;
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			display: inline-block;
+			float: $right; // {{RTL}}
+			margin: ( -$golden_minor / 2 +em ) 0;
+			margin-#{$left}: $golden +em; // {{RTL}}
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			border-color: currentColor;
+		}
+
+	}
+
+}
+
+
+
+// Error message
+
+	.woocommerce-error {
+		list-style: none;
+
+		li {
+			clear: both;
+			margin: ( $golden_major +em ) 0 0;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+		}
+
+	}

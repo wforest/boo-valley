@@ -1,0 +1,24 @@
+/* FILE: shortcodes/custom-styles/__base.scss */
+
+//
+// Basic shortcodes colors
+//
+
+
+
+
+
+// Accent color
+
+	.posts .type-wm_staff .taxonomy,
+	.simple-layout .type-wm_projects .entry-header,
+	.wm-tab-links .active a,
+	.wm-tab-links .is-active a,
+	.wm-tab-links a:hover,
+	.wm-tour-nav,
+	.wm-filter .active a,
+	.wm-filter .is-active a,
+	.fl-builder-content .wm-filter .active a,
+	.fl-builder-content .wm-filter .is-active a {
+		@extend %accent_colors;
+	}

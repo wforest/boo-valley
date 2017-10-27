@@ -1,0 +1,47 @@
+/* FILE: print/__footer.scss */
+
+//
+// Footer styles
+//
+
+
+
+
+
+// Container
+
+	.site-footer {
+		@extend %font_sans;
+		@extend %font_size_small;
+		@extend %background_light;
+		clear: both;
+		padding: $golden +em;
+		margin-top: power( $golden, 2 ) +em;
+		border: 2pt solid;
+		page-break-inside: avoid;
+
+		> * {
+
+			&:not(.footer-area-site-info) {
+				@extend .noprint;
+			}
+
+		}
+
+	}
+
+
+
+// Site info
+
+	.footer-area-site-info {
+
+		a {
+			@extend %no_link_after;
+		}
+
+	}
+
+	.back-to-top {
+		@extend .noprint;
+	}

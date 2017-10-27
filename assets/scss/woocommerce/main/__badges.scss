@@ -1,0 +1,23 @@
+/* FILE: woocommerce/main/__badges.scss */
+
+//
+// Badges styles
+//
+
+
+
+
+
+// Sale flash (badge)
+
+	.onsale {
+		display: inline-block;
+		padding: ( $golden_minor +em ) ( $golden_major +em );
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+		font-size: 1em - $golden_minor / 2;
+		font-weight: 700;
+		border-width: 2px;
+		border-style: solid;
+		border-color: currentColor;
+	}

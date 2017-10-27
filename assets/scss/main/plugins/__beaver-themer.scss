@@ -1,0 +1,64 @@
+/* FILE: main/plugins/__beaver-themer.scss */
+
+//
+// Beaver Themer
+//
+
+
+
+
+
+// Normal header styles overrides
+
+	.site-header {
+
+		.has-intro.fl-theme-builder-header & {
+
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				position: relative;
+				opacity: 1;
+				transition: none;
+			}
+
+		}
+
+	}
+
+
+
+	// Sticky header styles overrides
+
+		// No need to style sticky header as this is disabled when the plugin is used.
+
+
+
+
+
+// Prepare the page layout for Beaver Themer - make it fullwidth if possible
+
+	.fl-theme-builder {
+
+		&-singular,
+		&-404,
+		&-archive {
+			@extend %fullwidth_sections_layout;
+
+			&.single {
+
+				.site-main > .entry > .entry-header {
+					@extend %screen_reader_hiding;
+				}
+
+			}
+
+		}
+
+		&-singular.single {
+
+			.content-area {
+				max-width: none;
+			}
+
+		}
+
+	}

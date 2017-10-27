@@ -1,0 +1,83 @@
+/* FILE: main/custom-styles/__content.scss */
+
+//
+// Site content colors
+//
+
+
+
+
+
+// Default site content elements
+
+	.site,
+	.site-content,
+	.#{$special_color_class_prefix}content,
+	.#{$special_color_class_prefix}content > .fl-row-content-wrap,
+	.#{$special_color_class_prefix}content > .fl-col-content {
+		@extend %site_content_colors;
+	}
+
+
+
+// Post
+
+	.entry {
+
+		// In loop
+
+			.posts & {
+
+				&:hover {
+					box-shadow: $post_hover_shadow; //*
+				}
+
+			}
+
+
+
+		// Meta
+
+			&-meta {
+
+				&-element {
+
+					.single & {
+						@extend %site_content_headings_color;
+					}
+
+				}
+
+			}
+
+	}
+
+
+
+// Page
+
+	// Page template: List child pages
+
+		.child-page {
+			/*[*/
+			background-color: map_get( $colors, 'content_background' );
+			/*]*/
+			/*//
+			background-color: [[color_content_background]];
+			//*/
+
+			&:hover {
+				box-shadow: $post_hover_shadow; //*
+			}
+
+			.more-link {
+
+				&:hover,
+				&:focus,
+				&:active {
+					@extend %accent_colors;
+				}
+
+			}
+
+		}

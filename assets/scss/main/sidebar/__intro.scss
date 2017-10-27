@@ -1,0 +1,38 @@
+/* FILE: main/sidebar/__intro.scss */
+
+//
+// Intro widgets area
+//
+
+
+
+
+
+.intro-widgets {
+	@extend %horizontal_widget_area;
+
+	&-container {
+
+		@include responsive( map_get( $breakpoint, 'm' ), 'max-width' ) {
+			// Preventing mobile horizontal scrolling
+			// (Required for horizontal_widget_area.)
+			overflow: hidden;
+		}
+
+	}
+
+	&-container {
+		@extend %background_overlay_from_text_color;
+		width: 100%;
+
+		&::before {
+			opacity: .93; // The same value as for header opacity
+		}
+
+	}
+
+	a {
+		color: inherit;
+	}
+
+}

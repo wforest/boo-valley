@@ -1,0 +1,101 @@
+/* FILE: shortcodes/_divider.scss */
+
+//
+// Divider
+//
+
+
+
+
+
+%divider_types {
+	background: none;
+}
+
+
+
+.wm-divider {
+	// The same styles as <hr>
+	// Required to redeclare here as we have no access to main.scss from shortcodes.scss
+	height: 0;
+	margin: ( power( 1 + $golden_minor, 3 ) +em ) 0;
+	border-bottom-width: 1px;
+	border-style: solid;
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+		margin: ( power( 1 + $golden_minor, 4 ) +em ) 0;
+	}
+
+
+
+	// Types
+
+		&.type-dotted {
+			@extend %divider_types;
+			border-style: dotted;
+		}
+
+		&.type-dashed {
+			@extend %divider_types;
+			border-style: dashed;
+		}
+
+		&.type-double-line {
+			@extend %divider_types;
+			height: 5px;
+			border-top-width: 1px;
+			border-bottom-width: 1px;
+		}
+
+		&.type-whitespace {
+			@extend %divider_types;
+			margin: ( power( 1 + $golden_minor, 4 ) +em ) 0 0;
+			border-width: 0;
+		}
+
+
+
+	// Sizes
+
+		&.size-small {
+			display: inline-block;
+			width: percentage( $golden_minor / 2 );
+		}
+
+		&.size-medium {
+			display: inline-block;
+			width: percentage( $golden_minor );
+		}
+
+		&.size-large {
+			display: inline-block;
+			width: percentage( $golden_major );
+		}
+
+		&.size-extra-large {
+			display: inline-block;
+			width: percentage( 1 - $golden_minor / 2 );
+		}
+
+}
+
+
+
+// Divider in Beaver Builder
+
+	.fl-module-wm_divider {
+
+		.wm-divider {
+
+			&,
+			&.type-whitespace {
+				margin: 0;
+			}
+
+		}
+
+		.fl-module-overlay {
+			top: -6px;
+		}
+
+	}

@@ -1,0 +1,326 @@
+/* FILE: main/base/__site-borders.scss */
+
+//
+// Website borders
+//
+// Yes, we could simplify the styles using header position absolute
+// where appropriate, but that would create glitches on page scroll
+// as CSS position can not be smoothly transitioned.
+//
+
+
+
+
+
+.has-site-borders {
+
+	$border_animation_speed: .3;
+	$border_animation_easing: linear;
+	$border_animation_delay_sticky_header: .1;
+	$border_animation_delay_inertia: -.05; // Negative value => left & right borders delay / Positive value => top & bottom borders delay
+	$border_hiding_size_multiplier: 1.1;
+
+	@include responsive( map_get( $breakpoint, 'xl' ) ) {
+
+		.site-border {
+			position: fixed;
+			width: 100%;
+			height: 0;
+			left: 0;
+			top: 0;
+			padding-top: $site_border_width;
+			background: inherit;
+			border: 1px solid transparent;
+			z-index: 100;
+			transition: margin ( $border_animation_speed +s ) $border_animation_easing;
+
+			&.left,
+			&.right {
+				width: $site_border_width;
+				height: 100%;
+			}
+
+			&.right {
+				left: auto;
+				right: 0;
+			}
+
+			&.bottom {
+				top: auto;
+				bottom: 0;
+			}
+
+		}
+
+		// Add top margin when admin bar displayed
+
+			&.admin-bar {
+
+				.site-border {
+
+					&.top,
+					&.left,
+					&.right {
+						margin-top: 32px;
+					}
+
+				}
+
+			}
+
+		// Around the site container
+
+			&-around {
+
+				& {
+					padding: $site_border_width;
+				}
+
+				.site-border {
+
+					&.top,
+					&.bottom {
+						display: none;
+					}
+
+				}
+
+				&:not(.has-fullwidth-submenu) {
+
+					.site-border {
+
+						&.left,
+						&.right {
+							display: none;
+						}
+
+					}
+
+				}
+
+			}
+
+		// Around browser viewport, static
+
+			&-static {
+				padding: $site_border_width;
+			}
+
+		// Around browser viewport, on scroll only
+
+			&-on-scroll {
+				padding-bottom: $site_border_width;
+
+				.site-border {
+
+					&.left,
+					&.right {
+						margin-left: -$border_hiding_size_multiplier * $site_border_width;
+						margin-right: -$border_hiding_size_multiplier * $site_border_width;
+
+						@if 0 > $border_animation_delay_inertia {
+							transition-delay: $border_animation_delay_inertia * -1s;
+						}
+
+					}
+
+					&.top,
+					&.bottom {
+						margin-top: -$border_hiding_size_multiplier * $site_border_width;
+						margin-bottom: -$border_hiding_size_multiplier * $site_border_width;
+
+						@if 0 < $border_animation_delay_inertia {
+							transition-delay: $border_animation_delay_inertia +s;
+						}
+
+					}
+
+					&.left {
+						transform-origin: 0 50%;
+					}
+
+					&.right {
+						transform-origin: 100% 50%;
+					}
+
+					&.top {
+						transform-origin: 50% 0;
+					}
+
+					&.bottom {
+						transform-origin: 50% 100%;
+					}
+
+				}
+
+				&.admin-bar {
+
+					.site-border {
+
+						&.top {
+							margin-top: -$border_hiding_size_multiplier * $site_border_width;
+						}
+
+					}
+
+				}
+
+				&.has-scrolled {
+
+					.site-border {
+
+						&.left,
+						&.right {
+							margin-left: 0;
+							margin-right: 0;
+						}
+
+						&.top,
+						&.bottom {
+							margin-top: 0;
+							margin-bottom: 0;
+						}
+
+					}
+
+					&.admin-bar {
+
+						.site-border {
+
+							&.left,
+							&.right,
+							&.top {
+								margin-top: 32px;
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+	}
+
+
+
+	// With sticky header
+
+		@include responsive_minmax( map_get( $breakpoint, 'xl' ), map_get( $breakpoint, 's' ), 'min-width', 'min-height' ) {
+
+			&.has-sticky-header:not(.no-js) {
+
+				.site-border {
+					transition-delay: $border_animation_delay_sticky_header +s;
+				}
+
+				.site-header {
+					margin-top: $site_border_width;
+				}
+
+			}
+
+			&.has-sticky-header.admin-bar:not(.no-js) {
+
+				.site-header {
+					margin-top: calc( 32px + #{ $site_border_width } );
+				}
+
+			}
+
+			&-around {
+
+				&.has-sticky-header:not(.no-js) {
+
+					.site-header {
+						transition: transform ( $large_animation_speed +s ),
+						            // opacity ( $large_animation_speed +s ),
+						            margin ( $small_animation_speed +s );
+					}
+
+				}
+
+				&.has-sticky-header:not(.has-scrolled),
+				&.has-sticky-header.admin-bar:not(.has-scrolled) {
+
+					.site-header {
+						position: absolute;
+						width: 100%;
+						margin-top: 0;
+					}
+
+				}
+
+				&.has-sticky-header.has-scrolled {
+
+					.site-header {
+						width: calc( 100% - #{ 2 * $site_border_width } );
+						#{$left}: auto; // {{RTL}}
+						margin-top: 0;
+					}
+
+					&.admin-bar {
+
+						.site-header {
+							margin-top: 32px;
+						}
+
+					}
+
+				}
+
+			}
+
+			&-on-scroll {
+
+				&.has-sticky-header:not(.no-js) {
+
+					.site-border {
+
+						&.top,
+						&.bottom {
+							transition-delay: $border_animation_delay_sticky_header + $border_animation_delay_inertia +s;
+						}
+
+					}
+
+					.site-header {
+						margin-top: 0;
+					}
+
+				}
+
+				&.has-sticky-header.admin-bar:not(.no-js) {
+
+					.site-header {
+						margin-top: 32px;
+					}
+
+				}
+
+			}
+
+			&-static.has-sticky-header.has-scrolled:not(.no-js),
+			&-on-scroll.has-sticky-header.has-scrolled:not(.no-js) {
+				// Yes, we need to override the later styles here...
+
+				.site-header {
+					margin-top: $site_border_width;
+				}
+
+			}
+
+			&-static.has-sticky-header.has-scrolled.admin-bar:not(.no-js),
+			&-on-scroll.has-sticky-header.has-scrolled.admin-bar:not(.no-js) {
+				// Yes, we need to override the later styles here...
+
+				.site-header {
+					margin-top: calc( 32px + #{ $site_border_width } );
+				}
+
+			}
+
+		}
+
+}

@@ -1,0 +1,148 @@
+/* FILE: shortcodes/_testimonials.scss */
+
+//
+// Testimonials
+//
+
+
+
+
+
+$source_indent: calc( 50% - #{ $golden / 2 +rem } );
+$border_width: 1px;
+
+
+
+.wm-testimonials {
+
+	.archive-testimonials .posts &,
+	.search-results .posts & {
+		padding: 0;
+		text-align: inherit;
+		border-width: 0;
+
+		&:hover {
+			box-shadow: none;
+		}
+
+	}
+
+
+
+	// Quote
+
+		blockquote {
+			position: relative;
+			padding: $golden +rem;
+			margin: 0;
+			font-size: 1em + $golden_minor / 2;
+			border-top-width: $border_width;
+			border-top-style: solid;
+			border-#{$left}-width: $border_width; // {{RTL}}
+			border-#{$left}-style: solid; // {{RTL}}
+
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				padding: power( $golden, 2 ) +rem;
+			}
+
+			.fl-col-small & {
+				padding: $golden +rem;
+				padding-#{$right}: 0; // {{RTL}}
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				display: block;
+				width: $source_indent;
+				height: auto;
+				#{$left}: -$border_width; // {{RTL}}
+				top: 100%;
+				border-top-width: $border_width;
+				border-top-style: solid;
+			}
+
+			&::before {
+				@extend %sc_genericon;
+				content: '\f106';
+				float: $left; // {{RTL}}
+				position: relative;
+				display: inline-block;
+				width: auto;
+				height: auto;
+				#{$left}: auto; // {{RTL}}
+				top: auto;
+				margin-#{$right}: $golden_minor +em;
+				line-height: 1;
+				font-size: power( $golden, 2 ) +em;
+				border-width: 0;
+			}
+
+		}
+
+
+
+	// Source
+
+		.source {
+			position: relative;
+			display: block;
+			padding-top: $golden_major +em;
+			margin: ( $golden +em ) 0 0;
+			text-align: center;
+			font-weight: 700;
+
+			&::after,
+			&::before {
+				content: '';
+				position: absolute;
+				display: block;
+				height: $golden +rem;
+				#{$left}: $source_indent; // {{RTL}}
+				bottom: 100%;
+				margin-#{$left}: -$border_width; // {{RTL}}
+				border-#{$left}-width: $border_width; // {{RTL}}
+				border-#{$left}-style: solid; // {{RTL}}
+				border-color: inherit; // Required here
+			}
+
+			&::after {
+				height: power( $golden, 2 ) +rem;
+				@include rtl_property( transform, skewX( -45deg ), skewX( 45deg ) ); // {{RTL}}
+				transform-origin: 100% 100%;
+			}
+
+			small {
+				display: block;
+			}
+
+		}
+
+		.image {
+
+			img {
+				display: inline;
+				width: power( 1 + $golden_minor, 4 ) +em;
+				margin: 0 1rem 0;
+				margin-#{$left}: 0; // {{RTL}}
+				border-radius: 5em;
+			}
+
+		}
+
+
+
+	// Hover border color
+
+		&-item {
+			@extend %sc_clearfix;
+			transition: border-color ( $small_animation_speed +s );
+
+			&:hover,
+			.slick-slide:hover & {
+				border-color: currentColor;
+			}
+
+		}
+
+}

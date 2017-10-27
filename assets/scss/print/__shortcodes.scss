@@ -1,0 +1,196 @@
+/* FILE: print/__shortcodes.scss */
+
+//
+// Shortcodes styles
+//
+
+
+
+
+
+// Button
+
+	.button,
+	.wm-button {
+		display: inline-block;
+		padding: ( $golden_major +em ) 1em;
+		border: 1pt solid;
+	}
+
+
+
+// Call to action
+
+	.wm-call-to-action {
+		padding: 6%;
+		border: 4px solid;
+
+		&-button {
+			margin-top: $golden +em;
+		}
+
+	}
+
+
+
+// Columns
+
+	@for $i from 2 through 6 {
+
+		.width-1-#{$i} {
+			@extend %floating_column;
+			width: percentage( 1 / $i - .06 );
+
+			&:nth-child(#{$i}n+1) {
+				clear: $left; // {{RTL}}
+			}
+
+		}
+
+	}
+
+	.wm-column {
+		margin-bottom: 1em;
+
+		.masonry-this &,
+		.filter-this & {
+			@extend %remove_js_styles;
+		}
+
+	}
+
+
+
+// Item
+
+	.wm-item-content,
+	.wm-tabs .wm-item {
+		display: block !important;
+	}
+
+
+
+// Message
+
+	.wm-message {
+		margin: 1em 0;
+		padding: 1em;
+		border: 2pt solid;
+	}
+
+
+
+// Posts
+
+	.type-wm_staff,
+	.type-wm_projects {
+
+		a {
+			text-decoration: none;
+		}
+
+		.entry-content {
+			margin-bottom: 1em;
+		}
+
+		.taxonomy {
+			margin-bottom: $golden_major +em;
+			text-transform: uppercase;
+
+			a {
+				@extend %no_link_after;
+			}
+
+		}
+
+	}
+
+
+
+// Tabs
+
+	.wm-tab-links,
+	.wm-tour-nav {
+		@extend .noprint;
+	}
+
+
+
+// Testimonials
+
+	.wm-testimonials {
+
+		.screen-reader-text,
+		img {
+			@extend .noprint;
+		}
+
+	}
+
+
+
+// Utilities
+
+	// Masonry & Filter
+
+		.wm-filter {
+			@extend .noprint;
+		}
+
+		.filter-this {
+			@extend %remove_js_styles_container;
+
+			> article,
+			> div {
+				@extend %remove_js_styles;
+			}
+
+		}
+
+		.masonry {
+			@extend %remove_js_styles_container;
+
+			.masonry-brick {
+				@extend %remove_js_styles;
+
+				&:not(.wm-column) {
+					float: $left; // {{RTL}}
+					width: 33%;
+					margin: 2%;
+
+					&:nth-child( 2n + 1 ) {
+						clear: both;
+					}
+
+				}
+
+			}
+
+		}
+
+
+
+	// Slick slider
+
+		.slick {
+
+			&-track,
+			&-slide {
+				@extend %remove_js_styles;
+				width: 100% !important;
+				max-width: 36em;
+			}
+
+			&-slide {
+
+				.wm-column {
+					width: 100% !important;
+				}
+
+			}
+
+			&-arrow {
+				@extend .noprint;
+			}
+
+		}
