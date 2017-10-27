@@ -109,25 +109,10 @@ class Boo_Valley_TGMPA_Plugins {
 
 							// Recommended
 
-								'sullidigital-amplifier' => array(
-									'name'        => 'SulliDigital Amplifier',
+								'webman-amplifier' => array(
+									'name'        => 'WebMan Amplifier',
 									'description' => esc_html__( 'Adding theme features, post types, shortcodes, icons.', 'boo-valley' ),
-									'slug'        => 'sullidigital-amplifier',
-									'required'    => false,
-								),
-
-								'beaver-builder' => array(
-									'name'        => 'Beaver Builder',
-									'description' => esc_html__( 'Easy to use front-end page builder.', 'boo-valley' ),
-									'slug'        => 'beaver-builder-lite-version',
-									'required'    => false,
-									'is_callable' => 'FLBuilder::init',
-								),
-
-								'webman-templates' => array(
-									'name'        => 'WebMan Templates',
-									'description' => esc_html__( 'Adding set of predefined templates for Beaver Builder page builder.', 'boo-valley' ),
-									'slug'        => 'webman-templates',
+									'slug'        => 'webman-amplifier',
 									'required'    => false,
 								),
 
